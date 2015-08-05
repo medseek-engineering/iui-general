@@ -1,0 +1,23 @@
+.iui-breadcrumb {
+	@extend .breadcrumb;
+	padding: 0;
+	background: none;
+	margin-bottom: 10px;
+	a:after {
+		@extend %hide-for-print;
+	}
+	> li + li:before {
+		display: none;
+	}
+	> li:after {
+		content: ">";
+		padding-left: 5px;
+		padding-right: 10px;
+	}
+	.breadcrumb-as-back-link & {
+		> li:not(:last-child), li:after {
+			// hiding grandparents on up & forward arrow
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+	<head>
+		<title>iui-general</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular.min.js"></script>
+		<link rel="stylesheet" href="lib/dist/iui-general.css">
+    <style type="text/css">
+
+    </style>
+    <script src="lib/dist/iui-general.min.js"></script>
+		<script>
+			var app = angular.module('app', ['iui.general']);
+      app.root = '/';
+      app.controller('iuiGeneral', ['$scope', function(scope) {
+
+      }]);
+		</script>
+	</head>
+	<body ng-app="app" ng-controller="iuiGeneral">
+		<div class="container-fluid">
+      <h1>iui-breadcrumb</h1>
+			<iui-breadcrumb breadcrumb="[{name: 'Health Information', url: '/my-health-information/'},{name: 'Health Trackers', url: '/my-health-information/health-trackers/'}]"></iui-breadcrumb>
+		</div>
+	</body>
+</html>

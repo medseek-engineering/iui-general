@@ -1,0 +1,8 @@
+<nav role="navigation" class="iui-breadcrumb-nav" ng-if="breadcrumb.length">
+	<p class="sr-only" id="breadcrumblabel">You are here:</p>
+	<ol class="iui-breadcrumb" aria-labledby="breadcrumblabel">
+		<li ng-repeat="crumb in breadcrumb">
+			<a ng-href="{{crumb.url}}" class="page-breadcrumb" title="{{crumb.name}}" ng-bind="crumb.name"></a>
+		</li>
+	</ol>
+</nav>
