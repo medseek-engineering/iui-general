@@ -12,14 +12,21 @@
 			var app = angular.module('app', ['iui.general']);
       app.root = '/';
       app.controller('iuiGeneral', ['$scope', function(scope) {
-
+        scope.breadcrumb = [{name: 'Health Information', url: '/my-health-information/'},{name: 'Health Trackers', url: '/my-health-information/health-trackers/'}];
+        scope.headingText = 'This is a page header';
       }]);
 		</script>
 	</head>
 	<body ng-app="app" ng-controller="iuiGeneral">
 		<div class="container-fluid">
-      <h1>iui-breadcrumb</h1>
-			<iui-breadcrumb breadcrumb="[{name: 'Health Information', url: '/my-health-information/'},{name: 'Health Trackers', url: '/my-health-information/health-trackers/'}]"></iui-breadcrumb>
+      <section>
+        <h2>iui-page-header</h2>
+        <iui-page-header breadcrumb="breadcrumb" heading-text="{{headingText}}"></iui-page-header>
+      </section>
+      <section>
+        <h2>iui-breadcrumb</h2>
+        <iui-breadcrumb breadcrumb="breadcrumb"></iui-breadcrumb>
+      </section>
 		</div>
 	</body>
 </html>

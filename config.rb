@@ -14,10 +14,10 @@ require "bootstrap-sass"
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = File.join('lib','dist')
-sass_dir = File.join('lib','scss')
-images_dir = File.join('lib','images')
+sass_dir = File.join('lib','src')
+images_dir = File.join('lib','src','images')
 javascripts_dir = "js"
-fonts_dir = File.join('lib','fonts')
+fonts_dir = File.join('lib','src','fonts')
 
 debug_info = true
 environment = 'development'

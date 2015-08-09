@@ -1,0 +1,7 @@
+<span class="profile-image-wrap" ng-class="{'profile_square':iuiIsSquare, 'profile_rounded':!iuiIsSquare, 'profile_thumb':iuiIsThumb, 'profile_male': profileGender === 'Male',  'profile_female': profileGender === 'Female', 'profile_unknown':(profileGender !== 'Male' && profileGender !== 'Female')}">
+	<span
+		ng-if="iuiImage != 'data:image/jpeg;base64,null' && iuiImage != null"
+		ng-style="{'background-image':'url(data:image/jpeg;base64,'+iuiImage+')'}"
+		class="profile_image">
+	</span>
+</span>
