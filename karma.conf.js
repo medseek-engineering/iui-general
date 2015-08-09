@@ -60,12 +60,11 @@ module.exports = function (config) {
       'test/angular-mocks.js',
 
       // app module dependencies
-      'lib/directives/*.js',
-      'lib/services/*.js',
-      'lib/filters/*.js',
+      'lib/src/**/*.js',
+      'lib/src/*.js',
 
       //directive templates
-      'lib/**/*.html',
+      'lib/src/**/*.html',
       // test scripts
       'test/**/*.test.js'
     ],
@@ -73,16 +72,13 @@ module.exports = function (config) {
     reporters: ['coverage', 'progress', 'html'],
 
     preprocessors: {
-      'lib/**/*.html': ['ng-html2js'],
-      'lib/directives/*.js': ['coverage'],
-      'lib/filters/*.js': ['coverage'],
-      'lib/services/*.js': ['coverage']
+      'lib/src/**/*.html': ['ng-html2js']
     },
 
     ngHtml2JsPreprocessor: {
       // immitates ui-core
       prependPrefix: '/$iui-general',
-      stripPrefix: 'lib',
+      stripPrefix: 'lib/src',
       moduleName: 'templates'
     },
 

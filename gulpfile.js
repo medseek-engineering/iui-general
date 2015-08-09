@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var gulpConcat = require('gulp-concat');
 var minjs = require('gulp-uglify');
+var minifyCSS = require('gulp-minify-css');
+var compass = require('gulp-compass');
 var rename = require('gulp-rename');
 var ngHtml2Js = require('gulp-ng-html2js');
 var karma = require('karma').server;
@@ -8,15 +10,13 @@ var jshint = require('gulp-jshint');
 var express = require('express');
 
 // Defining Files
-var base = './lib/';
+var base = './lib/src/';
 var destination = './lib/dist';
-var templateFiles = './lib/**/*.html';
+var templateFiles = './lib/src/**/*.html';
 var templateFile = 'iui-general-templates.js';
 var jsFilesCombined = [
-  './lib/iui-general-module-header.js',
-  './lib/services/*.js',
-  './lib/filters/*.js',
-  './lib/directives/*.js'
+  './lib/src/iui-general-module-header.js',
+  './lib/src/**/*.js'
 ];
 var additionalLintFiles = [
   './lib/dist/core-module-setup.js',
@@ -61,11 +61,31 @@ gulp.task('combineFiles', ['createTemplates'], function(){
   // combine and minify JS
   var templateWithDestination = destination+'/'+templateFile;
   jsFilesCombined.push(templateWithDestination);
+  jsFilesCombined.push('!./lib/src/**/*.test.js');
+  //var filter = gulpFilter(['*', '!**.test.js']);
   gulp.src(jsFilesCombined, {base: base})
     .pipe(gulpConcat('iui-general.js'))
     .pipe(gulp.dest(destination))
     .pipe(rename('iui-general.min.js'))
     .pipe(minjs())
+    .pipe(gulp.dest(destination));
+});
+
+gulp.task('compileStyle', function(){
+  'use strict';
+  gulp.src(base+'*.scss')
+    .pipe(compass({
+      /* jshint ignore:start */
+      config_file: './config.rb',
+      /* jshint ignore:end */ 
+      sass: 'lib/src',
+      css: 'lib/dist'
+    }))
+    .on('error', function(error) {
+      console.log(error);
+      this.emit('end');
+    })
+    .pipe(minifyCSS())
     .pipe(gulp.dest(destination));
 });
 
@@ -76,4 +96,4 @@ gulp.task('serve', function() {
   app.listen(4321, function() { console.log('styleGuide listening'); });
 });
 
-gulp.task('default', ['lint', 'test', 'createTemplates', 'combineFiles']);
+gulp.task('default', ['lint', 'test', 'compileStyle', 'createTemplates', 'combineFiles']);

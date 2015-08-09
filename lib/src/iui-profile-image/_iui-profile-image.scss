@@ -1,0 +1,40 @@
+.user-image {
+  display: block;
+  max-width: 120px;
+}
+
+.profile-image-wrap {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	padding-bottom: 100%;
+	overflow: hidden;
+	border: 1px solid $sg_light_grey_border;
+	background: white url('/themes/default/images/basic-icons/profile-unknown.svg') no-repeat;
+  	background-size: cover;
+  	> .profile_image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		background-color: white;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	&.profile_rounded {
+		border: none;
+		@include box-shadow(0 0 0 2px white);
+		border-radius: 50%;
+		//@include border-radius(1000px);
+	}
+	&.profile_thumb {
+		width: 34px;
+
+		// @include breakpoint($bs_mq_xs) {
+		// 	padding-bottom: 34px;
+		// }
+	}
+}
