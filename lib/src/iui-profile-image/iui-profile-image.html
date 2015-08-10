@@ -4,4 +4,9 @@
 		ng-style="{'background-image':'url(data:image/jpeg;base64,'+iuiImage+')'}"
 		class="profile_image">
 	</span>
+	<span
+		class="profile_image"
+		ng-if="!(iuiImage != 'data:image/jpeg;base64,null' && iuiImage != null)"
+		ng-include="'/$iui-general/images/profile-unknown.svg'">
+	</span>
 </span>

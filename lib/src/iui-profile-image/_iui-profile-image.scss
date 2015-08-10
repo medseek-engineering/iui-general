@@ -1,6 +1,7 @@
 .user-image {
-  display: block;
+  display: inline-block;
   max-width: 120px;
+  width: 100%;
 }
 
 .profile-image-wrap {
@@ -10,8 +11,6 @@
 	padding-bottom: 100%;
 	overflow: hidden;
 	border: 1px solid $sg_light_grey_border;
-	background: white url('/themes/default/images/basic-icons/profile-unknown.svg') no-repeat;
-  	background-size: cover;
   	> .profile_image {
 		position: absolute;
 		top: 0;
@@ -23,18 +22,24 @@
 		background-color: white;
 		background-repeat: no-repeat;
 		background-size: cover;
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.icon {
+			fill: $sg_light_grey_border;
+		}
 	}
 	&.profile_rounded {
 		border: none;
-		@include box-shadow(0 0 0 2px white);
+		@include box-shadow(0 0 0 2px $sg_light_grey_border);
 		border-radius: 50%;
-		//@include border-radius(1000px);
 	}
 	&.profile_thumb {
 		width: 34px;
-
-		// @include breakpoint($bs_mq_xs) {
-		// 	padding-bottom: 34px;
-		// }
 	}
 }

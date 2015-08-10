@@ -12,7 +12,7 @@ var express = require('express');
 // Defining Files
 var base = './lib/src/';
 var destination = './lib/dist';
-var templateFiles = './lib/src/**/*.html';
+var templateFiles = ['./lib/src/**/*.html', './lib/src/**/*.svg'];
 var templateFile = 'iui-general-templates.js';
 var jsFilesCombined = [
   './lib/src/iui-general-module-header.js',
@@ -62,12 +62,11 @@ gulp.task('combineFiles', ['createTemplates'], function(){
   var templateWithDestination = destination+'/'+templateFile;
   jsFilesCombined.push(templateWithDestination);
   jsFilesCombined.push('!./lib/src/**/*.test.js');
-  //var filter = gulpFilter(['*', '!**.test.js']);
   gulp.src(jsFilesCombined, {base: base})
     .pipe(gulpConcat('iui-general.js'))
     .pipe(gulp.dest(destination))
     .pipe(rename('iui-general.min.js'))
-    .pipe(minjs())
+    .pipe(minjs({mangle: false}))
     .pipe(gulp.dest(destination));
 });
 

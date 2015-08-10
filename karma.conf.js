@@ -65,6 +65,7 @@ module.exports = function (config) {
 
       //directive templates
       'lib/src/**/*.html',
+      'lib/src/**/*.svg',
       // test scripts
       'test/**/*.test.js'
     ],
@@ -72,7 +73,8 @@ module.exports = function (config) {
     reporters: ['coverage', 'progress', 'html'],
 
     preprocessors: {
-      'lib/src/**/*.html': ['ng-html2js']
+      'lib/src/**/*.html': ['ng-html2js'],
+      'lib/src/**/*.svg': ['ng-html2js']
     },
 
     ngHtml2JsPreprocessor: {
