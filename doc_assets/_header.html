@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>a brand new styleguide: <%= title %></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular.min.js"></script>
+    <script src="../lib/dist/iui-general.min.js"></script>
+    <script src="../demo-files/demo.js"></script>
+    <link rel="stylesheet" href="../lib/dist/iui-general.css">
+  </head>
+  <body ng-app="app" ng-controller="iuiGeneral">
+    <div class="container-fluid">
+      <nav>
+        <ul>
+        <% @categories.each do |category, file_name| %>
+          <li><a href="<%= file_name %>"><%= category %></a></li>
+        <% end %>
+        </ul>
+      </nav>
+
+      <h1>a brand new style guide, it's super effective</h1>
+      <section class="content">
+        <ul>
+        <% @blocks.each do |b| %>
+          <li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+        <% end %>
+        </ul>

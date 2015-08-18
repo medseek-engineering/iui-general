@@ -8,6 +8,8 @@ var ngHtml2Js = require('gulp-ng-html2js');
 var karma = require('karma').server;
 var jshint = require('gulp-jshint');
 var express = require('express');
+var browserSync = require('browser-sync').create();
+var hologram = require('gulp-hologram');
 
 // Defining Files
 var base = './lib/src/';
@@ -23,6 +25,12 @@ var additionalLintFiles = [
   './test/**/*.test.js',
   './gulpfile.js'
 ];
+
+var watchFiles = {
+  styles: ['lib/src/**/*.scss','lib/src/*.scss'],
+  demo: ['index.html','demo-files/*.js', 'style-guide/*.html'],
+  srcFiles: ['lib/src/**/*.html', 'lib/src/**/*.js']
+};
 
 gulp.task('lint', function () {
   'use strict';
@@ -43,7 +51,7 @@ gulp.task('test', ['lint'], function (done) {
 });
 
 
-gulp.task('createTemplates', ['test'], function(cb){
+gulp.task('createTemplates', function(cb){
   'use strict';
   gulp.src(templateFiles)
     .pipe(ngHtml2Js({
@@ -67,7 +75,8 @@ gulp.task('combineFiles', ['createTemplates'], function(){
     .pipe(gulp.dest(destination))
     .pipe(rename('iui-general.min.js'))
     .pipe(minjs({mangle: false}))
-    .pipe(gulp.dest(destination));
+    .pipe(gulp.dest(destination))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('compileStyle', function(){
@@ -85,14 +94,27 @@ gulp.task('compileStyle', function(){
       this.emit('end');
     })
     .pipe(minifyCSS())
-    .pipe(gulp.dest(destination));
+    .pipe(gulp.dest(destination))
+    .pipe(browserSync.stream());
 });
 
-gulp.task('serve', function() {
+gulp.task('hologram', function() {
   'use strict';
-  var app = express();
-  app.use('/', express.static(__dirname + '/'));
-  app.listen(4321, function() { console.log('styleGuide listening'); });
+  gulp.src('hologram_config.yml')
+    .pipe(hologram());
+  browserSync.reload
+});
+
+gulp.task('serve', ['compileStyle'], function() {
+  'use strict';
+  browserSync.init({
+      server: {
+          baseDir: './'
+      }
+  });
+  gulp.watch(watchFiles.styles, ['compileStyle', 'hologram']);
+  gulp.watch(watchFiles.srcFiles, ['createTemplates', 'combineFiles', 'hologram']);
+  gulp.watch(watchFiles.demo).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['lint', 'test', 'compileStyle', 'createTemplates', 'combineFiles']);

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <title>a brand new styleguide: directives</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular.min.js"></script>
+    <script src="../lib/dist/iui-general.min.js"></script>
+    <script src="../demo-files/demo.js"></script>
+    <link rel="stylesheet" href="../lib/dist/iui-general.css">
+  </head>
+  <body ng-app="app" ng-controller="iuiGeneral">
+    <div class="container-fluid">
+      <nav>
+        <ul>
+        
+          <li><a href="directives.html">directives</a></li>
+        
+        </ul>
+      </nav>
+
+      <h1>a brand new style guide, it's super effective</h1>
+      <section class="content">
+        <ul>
+        
+          <li><a href="#iui-page-header">iui-page-header</a></li>
+        
+          <li><a href="#iui-profile-image">iui-profile-image</a></li>
+        
+        </ul>
+<h1 id="iui-page-header" class="styleguide">iui-page-header</h1>
+<p class="styleguide">General page header to be used on every page</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div ng-controller="pageHeaderController">
+  <iui-page-header breadcrumb="breadcrumb" heading-text="{{headingText}}"></iui-page-header>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"pageHeaderController"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;iui-page-header</span> <span class="na">breadcrumb=</span><span class="s">"breadcrumb"</span> <span class="na">heading-text=</span><span class="s">"{{headingText}}"</span><span class="nt">&gt;&lt;/iui-page-header&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<script>app.controller('pageHeaderController', ['$scope', function(scope) {
+  scope.breadcrumb = [
+    {name: 'Health Information', url: '/my-health-information/'},
+    {name: 'Health Trackers', url: '/my-health-information/health-trackers/'}
+  ];
+  scope.headingText = 'This is a page header';
+}]);
+</script>
+<div class="codeBlock jsExample">
+  <div class="highlight">
+    <pre><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'pageHeaderController'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$scope'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">scope</span><span class="p">.</span><span class="nx">breadcrumb</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Health Information'</span><span class="p">,</span> <span class="na">url</span><span class="p">:</span> <span class="s1">'/my-health-information/'</span><span class="p">},</span>
+    <span class="p">{</span><span class="na">name</span><span class="p">:</span> <span class="s1">'Health Trackers'</span><span class="p">,</span> <span class="na">url</span><span class="p">:</span> <span class="s1">'/my-health-information/health-trackers/'</span><span class="p">}</span>
+  <span class="p">];</span>
+  <span class="nx">scope</span><span class="p">.</span><span class="nx">headingText</span> <span class="o">=</span> <span class="s1">'This is a page header'</span><span class="p">;</span>
+<span class="p">}]);</span></pre>
+  </div>
+</div>
+
+
+<h1 id="iui-profile-image" class="styleguide">iui-profile-image</h1>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <iui-profile-image class="user-image" iui-image="profile.image" iui-gender="profile.gender"></iui-profile-image>
+<iui-profile-image class="user-image" iui-image="" iui-gender="profile.gender"></iui-profile-image>
+
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;iui-profile-image</span> <span class="na">class=</span><span class="s">"user-image"</span> <span class="na">iui-image=</span><span class="s">"profile.image"</span> <span class="na">iui-gender=</span><span class="s">"profile.gender"</span><span class="nt">&gt;&lt;/iui-profile-image&gt;</span>
+<span class="nt">&lt;iui-profile-image</span> <span class="na">class=</span><span class="s">"user-image"</span> <span class="na">iui-image=</span><span class="s">""</span> <span class="na">iui-gender=</span><span class="s">"profile.gender"</span><span class="nt">&gt;&lt;/iui-profile-image&gt;</span></pre>
+    </div>
+  </div>
+</div>
+      </section>
+      <footer>
+        <p>This documentation generated using <a href="http://github.com/trulia/hologram">Hologram</a>
+      </footer>
+    </div>
+  </body>
+</html>
