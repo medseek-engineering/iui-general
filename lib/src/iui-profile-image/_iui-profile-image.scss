@@ -52,6 +52,7 @@ for showing profile images
 		border: none;
 		@include box-shadow(0 0 0 2px $sg_light_grey_border);
 		border-radius: 50%;
+		z-index: 0;
 	}
 	&.profile_thumb {
 		width: 34px;
