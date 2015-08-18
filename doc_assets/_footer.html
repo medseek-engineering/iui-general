@@ -1,7 +1,16 @@
-      </section>
-      <footer>
-        <p>This documentation generated using <a href="http://github.com/trulia/hologram">Hologram</a>
-      </footer>
+
     </div>
+    <!-- MOBILE ONLY SIDENAV -->
+    <aside class="sg-sidebar visible-xs" role="complementary">
+        <nav class="sg-nav-secondary" role="navigation">
+            <ul role="menu">
+                <% @blocks.each do |b| %>
+                <li role="presentation"><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
+                <% end %>
+            </ul>
+        </nav>
+    </aside>
+    </main>    
+
   </body>
 </html>

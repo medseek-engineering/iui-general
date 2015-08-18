@@ -1,31 +1,67 @@
 <!doctype html>
-<html>
+<html ng-app="styleGuideApp" ng-controller="SGMainCtrl">
   <head>
-    <title>a brand new styleguide: directives</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular.min.js"></script>
+    <title>iui-general Style Guide: </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="common/js/ui-bootstrap-tpls-0.10.0.js"></script>
+    <script src="scripts/classname_clicker.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://medseek-engineering.github.io/iui-table/lib/dist/iui-table.min.js"></script>
+    <script src="scripts/style_guide_app.js"></script>
+
     <script src="../lib/dist/iui-general.min.js"></script>
-    <script src="../demo-files/demo.js"></script>
     <link rel="stylesheet" href="../lib/dist/iui-general.css">
   </head>
-  <body ng-app="app" ng-controller="iuiGeneral">
-    <div class="container-fluid">
-      <nav>
-        <ul>
-        
-          <li><a href="directives.html">directives</a></li>
-        
-        </ul>
+  <body role="document" class="sg-body">
+    <header class="sg-header clearfix" role="banner">
+      <h1 class="sg-title">
+        <a href="index.html">
+            <img src="images/sg-empower-revised-logo.svg" alt="iui-general Revised Style Guide logo" class="sg-empower-logo">
+        </a>
+      </h1>
+      <nav class="navbar navbar-default sg-nav-main">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sg-navbar-main" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="sg-navbar-main">
+            <ul class="nav navbar-nav">              
+              
+              <li role="presentation">
+                <a role="menuitem" href="index.html">directives</a>
+              </li>
+              
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
       </nav>
-
-      <h1>a brand new style guide, it's super effective</h1>
-      <section class="content">
-        <ul>
-        
-          <li><a href="#iui-page-header">iui-page-header</a></li>
-        
-          <li><a href="#iui-profile-image">iui-profile-image</a></li>
-        
-        </ul>
+    </header>
+    <main class="sg-wrapper clearfix" role="main">
+        <aside class="sg-sidebar hidden-xs" role="complementary">
+            <nav class="sg-nav-secondary" role="navigation">
+                <ul role="menu">
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('iui-page-header')">iui-page-header</a>
+                  </li>
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('iui-profile-image')">iui-profile-image</a>
+                  </li>
+                  
+                </ul>
+            </nav>
+        </aside>
+        <div class="sg-element-wrapper" id="top">
 <h1 id="iui-page-header" class="styleguide">iui-page-header</h1>
 <p class="styleguide">General page header to be used on every page</p><div class="codeExample">
   <div class="exampleOutput">
@@ -64,11 +100,10 @@
 
 
 <h1 id="iui-profile-image" class="styleguide">iui-profile-image</h1>
-<div class="codeExample">
+<p class="styleguide">for showing profile images</p><div class="codeExample">
   <div class="exampleOutput">
     <iui-profile-image class="user-image" iui-image="profile.image" iui-gender="profile.gender"></iui-profile-image>
 <iui-profile-image class="user-image" iui-image="" iui-gender="profile.gender"></iui-profile-image>
-
 
   </div>
   <div class="codeBlock">
@@ -78,10 +113,21 @@
     </div>
   </div>
 </div>
-      </section>
-      <footer>
-        <p>This documentation generated using <a href="http://github.com/trulia/hologram">Hologram</a>
-      </footer>
+
     </div>
+    <!-- MOBILE ONLY SIDENAV -->
+    <aside class="sg-sidebar visible-xs" role="complementary">
+        <nav class="sg-nav-secondary" role="navigation">
+            <ul role="menu">
+                
+                <li role="presentation"><a href="#iui-page-header">iui-page-header</a></li>
+                
+                <li role="presentation"><a href="#iui-profile-image">iui-profile-image</a></li>
+                
+            </ul>
+        </nav>
+    </aside>
+    </main>    
+
   </body>
 </html>
