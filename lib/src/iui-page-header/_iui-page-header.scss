@@ -1,0 +1,16 @@
+.page-header {
+  font-family: $base-font-family;
+  font-size: $large-font-size;
+  font-weight: $base-font-weight;
+  color: $sg_dark_grey;
+  margin: 0 0 1em;
+  padding-bottom: 0;
+  border-bottom: none;
+  a:after {
+    @extend %hide-for-print;
+  }
+}
+
+h1 {
+  @extend .page-header;
+}
