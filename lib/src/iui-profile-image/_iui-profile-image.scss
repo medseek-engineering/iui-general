@@ -1,17 +1,3 @@
-/*doc
----
-title: iui-profile-image
-name: iui-profile-image
-category: directives
----
-for showing profile images
-
-```html_example
-<iui-profile-image class="user-image" iui-image="profile.image" iui-gender="profile.gender"></iui-profile-image>
-<iui-profile-image class="user-image" iui-image="" iui-gender="profile.gender"></iui-profile-image>
-```
-*/
-
 .user-image {
   display: inline-block;
   max-width: 120px;
