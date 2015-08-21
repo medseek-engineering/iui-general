@@ -102,7 +102,7 @@ gulp.task('hologram', function() {
   'use strict';
   gulp.src('hologram_config.yml')
     .pipe(hologram());
-  browserSync.reload
+  browserSync.reload();
 });
 
 gulp.task('serve', ['compileStyle'], function() {
