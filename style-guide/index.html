@@ -50,6 +50,10 @@
                 <ul role="menu">
                   
                   <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('iui-input-field-highlight')">iui-input-field-highlight</a>
+                  </li>
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
                     <a href="" ng-click="scrollTo('iui-minlength')">iui-minlength</a>
                   </li>
                   
@@ -69,6 +73,92 @@
             </nav>
         </aside>
         <div class="sg-element-wrapper" id="top">
+<h1 id="iui-input-field-highlight" class="styleguide">iui-input-field-highlight</h1>
+<p class="styleguide">This directive, iui-input-field-highlight, looks for the focus state
+on various input types, and applies a bg color change to keep the
+user&#39;s attention on the section. It also separates each section without
+the use of borders.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="panel panel-default" iui-input-field-highlight>
+  <div class="panel-body">
+    <div class="form-group">
+      <input 
+        class="form-control"
+        aria-label="Field 1"
+        placeholder="Field 1" 
+        type="text">
+    </div>
+    <div class="form-group">
+      <input 
+        class="form-control"
+        aria-label="Field 2"
+        placeholder="Field 2" 
+        type="text">
+    </div>
+  </div>
+</section>
+<section class="panel panel-default" iui-input-field-highlight>
+  <div class="panel-body">
+    <div class="form-group">
+      <input 
+        class="form-control"
+        aria-label="Field 3"
+        placeholder="Field 3" 
+        type="text">
+    </div>
+    <div class="form-group">
+      <input 
+        class="form-control"
+        aria-label="Field 4"
+        placeholder="Field 4" 
+        type="text">
+    </div>
+  </div>
+</section>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"panel panel-default"</span> <span class="na">iui-input-field-highlight</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> 
+        <span class="na">class=</span><span class="s">"form-control"</span>
+        <span class="na">aria-label=</span><span class="s">"Field 1"</span>
+        <span class="na">placeholder=</span><span class="s">"Field 1"</span> 
+        <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> 
+        <span class="na">class=</span><span class="s">"form-control"</span>
+        <span class="na">aria-label=</span><span class="s">"Field 2"</span>
+        <span class="na">placeholder=</span><span class="s">"Field 2"</span> 
+        <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"panel panel-default"</span> <span class="na">iui-input-field-highlight</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> 
+        <span class="na">class=</span><span class="s">"form-control"</span>
+        <span class="na">aria-label=</span><span class="s">"Field 3"</span>
+        <span class="na">placeholder=</span><span class="s">"Field 3"</span> 
+        <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> 
+        <span class="na">class=</span><span class="s">"form-control"</span>
+        <span class="na">aria-label=</span><span class="s">"Field 4"</span>
+        <span class="na">placeholder=</span><span class="s">"Field 4"</span> 
+        <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
 <h1 id="iui-minlength" class="styleguide">iui-minlength</h1>
 <p class="styleguide">Angular&#39;s minlength directive does not $observe or $eval the value of ngMinlength in Angular 1.2</p><div class="codeExample">
   <div class="exampleOutput">
@@ -225,6 +315,8 @@
     <aside class="sg-sidebar visible-xs" role="complementary">
         <nav class="sg-nav-secondary" role="navigation">
             <ul role="menu">
+                
+                <li role="presentation"><a href="#iui-input-field-highlight">iui-input-field-highlight</a></li>
                 
                 <li role="presentation"><a href="#iui-minlength">iui-minlength</a></li>
                 
