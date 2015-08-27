@@ -1,12 +1,5 @@
 # Require any additional compass plugins here.
-# require "susy"
-# require "breakpoint"
 require "sass-globbing"
-require "susy"
-require "breakpoint"
-require "sassy-maps"
-require "SassyLists"
-require "sassy-buttons"
 require "bootstrap-sass"
 
 
