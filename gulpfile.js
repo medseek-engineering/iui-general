@@ -27,7 +27,7 @@ var additionalLintFiles = [
 ];
 
 var watchFiles = {
-  styles: ['lib/src/**/*.scss','lib/src/*.scss'],
+  styles: ['lib/src/**/*.scss','lib/src/*.scss','doc_assets/stylesheets/*.scss'],
   demo: ['index.html','demo-files/*.js', 'style-guide/*.html'],
   srcFiles: ['lib/src/**/*.html', 'lib/src/**/*.js']
 };
@@ -100,6 +100,21 @@ gulp.task('compileStyle', function(){
 
 gulp.task('hologram', function() {
   'use strict';
+  gulp.src('./doc_assets/stylesheets/*.scss')
+    .pipe(compass({
+      /* jshint ignore:start */
+      config_file: './config.rb',
+      /* jshint ignore:end */ 
+      sass: 'doc_assets/stylesheets',
+      css: 'style-guide/stylesheets'
+    }))
+    .on('error', function(error) {
+      console.log(error);
+      this.emit('end');
+    })
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('style-guide/stylesheets'))
+    .pipe(browserSync.stream());
   gulp.src('hologram_config.yml')
     .pipe(hologram());
   browserSync.reload();

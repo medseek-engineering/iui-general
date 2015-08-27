@@ -1,0 +1,9 @@
+<div 
+  ng-if="placementAlerts.alert.message" 
+  class="alert-wrapper">
+    <div 
+      class="alert alert-{{placementAlerts.alert.type}}" 
+      ng-if="placementAlerts.alert.message" 
+      role="alert" 
+      ng-bind-html="placementAlerts.alert.message | to_trusted"></div>
+</div>
