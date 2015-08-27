@@ -20,8 +20,6 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    compass-placeholders (1.1.1)
-      compass
     execjs (2.6.0)
     ffi (1.9.10)
     hologram (1.4.0)
@@ -33,7 +31,7 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     redcarpet (3.3.2)
-    rouge (1.9.1)
+    rouge (1.8)
     sass (3.4.18)
     sass-globbing (1.1.1)
       sass (>= 3.1)
@@ -43,9 +41,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass
-  compass (~> 1.0.0.alpha.20)
-  compass-import-once
-  compass-placeholders (~> 1.1.0)
+  compass
   hologram
-  sass
   sass-globbing
