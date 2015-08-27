@@ -30,6 +30,7 @@ line_comments = (environment == 'development')
 color_output = false
 sourcemap = (environment == :development)
 
+additional_import_paths = [File.join('lib','src'), File.join('doc_assets','stylesheets')]
 
 
 

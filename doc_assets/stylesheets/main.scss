@@ -1,15 +1,19 @@
+@import "_iui-variables";
+
 .content {
-padding: 1em;
+  padding: 1em;
 }
+
 body {
-font-size: 14px;
-background-color: #e8e8e8; /* $sg_light_grey_background */
+  font-size: 14px;
+  background-color: $sg_light_grey_background; /* $sg_light_grey_background */
 }
+
 a {
-color: #00a197;
+  color: #00a197;
 }
 a:hover {
-color: #00b7ae;
+  color: #00b7ae;
 }
 .sg-wrapper {
   display: block;
