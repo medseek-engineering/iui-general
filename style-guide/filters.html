@@ -1,0 +1,162 @@
+<!doctype html>
+<html ng-app="styleGuideApp" ng-controller="SGMainCtrl">
+  <head>
+    <title>iui-general Style Guide: filters</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="scripts/classname_clicker.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://medseek-engineering.github.io/iui-table/lib/dist/iui-table.min.js"></script>
+    <script src="scripts/style_guide_app.js"></script>
+    <script src="../lib/dist/iui-general.min.js"></script>
+    <link rel="stylesheet" href="../lib/dist/iui-general.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  </head>
+  <body role="document" class="sg-body">
+    <header class="sg-header clearfix" role="banner">
+      <h1 class="sg-title">
+        <a href="index.html">
+            <img src="images/sg-empower-revised-logo.svg" alt="iui-general Revised Style Guide logo" class="sg-empower-logo">
+        </a>
+      </h1>
+      <nav class="navbar navbar-default sg-nav-main">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sg-navbar-main" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="sg-navbar-main">
+            <ul class="nav navbar-nav">              
+              
+              <li class="active" role="presentation">
+                <a role="menuitem" href="filters.html">filters</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="index.html">directives</a>
+              </li>
+              
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <main class="sg-wrapper clearfix" role="main">
+        <aside class="sg-sidebar hidden-xs" role="complementary">
+            <nav class="sg-nav-secondary" role="navigation">
+                <ul role="menu">
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('gender')">gender</a>
+                  </li>
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('to_trusted')">to_trusted</a>
+                  </li>
+                  
+                </ul>
+            </nav>
+        </aside>
+        <div class="sg-element-wrapper" id="top">
+          <iui-alert-placeholder id="alert_appTop"></iui-alert-placeholder>
+<h1 id="gender" class="styleguide">gender</h1>
+<p class="styleguide">Filter to translate Communicate Gender number into Unknown, Male (2), or Female (3)</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div ng-controller="GenderFilterExampleController as example">
+  <dl class="dl-horizontal dt-as-left-aligned short-list">
+    <dt>Name</dt>
+    <dd>{{example.profile.name}}</dd>
+    <dt>Gender</dt>
+    <dd>{{example.profile.gender | gender}}</dd>
+  </dl>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"GenderFilterExampleController as example"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal dt-as-left-aligned short-list"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dt&gt;</span>Name<span class="nt">&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;</span>{{example.profile.name}}<span class="nt">&lt;/dd&gt;</span>
+    <span class="nt">&lt;dt&gt;</span>Gender<span class="nt">&lt;/dt&gt;</span>
+    <span class="nt">&lt;dd&gt;</span>{{example.profile.gender | gender}}<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;/dl&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<script>app.controller('GenderFilterExampleController', [function() {
+  this.profile = {
+    name: 'Agent 99',
+    gender: 3
+  };
+}]);
+</script>
+<div class="codeBlock jsExample">
+  <div class="highlight">
+    <pre><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'GenderFilterExampleController'</span><span class="p">,</span> <span class="p">[</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">profile</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">name</span><span class="p">:</span> <span class="s1">'Agent 99'</span><span class="p">,</span>
+    <span class="na">gender</span><span class="p">:</span> <span class="mi">3</span>
+  <span class="p">};</span>
+<span class="p">}]);</span></pre>
+  </div>
+</div>
+
+
+<h1 id="to_trusted" class="styleguide">to_trusted</h1>
+<p class="styleguide">Filter to &quot;trust&quot; the HTML source. This is useful for binding HTML from the API. 
+Please use caution when using this filter. If you find yourself storing bits and 
+pieces of HTML in a service or controller, consider using an <code class="styleguide">ng-include</code> or a <code class="styleguide">directive</code> instead.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div ng-controller="ToTrustedController as example">
+  <span ng-bind-html="example.quote | to_trusted"></span>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"ToTrustedController as example"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">ng-bind-html=</span><span class="s">"example.quote | to_trusted"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<script>app.controller('ToTrustedController', [function() {
+  // This is strictly an example. Please do not store HTML in Javascript files
+  this.quote = '<blockquote><em>Good thinking, Max.</em> &mdash; <strong>Agent 99</strong></blockquote>';
+}]);
+</script>
+<div class="codeBlock jsExample">
+  <div class="highlight">
+    <pre><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'ToTrustedController'</span><span class="p">,</span> <span class="p">[</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// This is strictly an example. Please do not store HTML in Javascript files</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">quote</span> <span class="o">=</span> <span class="s1">'&lt;blockquote&gt;&lt;em&gt;Good thinking, Max.&lt;/em&gt; &amp;mdash; &lt;strong&gt;Agent 99&lt;/strong&gt;&lt;/blockquote&gt;'</span><span class="p">;</span>
+<span class="p">}]);</span></pre>
+  </div>
+</div>
+
+
+    </div>
+    <!-- MOBILE ONLY SIDENAV -->
+    <aside class="sg-sidebar visible-xs" role="complementary">
+        <nav class="sg-nav-secondary" role="navigation">
+            <ul role="menu">
+                
+                <li role="presentation"><a href="#gender">gender</a></li>
+                
+                <li role="presentation"><a href="#to_trusted">to_trusted</a></li>
+                
+            </ul>
+        </nav>
+    </aside>
+    </main>    
+
+  </body>
+</html>
