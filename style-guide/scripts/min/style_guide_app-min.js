@@ -1,1 +1,0 @@
-angular.module("styleGuideApp", [ "ngSanitize", "ui.bootstrap" ]);
