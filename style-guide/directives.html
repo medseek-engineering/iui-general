@@ -140,13 +140,13 @@ This prefix allows us to easily identify alerts in the codebase</p><div class="c
     </div>
   </div>
 </div>
-<script>app.controller('AlertController', ['$scope', 'iuiAlertService', function(scope, iuiAlertService) {
+<script>app.controller('AlertController', ['iuiAlertService', function(iuiAlertService) {
   this.iuiAlertService = iuiAlertService;
 }]);
 </script>
 <div class="codeBlock jsExample">
   <div class="highlight">
-    <pre><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'AlertController'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$scope'</span><span class="p">,</span> <span class="s1">'iuiAlertService'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="nx">iuiAlertService</span><span class="p">)</span> <span class="p">{</span>
+    <pre><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'AlertController'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'iuiAlertService'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">iuiAlertService</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">iuiAlertService</span> <span class="o">=</span> <span class="nx">iuiAlertService</span><span class="p">;</span>
 <span class="p">}]);</span></pre>
   </div>
