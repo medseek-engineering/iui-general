@@ -4,7 +4,10 @@
     <div 
       class="alert alert-{{placementAlerts.alert.type}}" 
       role="alert">
-	    <span ng-bind-html="placementAlerts.alert.message | to_trusted"></span>
+	    <span 
+	    	class="alert-message" 
+	    	ng-bind-html="placementAlerts.alert.message | to_trusted">
+	    </span>
 	    <button 
 	    	ng-if="placementAlerts.alert.canClose"
 	    	type="button" 
