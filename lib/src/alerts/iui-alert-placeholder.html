@@ -3,7 +3,18 @@
   class="alert-wrapper">
     <div 
       class="alert alert-{{placementAlerts.alert.type}}" 
-      ng-if="placementAlerts.alert.message" 
-      role="alert" 
-      ng-bind-html="placementAlerts.alert.message | to_trusted"></div>
+      role="alert">
+	    <span 
+	    	class="alert-message" 
+	    	ng-bind-html="placementAlerts.alert.message | to_trusted">
+	    </span>
+	    <button 
+	    	ng-if="placementAlerts.alert.canClose"
+	    	type="button" 
+	    	class="close" 
+	    	aria-label="Close" 
+	    	ng-click="closeAlert()">
+	    	<span aria-hidden="true">&times;</span>
+	    </button>
+    </div>
 </div>
