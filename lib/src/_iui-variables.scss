@@ -42,3 +42,45 @@ $sg_normalcy_extreme: $sg_prairie_purple !default;
 $sg_normalcy_not-coded: $sg_bold_blue !default;
 $sg_normalcy_undefined: $sg_light_grey !default;
 
+// Typography Variables
+
+// Base Font
+$base-font-size: 14px !default;
+$base-mobile-font-size: 16px !default;
+$base-line-height: 20px !default;
+$base-font-family: "Roboto", Helvetica, Arial, sans-serif !default;
+$base-font-weight: 400 !default;
+
+// Font Sizes
+$tiny-font-size: 8.192px !default;
+$tiny-font-leading: 0.75 !default;
+$small-font-size: 10.24px !default;
+$small-font-leading: 0.75 !default;
+$base-font-leading: 1 !default;
+$medium-font-size: 14px !default;
+$medium-font-leading: 1.25 !default;
+$large-font-weight: 700 !default;
+$large-font-size: 22px !default;
+$large-font-leading: 1.5 !default;
+$xlarge-font-size: 29.298px !default;
+$xlarge-font-leading: 1.75 !default;
+
+
+// Breakpoints
+$bp-sm: 768px !default;
+$bp-md: 992px !default;
+$bp-lg: 1200px !default;
+$bp-xlg: 1600px !default;
+
+// Media Queries
+$mq-xs-screen: "screen" !default;
+$mq-sm-screen: "screen and (min-width: #{$bp-sm})" !default;
+$mq-md-screen: "screen and (min-width: #{$bp-md})" !default;
+$mq-lg-screen: "screen and (min-width: #{$bp-lg})" !default;
+$mq-xlg-screen: "screen and (min-width: #{$bp-xlg})" !default;
+
+$mq-xs-screen-only: "screen and (max-width: #{$bp-sm - 1px})" !default;
+$mq-sm-screen-only: "screen and (min-width: #{$bp-sm}) and (max-width: #{$bp-md - 1px})" !default;
+$mq-md-screen-only: "screen and (min-width: #{$bp-md}) and (max-width: #{$bp-lg - 1px})" !default;
+$mq-lg-screen-only: "screen and (min-width: #{$bp-lg}) and (max-width: #{$bp-xlg - 1px})" !default;
+$mq-xlg-screen-only: $mq-xlg-screen !default;

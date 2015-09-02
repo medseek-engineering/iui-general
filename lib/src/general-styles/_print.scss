@@ -1,0 +1,74 @@
+.no-print {
+  @extend %hide-for-print;
+}
+
+body a[href]:after {
+  @media print {
+    // hiding Bootstrap link afters as we do not have many articles in the app, but do have a lot of empty links
+    content: '';
+  }
+}
+
+.btn {
+  @extend %hide-for-print;
+}
+
+.print-only {
+  @extend %hide-for-screen;
+  @media print {
+    display: block;
+  }
+}
+
+span, a {
+  &.print-only {
+    @extend %hide-for-screen;
+    @media print {
+      display: inline;
+    }
+  }
+}
+
+button {
+  &.print-only {
+    @extend %hide-for-screen;
+    @media print {
+      display: inline-block;
+    }
+  }
+}
+
+table.print-only {
+  @extend %hide-for-screen;
+  @media print {
+    display: table;
+  }
+}
+
+thead.print-only {
+  @extend %hide-for-screen;
+  @media print {
+    display: table-header-group;
+  }
+}
+
+tbody.print-only {
+  @extend %hide-for-screen;
+  @media print {
+    display: table-row-group;
+  }
+}
+
+tr.print-only {
+  @extend %hide-for-screen;
+  @media print {
+    display: table-row;
+  }
+}
+
+td.print-only {
+  @extend %hide-for-screen;
+  @media print {
+    display: table-cell;
+  }
+}
