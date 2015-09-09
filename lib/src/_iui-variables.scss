@@ -1,5 +1,10 @@
-// Color Variables
+/*
+--------------------------------------------------------------------------
+  Colors
+--------------------------------------------------------------------------
+*/
 
+// General Colors
 $sg_bold_blue: #0072bc !default;
 $sg_bold_blue_active: darken($sg_bold_blue, 10%) !default;
 $sg_bashful_blue: #6fa9df !default;
@@ -42,7 +47,12 @@ $sg_normalcy_extreme: $sg_prairie_purple !default;
 $sg_normalcy_not-coded: $sg_bold_blue !default;
 $sg_normalcy_undefined: $sg_light_grey !default;
 
-// Typography Variables
+
+/*
+--------------------------------------------------------------------------
+  Typography
+--------------------------------------------------------------------------
+*/
 
 // Base Font
 $base-font-size: 14px !default;
@@ -66,6 +76,12 @@ $xlarge-font-size: 29.298px !default;
 $xlarge-font-leading: 1.75 !default;
 
 
+/*
+--------------------------------------------------------------------------
+  Breakpoints & Media Queries
+--------------------------------------------------------------------------
+*/
+
 // Breakpoints
 $bp-sm: 768px !default;
 $bp-md: 992px !default;
@@ -84,3 +100,16 @@ $mq-sm-screen-only: "screen and (min-width: #{$bp-sm}) and (max-width: #{$bp-md 
 $mq-md-screen-only: "screen and (min-width: #{$bp-md}) and (max-width: #{$bp-lg - 1px})" !default;
 $mq-lg-screen-only: "screen and (min-width: #{$bp-lg}) and (max-width: #{$bp-xlg - 1px})" !default;
 $mq-xlg-screen-only: $mq-xlg-screen !default;
+
+
+/*
+--------------------------------------------------------------------------
+  Icons
+--------------------------------------------------------------------------
+*/
+
+$base-mobile-icon-size: 44px !default;
+$base-icon-size: 30px !default;
+
+
+
