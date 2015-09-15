@@ -23,7 +23,7 @@ $sg_dark_grey: #333 !default;
 $sg_medium_grey: #666 !default;
 $sg_light_grey: #999 !default;
 $sg_dark_highlight: #B4B4B4 !default;
-$sg_light_hightlight: #CCC !default;
+$sg_light_highlight: #CCC !default;
 $sg_table_row: #EBEBEB !default;
 $sg_light_grey_background: #e8e8e8 !default;
 $sg_light_grey_border: darken($sg_light_grey_background, 8%) !default;
@@ -60,6 +60,7 @@ $base-mobile-font-size: 16px !default;
 $base-line-height: 20px !default;
 $base-font-family: "Roboto", Helvetica, Arial, sans-serif !default;
 $base-font-weight: 400 !default;
+$heading-font-weight: 700 !default;
 
 // Font Sizes
 $tiny-font-size: 8.192px !default;
@@ -110,6 +111,3 @@ $mq-xlg-screen-only: $mq-xlg-screen !default;
 
 $base-mobile-icon-size: 44px !default;
 $base-icon-size: 30px !default;
-
-
-
