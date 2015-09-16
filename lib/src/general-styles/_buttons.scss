@@ -1,0 +1,110 @@
+/* BUTTONS */
+%iui-button-skin-default__disabled {
+  color : $sg_light_highlight;
+  border-color: $sg_light_highlight;
+  background-color: $sg_disabled_background;
+  cursor: not-allowed;
+}
+%no-btn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.no-btn {
+  @extend %no-btn;
+}
+.btn-primary {
+  color: white;
+  background-color: $sg_secondary;
+	border-width: 1px;
+  border-style: solid;
+  border-color: $sg_secondary;
+  &:hover, &:focus, &:active, &.active {
+    color: white;
+    background-color: $sg_primary;
+		border-color: $sg_primary;
+  }
+  &:disabled {
+    @extend %iui-button-skin-default__disabled;
+  }
+}
+.btn-default, .btn-secondary {
+  background-color: $sg_secondary_background;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $sg_light_grey_border;
+  color: $sg_secondary;
+  @include transition(border-color 100ms linear, color 100ms linear, background-color 100ms linear);
+  &:hover, &:focus {
+    background-color: $sg_primary;
+    color: white;
+    border-color: $sg_primary;
+  }
+	&:active, &.active {
+		color: white;
+		border: 1px solid $sg_primary;
+		box-shadow: none;
+		background-color: $sg_primary;
+	}
+  &:disabled {
+    @extend %iui-button-skin-default__disabled;
+  }
+}
+.icon-with-label {
+  position: relative;
+  padding-left: $base-icon-size;
+  text-decoration: none;
+  min-height: $base-icon-size;
+  display: inline-block;
+  @media #{$mq-xs-screen-only} {
+    padding-left: $base-mobile-icon-size;
+    min-height: $base-mobile-icon-size;
+  }
+  %color-transition {
+    @include transition(color 100ms linear);
+  }
+  > .icon-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  > .icon-label {
+    margin-top: 0.35em;
+    margin-left: 0.5em;
+    display: inline-block;
+    color: $sg_medium_grey;
+    text-align: left;
+    @extend %color-transition;
+    @media #{$mq-xs-screen-only} {
+      margin-top: 0.75em;
+    }
+    > .link-inside-button {
+      color: $sg_secondary;
+      @extend %color-transition;
+    }
+  }
+
+
+  &:not(:disabled):hover, &:focus {
+    text-decoration: none;
+    > .icon-label > .link-inside-button {
+      color: $sg_primary;
+    }
+  }
+  &.with-key {
+    padding-left: ($base-icon-size+60px);
+    .label-key {
+      position: absolute;
+      left: $base-icon-size;
+      margin-left: 0.5em;
+      font-weight: $large-font-weight;
+    }
+    @media #{$mq-xs-screen-only} {
+      padding-left: ($base-mobile-icon-size+60px);
+      .label-key {
+        left: $base-mobile-icon-size;
+      }
+    }
+  }
+}

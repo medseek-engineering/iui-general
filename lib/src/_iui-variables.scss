@@ -29,6 +29,7 @@ $sg_light_grey_background: #e8e8e8 !default;
 $sg_light_grey_border: darken($sg_light_grey_background, 8%) !default;
 $sg_small_text_gray: #898989 !default;
 $sg_disabled_background: #eeeeee !default;
+$sg_secondary_background: #f8f8f8 !default;
 
 // Setting App Primaries
 $sg_primary: $sg_bashful_blue !default;
@@ -46,6 +47,8 @@ $sg_normalcy_danger: $sg_rosy_red !default;
 $sg_normalcy_extreme: $sg_prairie_purple !default;
 $sg_normalcy_not-coded: $sg_bold_blue !default;
 $sg_normalcy_undefined: $sg_light_grey !default;
+
+$page-wrapper-padding: 10px;
 
 
 /*
@@ -111,3 +114,4 @@ $mq-xlg-screen-only: $mq-xlg-screen !default;
 
 $base-mobile-icon-size: 44px !default;
 $base-icon-size: 30px !default;
+$base-number-icon-size: 34px !default;
