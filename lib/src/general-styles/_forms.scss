@@ -1,0 +1,248 @@
+.form-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
+  &.flush-left {
+    margin-left: 0;
+  }
+  &.flush-right {
+    margin-right: 0;
+  }
+  &.with-2-columns {
+    max-width: 640px;
+  }
+  &.with-3-columns {
+    max-width: 960px;
+  }
+  &.form-horizontal {
+    max-width: 480px;
+    &.with-2-columns {
+      max-width: 960px;
+    }
+  }
+}
+// CUSTOM RADIO BUTTONS
+%custom-radio-pseudo-absolute-element {
+  content: ' ';
+  display:block;
+  position: absolute;
+  cursor:pointer;
+  background-color: white;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+$custom-radio-offset-top: 1px;
+$custom-radio-width: 18px;
+$custom-radio-border-size: 1px;
+.radio-cell > .custom-radio, .primary-cell > .custom-radio {
+  display: inline-block;
+  padding-left: $custom-radio-width;
+}
+.custom-radio {
+  position: relative;
+  padding-left: $custom-radio-width*1.5;
+  &.radio-inline {
+    padding-left: $custom-radio-width*1.5;
+  }
+  label {
+    font-weight: $heading-font-weight;
+    cursor: pointer;
+  }
+  input[type="radio"] {
+    @extend .sr-only;
+    cursor: pointer;
+    + label, + .implicit-label{&:before {
+      @extend %custom-radio-pseudo-absolute-element;
+      width:$custom-radio-width;
+      height:$custom-radio-width;
+      left: 0;
+      top: $custom-radio-offset-top;
+      @include transition(box-shadow 100ms linear);
+      @include box-shadow(0 0 0 $custom-radio-border-size $sg_light_grey);
+    }
+    &:after {
+      @extend %custom-radio-pseudo-absolute-element;
+      width: $custom-radio-width - $custom-radio-border-size*4;
+      height: $custom-radio-width - $custom-radio-border-size*4;
+      left: $custom-radio-border-size*2;
+      top: $custom-radio-border-size*2 + $custom-radio-offset-top;
+      @include box-shadow(0 0 $custom-radio-width*0.2 0 rgba(black, .33) inset);
+      @include transition(background-color 100ms linear);
+    }
+  }
+    &:checked {
+      + label, + .implicit-label{&:before {
+        @include box-shadow(0 0 0 $custom-radio-border-size $sg_primary);
+      }
+      &:after {
+        background-color: $sg_primary;
+      }
+    }
+    }
+    &:focus {
+      + label, + .implicit-label{&:before {
+        @include box-shadow(0 0 $custom-radio-width/3 0 $sg_primary);
+      }}
+      &:checked {
+        + label, + .implicit-label{:before {
+          @include box-shadow(0 0 $custom-radio-width/3 $custom-radio-border-size $sg_primary);
+        }
+       }
+      }
+    }
+    &:disabled {
+      + label, + .implicit-label {
+        opacity: 0.3;
+       &:before, + &:after {
+        cursor: not-allowed;
+       }
+      }
+      &:checked {
+        + label, + .implicit-label {&:before {
+          @include box-shadow(0 0 0 $custom-radio-border-size $sg_light_grey);
+        }
+        &:after {
+          background-color: $sg_light_grey;
+        }
+      }
+      }
+    }
+  }
+}
+
+/* CUSTOM CHECKBOXES Oh Yeah!!!!! */
+
+$checkbox-size: 1em;
+$checkbox-size-mobile: 1.2em;
+
+%custom-checkbox {
+    &[type="checkbox"] {
+      cursor: pointer;
+        &:not(:checked), &:checked {
+            // Hide visually, but not for screen readers
+            @extend .sr-only;
+            &.with-hidden-label {
+                + label {
+                    padding-left: $checkbox-size;
+                }
+            }
+            // We use the adjacent label for both the pseudo checkbox and check as well as for the label
+            + label {
+                position: relative;
+                padding-left: ($checkbox-size + 0.8em);
+                cursor: pointer;
+                display: inline-block;
+                font-weight: $heading-font-weight;
+                // The box
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 2px;
+                    width: $checkbox-size;
+                    height: $checkbox-size;
+                    @media #{$mq-xs-screen-only} {
+                      width: $checkbox-size-mobile;
+                      height: $checkbox-size-mobile;
+                    }
+                    border: 1px solid $sg_light_grey;
+                    background-color: white;
+                    @include transition(border 200ms linear, background-color 200ms linear);
+                }
+
+                // The check
+                &:after {
+                    @extend .glyphicon;
+                    @extend .glyphicon-ok:before;
+                    position: absolute;
+                    top: 1px;
+                    left: 1px;
+                    font-size: $checkbox-size;
+                    @media #{$mq-xs-screen-only} {
+                      font-size: $checkbox-size-mobile;
+                    }
+                    color: $sg_bashful_blue;
+                    -webkit-transition: all 200ms cubic-bezier(0.730, 0, 0.240, 1);
+                    @include transition(all 200ms cubic-bezier(0.730, -0.300, 0.240, 1.280));
+                }
+            }
+
+            &:focus {
+                + label {
+                    // The box :focus
+                    &:before {
+                      @extend .form-control:focus;
+                    }
+                }
+            }
+        } // &:not(:checked), &:checked
+
+        // Not Checked - The Check
+        &:not(:checked) + label:after {
+            top: $checkbox-size/2;
+            opacity: 0;
+            transform: scale(0);
+            @media #{$mq-xs-screen-only} {
+              top: $checkbox-size-mobile/2;
+            }
+        }
+
+        // Checked - The Check
+        &:checked + label:after {
+            top: 1px;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        // Disabled
+        &:disabled {
+            &:not(:checked), &:checked {
+                + label {
+                    color: $sg_light_grey;
+                    cursor: not-allowed;
+
+                    // The Box
+                    &:before {
+                        box-shadow: none;
+                        border: 1px solid lighten($sg_light_grey, 10%);
+                    }
+
+                    // The Check
+                    &:after {
+                        color: $sg_light_grey;
+                    }
+                }
+            }
+        } // &:disabled
+
+    } // &[type="checkbox"]
+}
+
+.custom-checkbox {
+  @extend %custom-checkbox;
+  &.in-table-header {
+    &[type="checkbox"]:not(:checked), &:checked {
+      + label {
+        &:before {
+          top: -7px;
+        }
+        &:after {
+          top: -8px;
+        }
+      }
+    }
+  }
+}
+
+.checkbox:not(.input-group) .custom-checkbox[type="checkbox"]:not(:checked) + label,
+.checkbox:not(.input-group) .custom-checkbox[type="checkbox"]:checked + label {
+    margin-left: -20px;
+}
+
+.checkbox.large-on-mobile {
+  @media #{$mq-xs-screen-only} {
+    font-size: 18px;
+  }
+}
+
+/* END CUSTOM CHECKBOXES*/
