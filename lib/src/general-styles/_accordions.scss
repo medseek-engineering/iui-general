@@ -1,0 +1,86 @@
+.panel {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+accordion > .panel-group {
+  .panel-heading {
+    position: relative;
+    padding-left: 2em;
+  }
+  .panel-heading .accordion-toggle {
+    display: block;
+    &.collapsed:before {
+      content: "\e080";
+    }
+    &:before {
+      position: absolute;
+      left: 0.5em;
+      font-family: 'Glyphicons Halflings';
+      color: inherit;
+    }
+  }
+  .panel-body {
+    padding-left: 2em;
+    padding-right: 2em;
+    .panel-body {
+      padding: 1em;
+    }
+  }
+}
+.panel-group .expanded .panel-heading .accordion-toggle:before {
+  content: "\e114";
+}
+
+.panel-group .panel-heading .accordion-toggle:before {
+  content: "\e080";
+}
+.panel-default {
+  .panel-title {
+    font-weight: 400;
+  }
+  > .panel-heading {
+    background: none;
+    color: $sg_medium_grey;
+    & + .panel-body {
+      padding-top: 0;
+    }
+  }
+}
+accordion > .panel-group > .panel-default, accordion > .panel-group > ul > li > .panel-default{
+  background-color: $sg_secondary_background;
+  @include transition(background-color 100ms linear);
+
+  > .panel-heading, .accordion-toggle {
+    @include transition(color 100ms linear);
+    background: none;
+  }
+  .panel-title {
+    font-weight: 400;
+  }
+  &.expanded, &:hover, &:focus {
+    .accordion-toggle {
+      color: $sg_primary;
+    }
+   &.expanded{
+     background-color: white;
+     overflow: visible;
+     .panel {
+      overflow: visible;
+     }
+     > .panel-heading{
+       border-bottom: none;
+     }
+   }
+  }
+  .panel-collapse > .panel-body {
+    padding-top: 0;
+  }
+  //overide BOOTSTRAP
+  .panel-heading + .panel-collapse {
+    background-color: white;
+    .panel-body {
+      border-top-style: none;
+      background-color: white;
+    }
+  }
+}
