@@ -5,6 +5,10 @@
 
 ## Changelog
 
+### 1.0.2
+
+Add iui-stepper as a new directive.
+
 ### 1.0.1
 
 Add new _accordions.scss_ file and drop in basic accordion styles to iui-general.

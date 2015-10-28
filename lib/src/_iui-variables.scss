@@ -115,3 +115,16 @@ $mq-xlg-screen-only: $mq-xlg-screen !default;
 $base-mobile-icon-size: 44px !default;
 $base-icon-size: 30px !default;
 $base-number-icon-size: 34px !default;
+
+/*
+--------------------------------------------------------------------------
+  Directive-Specific Variables
+--------------------------------------------------------------------------
+*/
+
+// ====== iui-stepper
+
+$stepper-height: 34px;
+$stepper-button-width: 36px;
+$stepper-input-width: 70px;
+$base-border-radius: 4px;
