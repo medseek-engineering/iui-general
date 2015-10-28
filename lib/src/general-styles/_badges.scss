@@ -1,0 +1,32 @@
+.badge {
+  background-color: $sg_alert_danger;
+  border-radius: 10px;
+  color: white;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  min-width: 10px;
+  padding: 3px 7px;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+  border: 1px solid $sg_alert_danger;
+}
+/*doc
+---
+title : Badges
+name : f_badges
+parent : a_a_basics
+category : Globals
+---
+Badges are UI components that draw the user's attention to a specific piece of content. Usually indicates a counter or that action needs to be taken. Badge color should always be red, <code>$sg\_alert\_primary</code>.
+
+```html_example
+<a href="" class="no-btn">
+  <span class="icon-label">Notifications</span>
+  <span class="badge badge-alert">4</span>
+</a>
+
+```
+*/

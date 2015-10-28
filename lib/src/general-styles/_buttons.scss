@@ -108,3 +108,266 @@
     }
   }
 }
+$button-bar-margin: 1em;
+
+%multi-button-bar {
+  @extend %clearfix;
+  &.has-top-spacing {
+    margin-top: 10px;
+  }
+  @media #{$mq-xs-screen-only} {
+    > .btn, .round-icon_print {
+      padding-top: $button-bar-margin;
+      padding-bottom: $button-bar-margin;
+      margin-top: 10px;
+      display: block;
+      min-width: 100%;
+    }
+  }
+  @media #{$mq-md-screen} {
+    > .btn, .round-icon_print {
+      float: right;
+      margin-left: 10px;
+    }
+  }
+}
+
+.multi-button-bar {
+  @extend %multi-button-bar;
+}
+// STYLE GUIDE ONLY BUTTON STATES SHOWCASE
+.sg-btn-active {
+  @extend .btn;
+  color: white;
+  background-color: $sg_bashful_blue;
+  border-color: $sg_bashful_blue;
+	&:hover {
+		color: white;
+	}
+}
+.sg-btn-disabled {
+  @extend .btn;
+	@extend %iui-button-skin-default__disabled;
+	&:hover {
+		color: #ccc;
+	}
+}
+.sg-btn-mobile {
+	@media #{$mq-xs-screen-only} {
+		padding-top: 1em;
+		padding-bottom: 1em;
+		min-width: 100%;
+		margin-top: 10px;
+	}
+}
+a.disabled-link {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/*doc
+---
+title: Buttons
+name: c_buttons
+parent : a_a_basics
+category: Globals
+---
+
+Empower uses 3 types of buttons: primary, default, and icon buttons. Our buttons, excluding icon buttons, follow Bootstrap's default styling and should not be customized outside of primary and default styling. _On mobile, all buttons should be at least 2.5em (44px) wide or tall for a greater hit target._
+
+##### Primary Button
+```html_example
+<button type="button" role="button" class="btn btn-primary">Primary Action</button>
+```
+<h5 class="visible-xs">Primary Button Mobile</h5>
+<button type="button" role="button" class="btn btn-primary sg-btn-mobile visible-xs">Mobile Primary</button>
+
+##### Default Button
+```html_example
+<button type="button" role="button" class="btn btn-default">Secondary Action</button>
+```
+<h5 class="visible-xs">Default Button Mobile</h5>
+<button type="button" role="button" class="btn btn-default sg-btn-mobile visible-xs">Mobile Secondary</button>
+
+##### Circle Icon Button
+
+**Rules of Development**
+
+- Any circle icons without labels must use a <a href="/style_guide/components.html##h_tooltip">tooltip</a>.
+- For use of circle icons with a label, click <a href="/style_guide/components.html##a_circle_icon_label">here</a>.
+
+```html_example
+<button type="button" role="button" class="no-btn" tooltip="Edit" tooltip-placement="top edit">
+  <span class="icon-holder">
+    <i class="round-icon_edit"></i>
+    <span class="sr-only">Edit Icon Button</span>
+  </span>
+</button>
+```
+Note that the <code>.no-btn</code> class is used for the circle icon. Because this is a button type, most browser automatically style these buttons a certain way. Add the <code>.no-btn</code> class to remove unwanted styling.
+<hr>
+### Button States
+
+##### Hover, Active, & Focus States
+<button type="button" role="button" class="sg-btn-active">Active State</button>
+
+##### Disabled State
+<button type="button" role="button" class="sg-btn-disabled">Disabled</button>
+
+Use angular's built in directive <code>ng-disabled</code> as an attribute for all buttons that need to be disabled. Do not apply disabled classes.
+
+<p class="sg-callout sg-callout-warning">
+  <span class="sg-warning-title">Accessibility Note</span>
+  <span class="sg-warning-body">all <code>buttons</code> need to include a <code>role="button"</code> and <code>type="button"</code></span>
+</p>
+<p class="sg-callout sg-callout-info">
+  <span class="sg-info-title">Semantic Note</span>
+  <span class="sg-info-body">Use <code>button</code> for any actions that do not take you to a separate page in the app. Anchor tags, <code>a</code>, represent hyperlinks which is an action that takes you away from the current page.</span>
+</p>
+
+*/
+
+/*doc
+---
+title: Links
+name: d_links
+parent : a_a_basics
+category: Globals
+---
+
+Empower uses 3 types of buttons: primary, default, and icon buttons. Our buttons, excluding icon buttons, follow Bootstrap's default styling and should not be customized outside of primary and default styling.
+
+Links as defined as hyperlinks, and it's function is to take the user a new page. Uses the <code>$sg\_bold\_blue</code> color to define a hyperlink. On hover, a text underline appears so there is more emphasis on state change if users are unable to differentiate the shift from dark blue to light blue.
+
+```html_example
+<a href="">This is a hyperlink</a>
+```
+
+<h4>Disabled Links</h4>
+```html_example
+<a href="" class="disabled-link">Disabled hyperlink</a>
+```
+*/
+
+
+/*doc
+---
+title : Dropdown Menus
+name : c_dropdowns
+parent : b_a_components
+category : Components
+---
+
+There are 2 types of dropdown menus. The Button Dropdown and the Circle Button Dropdown. The Button Dropdown uses  the UI Bootstrap directive <a href="https://angular-ui.github.io/bootstrap/#/dropdown" target="_blank">Dropdown.</a>
+
+On mobile, the circle button dropdown changes to an action sheet style. Add the `.as-action-sheet` modifier to the parent element with the `.dropdown` class.
+
+**Rules of Development**
+
+- All dropdown buttons must default to the `.btn-default` class for styling.
+- All dropdown menu items must be separated with a divider.
+- On mobile, action sheet must always have a Cancel menu item.
+
+## Button Dropdown Menu
+
+```html_example
+<div class="dropdown" dropdown is-open="isOpen">
+	<button type="button" role="button" class="btn btn-default" dropdown-toggle>Actions
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" id="dropdown-menu-id" role="menu">
+		<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+		<li role="separator" class="divider"></li>
+		<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+		<li role="separator" class="divider"></li>
+		<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+	</ul>
+</div>
+```
+
+## Circle Button Dropdown Menu
+
+_View this on mobile to see the `.as-action-sheet` modifier in action._
+
+```html_example
+<div class="row">
+	<div class="col-md-2">
+		<div class="dropdown circle-button-dropdown-wrapper as-action-sheet" id="circle-dropdown-menu-id" dropdown is-open="isOpen">
+			<button class="with-circle-toggle no-btn" role="button" dropdown-toggle>
+				<span class="circle-dropdown-label-wrapper">
+					<span class="circle-dropdown-label">More Actions</span>
+					<span class="btn btn-sm dropdown-toggle-circle">
+						<span class="caret"></span>
+					</span>
+				</span>
+			</button>
+			<ul class="dropdown-menu" id="userMenu">
+				<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+				<li role="separator" class="divider"></li>
+				<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+				<li role="separator" class="divider"></li>
+				<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+				<li role="separator" class="divider"></li>
+				<li role="presentation"><a href="" role="menuitem">Cancel</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+```
+
+## Dropdown Menu with Icons
+
+`.svg-inline` &amp; `.is-custom-svg` allows the ability to control SVG styling in CSS. This uses the @mixin `svg-custom`, which takes in a size value and a color value params. Note that the background color changes to `$sg_light_grey_background` on hover. This is to prevent color clashing of the svg and the primary color.
+
+```html_example
+<div class="dropdown" dropdown is-open="isOpen">
+	<button type="button" role="button" class="btn btn-default" dropdown-toggle>Actions
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu has-svg-inline-item" id="dropdown-menu-id" role="menu">
+		<li role="presentation">
+			<a href="" role="menuitem">
+				<span class="svg-inline is-custom-svg" ng-include="'images/icon-blue_rebook.svg'"></span>
+				<span class="svg-inline svg-label"> Add a Search</span>
+			</a>
+		</li>
+		<li role="separator" class="divider"></li>
+		<li role="presentation">
+			<a href="" role="menuitem">
+				<span class="svg-inline is-custom-svg" ng-include="'images/settings.svg'"></span>
+				<span class="svg-inline svg-label"> Manage Searches</span>
+			</a>
+		</li>
+	</ul>
+</div>
+```
+
+*/
+
+/*doc
+ ---
+title: Multi-Button Bar
+name: d_multi_button_bar
+parent: b_b_groups
+category: Components
+ ---
+
+The `.multi-button-bar` class groups 2 or more buttons and floats them to the right. Modal dialogs, forms, and anything that may require 2 or more actions must use the `.multi-button-bar`.
+
+```html_example
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          Some content.
+        </div>
+        <div class="panel-footer">
+          <div class="multi-button-bar">
+            <button role="button" type="button" class="btn btn-primary">Save</button>
+            <button role="button" type="button" class="btn btn-default">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+```
+*/

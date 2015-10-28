@@ -1,0 +1,1249 @@
+<!doctype html>
+<html ng-app="styleGuideApp" ng-controller="SGMainCtrl">
+  <head>
+    <title>iui-general Style Guide: Globals</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="scripts/classname_clicker.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://medseek-engineering.github.io/iui-table/lib/dist/iui-table.min.js"></script>
+    <script src="scripts/style_guide_app.js"></script>
+    <script src="../lib/dist/iui-general.min.js"></script>
+    <link rel="stylesheet" href="../lib/dist/iui-general.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  </head>
+  <body role="document" class="sg-body">
+    <header class="sg-header clearfix" role="banner">
+      <h1 class="sg-title">
+        <a href="index.html">
+            Influence Health UX Style Guide 1.0
+        </a>
+      </h1>
+      <nav class="navbar navbar-default sg-nav-main">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sg-navbar-main" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="sg-navbar-main">
+            <ul class="nav navbar-nav">
+              
+              <li class="active" role="presentation">
+                <a role="menuitem" href="globals.html">Globals</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="components.html">Components</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="filters.html">Filters</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="directives.html">Directives</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="index.html">Overview</a>
+              </li>
+              
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <main class="sg-wrapper clearfix" role="main">
+        <aside class="sg-sidebar hidden-xs" role="complementary">
+            <nav class="sg-nav-secondary" role="navigation">
+                <ul role="menu">
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('a_a_basics')">Basics</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('a_colors')">Colors</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('b_fonts')">Fonts</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('c_buttons')">Buttons</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('d_links')">Links</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('e_hr')">Horizontal Rule</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('f_badges')">Badges</a>
+                  </li>
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('a_b_typography')">Typography</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('a_headings')">Headings</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('b_paragraphs')">Paragraphs</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('c_required_fields')">Required Fields</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('d_lists')">Lists</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('a_unordered_lists')">Unordered Lists</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('b_ordered_lists')">Ordered Lists</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('c_definition_lists')">Definition Lists</a>
+                  </li>
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('a_c_forms')">Forms</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('a_general_form_rules')">General Form Rules</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('b_input_fields')">Text Input Fields</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('b_input_fields_states')">Input States</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('c_labels')">Labels</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('a_top_aligned_labels')">Top Aligned Labels</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('b_right_aligned_labels')">Right Aligned Labels</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('r-b_basic_form_block')">Right Aligned Labels Form</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('c_radio_buttons')">Radio Buttons</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('d_checkboxes')">Checkboxes</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('e_select_boxes')">Select Boxes</a>
+                  </li>
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('a_d_images')">Images</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('b_iconography')">Iconography</a>
+                  </li>
+                  
+                </ul>
+            </nav>
+        </aside>
+        <div class="sg-element-wrapper" id="top">
+          <iui-alert-placeholder id="alert_appTop"></iui-alert-placeholder>
+<h1 id="a_a_basics" class="styleguide">Basics</h1>
+
+<ul class="section-nav">
+  <li><a href="#a_colors">Colors</a></li>
+  <li><a href="#f_badges">Badges</a></li>
+  <li><a href="#c_buttons">Buttons</a></li>
+  <li><a href="#d_links">Links</a></li>
+  <li><a href="#b_fonts">Fonts</a></li>
+  <li><a href="#e_hr">Horizontal Rule</a></li>
+</ul>
+
+<h2 id="a_colors" class="styleguide">Colors</h2>
+<p class="styleguide"> These are the colors used throughout the application. Each color is defined with its Hex value and its Sass variable. Please do not use any colors that are not defined here. Any lightening or darkening of a color should only be applied to greys and should never exceed 5%.</p>
+<div class="row">
+<div class="col-lg-10">
+<div class="row">
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch bashful-blue">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Primary Color</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#6fa8dc</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>111 168 220</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_primary</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch bold-blue">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Secondary Color</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#0072bc</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>0 114 188</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_secondary</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch teal">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Tertiary Color</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#00a79b</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>0 167 155</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_tertiary</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch gamma-green">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Gamma Green</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#6aa84f</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>106 168 79</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_alert_success</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch organic-orange">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Organic Orange</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#ff9900</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>255 153 0</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_organic_orange</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch alert-red">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Alert Red</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#e06666</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>224 102 102</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_alert_danger</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch light-grey">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Light Grey</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#e8e8e8</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>232 232 232</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_light_grey_background</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch light-grey-border">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Light Grey Border</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#d4d4d4</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>212 212 212</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_light_grey_border</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch medium-grey">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Medium Grey</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#666</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>102 102 102</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_medium_grey</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-4">
+        <article class="panel panel-default sg-color-swatch dark-grey">
+            <div class="panel-body"></div>
+            <footer class="panel-footer">
+              <h4>Dark Grey</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <span class="label-text">Hex</span>
+                  <code>#333</code>
+                </li>
+                <li>
+                  <span class="label-text">RGB</span>
+                  <span>51 51 51</span>
+                </li>
+                <li>
+                  <span class="label-text">Sass</span>
+                  <code>$sg_dark_grey</code>
+                </li>
+              </ul>
+            </footer>
+        </article>
+    </div>
+</div>
+<p class="styleguide"></div>
+</div></p>
+<h2 id="b_fonts" class="styleguide">Fonts</h2>
+<p class="styleguide">Font-Family : Roboto, Helvetica, Arial, sans-serif</p><p class="styleguide"><a href="https://www.google.com/fonts/specimen/Roboto" target="_blank">Roboto</a> is a sans-serif typeface developed by Google released in January of 2012 and is the main typeface used in the app. This font was chosen for it&#39;s approachable, modern, and professional characteristics. Use 700 font weight for headings and labels and 400 font weight for non-heading text.</p><p class="styleguide">All non-heading text is 14px font size by default. On mobile, font size is increased to 16px for cleaner reading and legibility.
+<dl>
+  <dt>Roboto Bold</dt>
+  <dd class="sg-font-showcase label-text">Grumpy wizards make toxic brew for the evil Queen and Jack. 0123456789</dd>
+  <dt>Roboto Regular</dt>
+  <dd class="sg-font-showcase">Grumpy wizards make toxic brew for the evil Queen and Jack. 0123456789</dd>
+  <dt>Roboto Italic</dt>
+  <dd class="sg-font-showcase italic-text">Grumpy wizards make toxic brew for the evil Queen and Jack. 0123456789</dd>
+</dl></p><p class="styleguide">Use these variables for each of the font weights:</p><ul class="styleguide"><li><p class="styleguide"><code class="styleguide">$base-font-weight</code> for 400 weight</p></li>
+<li><p class="styleguide"><code class="styleguide">$large-font-weight</code> for 700 weight</p></li>
+</ul>
+<h2 id="c_buttons" class="styleguide">Buttons</h2>
+<p class="styleguide">Empower uses 3 types of buttons: primary, default, and icon buttons. Our buttons, excluding icon buttons, follow Bootstrap&#39;s default styling and should not be customized outside of primary and default styling. <em>On mobile, all buttons should be at least 2.5em (44px) wide or tall for a greater hit target.</em></p>
+<h5>Primary Button</h5>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <button type="button" role="button" class="btn btn-primary">Primary Action</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Primary Action<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h5 class="visible-xs">Primary Button Mobile</h5>
+<p class="styleguide"><button type="button" role="button" class="btn btn-primary sg-btn-mobile visible-xs">Mobile Primary</button></p>
+<h5>Default Button</h5>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <button type="button" role="button" class="btn btn-default">Secondary Action</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Secondary Action<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h5 class="visible-xs">Default Button Mobile</h5>
+<p class="styleguide"><button type="button" role="button" class="btn btn-default sg-btn-mobile visible-xs">Mobile Secondary</button></p>
+<h5>Circle Icon Button</h5>
+<p class="styleguide"><strong>Rules of Development</strong></p><ul class="styleguide"><li>Any circle icons without labels must use a <a href="/style_guide/components.html##h_tooltip">tooltip</a>.</li>
+<li>For use of circle icons with a label, click <a href="/style_guide/components.html##a_circle_icon_label">here</a>.</li>
+</ul><div class="codeExample">
+  <div class="exampleOutput">
+    <button type="button" role="button" class="no-btn" tooltip="Edit" tooltip-placement="top edit">
+  <span class="icon-holder">
+    <i class="round-icon_edit"></i>
+    <span class="sr-only">Edit Icon Button</span>
+  </span>
+</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"no-btn"</span> <span class="na">tooltip=</span><span class="s">"Edit"</span> <span class="na">tooltip-placement=</span><span class="s">"top edit"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-holder"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"round-icon_edit"</span><span class="nt">&gt;&lt;/i&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Edit Icon Button<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide">Note that the <code>.no-btn</code> class is used for the circle icon. Because this is a button type, most browser automatically style these buttons a certain way. Add the <code>.no-btn</code> class to remove unwanted styling.
+<hr></p>
+<h3>Button States</h3>
+
+<h5>Hover, Active, &amp; Focus States</h5>
+<p class="styleguide"><button type="button" role="button" class="sg-btn-active">Active State</button></p>
+<h5>Disabled State</h5>
+<p class="styleguide"><button type="button" role="button" class="sg-btn-disabled">Disabled</button></p><p class="styleguide">Use angular&#39;s built in directive <code>ng-disabled</code> as an attribute for all buttons that need to be disabled. Do not apply disabled classes.</p>
+<p class="sg-callout sg-callout-warning">
+  <span class="sg-warning-title">Accessibility Note</span>
+  <span class="sg-warning-body">all <code>buttons</code> need to include a <code>role="button"</code> and <code>type="button"</code></span>
+</p>
+
+<p class="sg-callout sg-callout-info">
+  <span class="sg-info-title">Semantic Note</span>
+  <span class="sg-info-body">Use <code>button</code> for any actions that do not take you to a separate page in the app. Anchor tags, <code>a</code>, represent hyperlinks which is an action that takes you away from the current page.</span>
+</p>
+
+<h2 id="d_links" class="styleguide">Links</h2>
+<p class="styleguide">Empower uses 3 types of buttons: primary, default, and icon buttons. Our buttons, excluding icon buttons, follow Bootstrap&#39;s default styling and should not be customized outside of primary and default styling.</p><p class="styleguide">Links as defined as hyperlinks, and it&#39;s function is to take the user a new page. Uses the <code>$sg_bold_blue</code> color to define a hyperlink. On hover, a text underline appears so there is more emphasis on state change if users are unable to differentiate the shift from dark blue to light blue.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <a href="">This is a hyperlink</a>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>This is a hyperlink<span class="nt">&lt;/a&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h4>Disabled Links</h4>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <a href="" class="disabled-link">Disabled hyperlink</a>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"disabled-link"</span><span class="nt">&gt;</span>Disabled hyperlink<span class="nt">&lt;/a&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="e_hr" class="styleguide">Horizontal Rule</h2>
+<p class="styleguide">Horizontal rules, or hr, is a thematic break between paragraph elements or sections. While the &lt;hr&gt; element is not defined frequently in the app, we use the same CSS properties to define list item separators. If you need to use a border or divider line, always use the color <code>$sg_light_grey_border</code>. And border-width should not exceed 1px.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <section class="row">
+ <div class="col-md-6">
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores hic provident, ipsum dicta perferendis possimus labore illum quidem enim quibusdam harum perspiciatis, tenetur et, aliquam.</p>
+   <hr>
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores hic provident, ipsum dicta perferendis possimus labore illum quidem enim quibusdam harum perspiciatis, tenetur et, aliquam.</p>
+ </div>
+</section>
+
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores hic provident, ipsum dicta perferendis possimus labore illum quidem enim quibusdam harum perspiciatis, tenetur et, aliquam.<span class="nt">&lt;/p&gt;</span>
+   <span class="nt">&lt;hr&gt;</span>
+   <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores hic provident, ipsum dicta perferendis possimus labore illum quidem enim quibusdam harum perspiciatis, tenetur et, aliquam.<span class="nt">&lt;/p&gt;</span>
+ <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="f_badges" class="styleguide">Badges</h2>
+<p class="styleguide">Badges are UI components that draw the user&#39;s attention to a specific piece of content. Usually indicates a counter or that action needs to be taken. Badge color should always be red, <code>$sg_alert_primary</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <a href="" class="no-btn">
+  <span class="icon-label">Notifications</span>
+  <span class="badge badge-alert">4</span>
+</a>
+
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"no-btn"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-label"</span><span class="nt">&gt;</span>Notifications<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"badge badge-alert"</span><span class="nt">&gt;</span>4<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/a&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="a_b_typography" class="styleguide">Typography</h1>
+
+<ul class="section-nav">
+  <li><a href="#d_lists">Lists</a></li>
+  <li><a href="#a_headings">Headings</a></li>
+  <li><a href="#c_required_fields">Required Fields</a></li>
+  <li><a href="#b_paragraphs">Paragraphs</a></li>
+</ul>
+
+<h2 id="a_headings" class="styleguide">Headings</h2>
+<p class="styleguide">Use the appropriate header <strong>h1</strong> through <strong>h6</strong> based on HTML hirearchy. NOT based on the default size it outputs.
+Use the classes defined below to change the size and styling.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <h1 class="page-header">Page Header</h1>
+<h2 class="page-subheader">Page Subheader</h2>
+<p class="paragraph-header">paragraph header</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"page-header"</span><span class="nt">&gt;</span>Page Header<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"page-subheader"</span><span class="nt">&gt;</span>Page Subheader<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"paragraph-header"</span><span class="nt">&gt;</span>paragraph header<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<p class="sg-callout sg-callout-info">
+  <span class="sg-info-title">iui-page-header directive</span>
+  <span class="sg-info-body">Use the directive <code>iui-page-header</code> for page headings. This will also include the <code>iui-breadcrumb</code> directive. <br>
+  You can find the directive documentation <a href="">here</a>.
+  </span>
+</p>
+
+<h2 id="b_paragraphs" class="styleguide">Paragraphs</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <p>A standard paragraph.</p>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;p&gt;</span>A standard paragraph.<span class="nt">&lt;/p&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="c_required_fields" class="styleguide">Required Fields</h2>
+<p class="styleguide">All forms that have required fields should use this text. The class of <code class="styleguide">.required-field</code> is appended to the <code class="styleguide">&lt;label&gt;</code> to add the * to the right of the label.</p><p class="styleguide">Use this ng-include for the &quot;Indicates required field&quot; text.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <div ng-include="'/templates/required-text.html'"></div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">ng-include=</span><span class="s">"'/templates/required-text.html'"</span><span class="nt">&gt;&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="d_lists" class="styleguide">Lists</h2>
+
+<h3 id="a_unordered_lists" class="styleguide">Unordered Lists</h3>
+<p class="styleguide">Unordered lists, <code class="styleguide">ul</code>, are a collection of items that are not numbered and order is not important. By default, <code class="styleguide">ul</code>, are bulleted. For an un-bulleted list, use the Bootstrap class <code class="styleguide">.list-unstyled</code> on the parent <code class="styleguide">ul</code>.</p><p class="styleguide">If you are using a collection of links as a list, please use the proper accessibility role requirements for list items:</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ul role="menu">
+  <li role="presentation"><a href="" role="menuitem">List Item 1</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 2</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 3</a></li>
+</ul>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;ul</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>List Item 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>List Item 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>List Item 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3 id="b_ordered_lists" class="styleguide">Ordered Lists</h3>
+<p class="styleguide">Ordered lists, <code class="styleguide">ol</code>, are a collection of items that are numbered.</p><p class="styleguide">If you are using a collection of links as a list, please use the proper accessibility role requirements for list items:</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ol role="menu">
+  <li role="presentation"><a href="" role="menuitem">List Item 1</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 2</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 3</a></li>
+</ol>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;ol</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>List Item 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>List Item 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>List Item 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide">You can also use our customized ordered list numbers using the <code class="styleguide">.number</code> class on the parent <code class="styleguide">ol</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <ol class="number" role="menu">
+  <li role="presentation"><a href="" role="menuitem">List Item 1</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 2</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 3</a></li>
+</ol>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">"number"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>List Item 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>List Item 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>List Item 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h3 id="c_definition_lists" class="styleguide">Definition Lists</h3>
+<p class="styleguide">Definition lists, or Descriptive lists, are used to list out terms and description pairs. <code class="styleguide">dl</code>s contain <code class="styleguide">dt</code>, (which stands for definition term), and <code class="styleguide">dd</code> (which is the description of the term). Like unordered lists, you cannot insert non-dl elements in the <code class="styleguide">dl</code>, or between the <code class="styleguide">dt</code> and <code class="styleguide">dd</code>.</p><p class="styleguide">Definition lists come in 2 styles: horizontal and vertical. Most of the <code class="styleguide">dl</code>s in the app use the <code class="styleguide">.dl-horizontal</code> class to align the terms and descriptions horizontally. On mobile, it defaults to stacked style. Bootstrap right-aligns the <code class="styleguide">dt</code> by default when using the <code class="styleguide">.dl-horizontal</code> class. This is not an optimal UX experience, therefore always add the class <code class="styleguide">.dt-as-left-aligned</code> to the <code class="styleguide">dl</code> parent</p><p class="styleguide">You can also define the size of the <code class="styleguide">dl</code> in 3 ways: <code class="styleguide">.short-list</code>, <code class="styleguide">.medium-list</code>, <code class="styleguide">.large-list</code>. Each class defines a certain width and spacing of <code class="styleguide">dt</code>,<code class="styleguide">dd</code> elements. By default, use the <code class="styleguide">.medium-list</code> class.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <dl class="dl-horizontal dt-as-left-aligned medium-list">
+  <dt>Patient Name</dt>
+  <dd>Edward Stone</dd>
+  <dt>Task Name</dt>
+  <dd>Connect with New Patient Approval Request</dd>
+  <dt>Request Id</dt>
+  <dd>PMEM1ACEQE</dd>
+</dl>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal dt-as-left-aligned medium-list"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>Patient Name<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>Edward Stone<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>Task Name<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>Connect with New Patient Approval Request<span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>Request Id<span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>PMEM1ACEQE<span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="a_c_forms" class="styleguide">Forms</h1>
+
+<ul class="section-nav">
+  <li><a href="#a_general_form_rules">General Form Rules</a></li>
+  <li><a href="#b_input_fields">Text Input Fields</a></li>
+  <li><a href="#b_input_fields_states">Input States</a></li>
+  <li><a href="#c_labels">Labels</a></li>
+  <li><a href="#c_radio_buttons">Radio Buttons</a></li>
+  <li><a href="#d_checkboxes">Checkboxes</a></li>
+  <li><a href="#e_select_boxes">Select Boxes</a></li>
+</ul>
+
+<h2 id="a_general_form_rules" class="styleguide">General Form Rules</h2>
+<p class="styleguide">We use Bootstrap&#39;s basic form styles to style forms.</p><p class="styleguide"><strong>All form inputs, selects and textareas must have:</strong></p><ul class="styleguide"><li>unique <code class="styleguide">id</code> attribute</li>
+<li>corresponding <code class="styleguide">&lt;label&gt;</code></li>
+</ul><p class="styleguide"><strong>All buttons must have a unique <code class="styleguide">id</code></strong></p><p class="styleguide">When in doubt, follow as closely as possible to the <a class="styleguide" href="http://getbootstrap.com/css/#forms-example" title="http://getbootstrap.com/css/#forms-example">Bootstrap Form Defaults</a></p>
+<h2 id="b_input_fields" class="styleguide">Text Input Fields</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row">
+  <div class="col-md-4">
+    <form role="form" class="form">
+      <div class="form-group">
+        <label for="CHANGE-ME" class="control-label">Name</label>
+        <input type="text" placeholder="Placeholder Text disappears when typing starts" class="form-control" id="CHANGE-ME">
+        <p class="help-block">Help Text should describe the type of input desired</p>
+      </div>
+      <div class="form-group">
+        <label for="CHANGE-ME2" class="control-label">Email</label>
+        <input type="email" placeholder="Enter email" id="CHANGE-ME2">
+      </div>
+      <div class="form-group">
+       <label for="CHANGE-ME3" class="control-label">Phone</label>
+       <input class="form-control" type="phone" id="CHANGE-ME3"
+        pattern="(\d-)?(\d{3}-){1,2}\d{4}"
+        title="Minimum of 7 digits"
+        placeholder="x-xxx-xxx-xxxx">
+       <p class="help-block">Minimum of 7 digits</p>
+      </div>
+      <div class="form-group">
+       <label for="textarea-example" class="control-label">Enter Message</label>
+       <textarea id="textarea_example" name="textarea_example" class="form-control" maxlength="200" field="compose.body" rows="4" ng-model="compose.body"></textarea>
+       <p class="help-block">Remaining characters : {{200 - compose.body.length}}</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">role=</span><span class="s">"form"</span> <span class="na">class=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"CHANGE-ME"</span> <span class="na">class=</span><span class="s">"control-label"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Placeholder Text disappears when typing starts"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"CHANGE-ME"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"help-block"</span><span class="nt">&gt;</span>Help Text should describe the type of input desired<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"CHANGE-ME2"</span> <span class="na">class=</span><span class="s">"control-label"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Enter email"</span> <span class="na">id=</span><span class="s">"CHANGE-ME2"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"CHANGE-ME3"</span> <span class="na">class=</span><span class="s">"control-label"</span><span class="nt">&gt;</span>Phone<span class="nt">&lt;/label&gt;</span>
+       <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">type=</span><span class="s">"phone"</span> <span class="na">id=</span><span class="s">"CHANGE-ME3"</span>
+        <span class="na">pattern=</span><span class="s">"(\d-)?(\d{3}-){1,2}\d{4}"</span>
+        <span class="na">title=</span><span class="s">"Minimum of 7 digits"</span>
+        <span class="na">placeholder=</span><span class="s">"x-xxx-xxx-xxxx"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"help-block"</span><span class="nt">&gt;</span>Minimum of 7 digits<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"textarea-example"</span> <span class="na">class=</span><span class="s">"control-label"</span><span class="nt">&gt;</span>Enter Message<span class="nt">&lt;/label&gt;</span>
+       <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">"textarea_example"</span> <span class="na">name=</span><span class="s">"textarea_example"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">maxlength=</span><span class="s">"200"</span> <span class="na">field=</span><span class="s">"compose.body"</span> <span class="na">rows=</span><span class="s">"4"</span> <span class="na">ng-model=</span><span class="s">"compose.body"</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+       <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"help-block"</span><span class="nt">&gt;</span>Remaining characters : {{200 - compose.body.length}}<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="b_input_fields_states" class="styleguide">Input States</h2>
+<p class="styleguide">Angular includes validation styles for error, warning, and success states on form controls. To use, add the <code class="styleguide">ng-required=&quot;true&quot;</code> to the input element. Any <code class="styleguide">.control-label</code>, <code class="styleguide">.form-control</code>, and <code class="styleguide">.help-block</code> within that element will receive the validation styles.</p>
+<div class="row">
+  <div class="col-md-4">
+    <form class="form" role="form">
+      <div class="form-group">
+          <label for="CHANGE-ME-1" class="control-label">Demo 1</label>
+          <input type="text" placeholder="Placeholder Text disappears when typing starts" class="form-control" id="CHANGE-ME-1">
+          <p class="help-block">Help Text should describe the type of input desired</p>
+        </div>
+        <div class="form-group has-error">
+          <label for="CHANGE-ME-1B" class="control-label">Demo 1 with Error</label>
+          <input type="text" class="form-control" id="CHANGE-ME-1B">
+          <p class="help-block">Help Text should describe the type of input desired</p>
+        </div>
+        <div class="form-group has-warning">
+          <label for="CHANGE-ME-1C" class="control-label">Demo 1 with Warning</label>
+          <input type="text" class="form-control" id="CHANGE-ME-1C">
+          <p class="help-block">Help Text should describe the type of input desired</p>
+        </div>
+        <div class="form-group has-success">
+          <label for="CHANGE-ME-1D" class="control-label">Demo 1 with Success</label>
+          <input type="text" class="form-control" id="CHANGE-ME-1D">
+        </div>
+        <div class="form-group disabled">
+          <label for="CHANGE-ME-1E" class="control-label">Demo 1 Disabled</label>
+          <input type="text" class="form-control" value="Can't Change Me" disabled="disabled" id="CHANGE-ME-1E">
+        </div>
+        <div class="form-group readonly">
+          <label for="CHANGE-ME-1F" class="control-label">Demo 1 Read Only</label>
+          <input type="text" value="I'm a read only field"  class="form-control" id="CHANGE-ME-1F" readonly>
+        </div>
+    </form>
+  </div>
+</div>
+
+<h2 id="c_labels" class="styleguide">Labels</h2>
+<p class="styleguide">Every <code class="styleguide">label</code> should include a <code class="styleguide">for=&quot;&quot;</code> which matches the id of the input. Use the label class <code class="styleguide">.label-soft</code> for cases where the font weight needs to be normal instead of bolded.</p>
+<h3 id="a_top_aligned_labels" class="styleguide">Top Aligned Labels</h3>
+<p class="styleguide">When the label sits on top of the input field.</p><p class="styleguide"><strong>Advantages:</strong></p><ul class="styleguide"><li>great for limited horizontal space</li>
+<li>tends to reduce form completion times</li>
+<li>mobile phones</li>
+</ul><p class="styleguide"><strong>Disadvantages:</strong></p><ul class="styleguide"><li>increased vertical space</li>
+</ul><p class="styleguide"><strong>Rules of Development:</strong></p><ul class="styleguide"><li><code class="styleguide">.form-group</code> class should wrap each form element &amp; label</li>
+<li><code class="styleguide">.control-label</code> class should be applied to the label</li>
+<li><code class="styleguide">.form-control</code> class should be on all inputs except radio buttons and checkboxes</li>
+<li><em>Optional</em> <code class="styleguide">&lt;p class=&quot;help-block&quot;&gt;</code> is for help text. This should follow under the <code class="styleguide">&lt;input&gt;</code> if desired</li>
+<li>For optimal mobile experience, use HTML5 input types when applicable. This includes: <code class="styleguide">&lt;input type=&quot;email&quot;&gt;</code>, <code class="styleguide">&lt;input type=&quot;number&quot;&gt;</code>, <code class="styleguide">&lt;input type=&quot;email&quot;&gt;</code>, <code class="styleguide">&lt;input type=&quot;search&quot;&gt;</code> and <code class="styleguide">&lt;input type=&quot;tel&quot;&gt;</code></li>
+<li><code class="styleguide">.multi-button-bar</code> class should be used to contain the buttons used at the end of the form which will cause the buttons to be properly <code class="styleguide">float: right</code></li>
+</ul>
+<h3 id="b_right_aligned_labels" class="styleguide">Right Aligned Labels</h3>
+<p class="styleguide">When the label is to the left of the input field.</p><p class="styleguide"><strong>Advantages:</strong></p><ul class="styleguide"><li>great for limited vertical space</li>
+<li>this version can switch to a top-aligned layout at small screen widths which is ideal for mobile</li>
+</ul><p class="styleguide"><strong>Disadvantages:</strong></p><ul class="styleguide"><li>increased horizontal space</li>
+<li>labels are sometimes too long for available space</li>
+</ul><p class="styleguide"><strong>Rules of Development:</strong></p><ul class="styleguide"><li><code class="styleguide">.form-horizontal</code> class should be applied to wrapping <code class="styleguide">&lt;form&gt;</code> tags</li>
+<li><code class="styleguide">.form-group</code> class should wrap each form element &amp; label; this class acts like a <code class="styleguide">.row</code> when wrapped with the <code class="styleguide">.form-horizontal</code> class</li>
+<li><code class="styleguide">.control-label</code> class should be applied to the label</li>
+<li><a class="styleguide" href="http://getbootstrap.com/css/#grid-options" title="http://getbootstrap.com/css/#grid-options">Bootstrap grid classes</a> should be applied to the <code class="styleguide">&lt;label&gt;</code> (or <code class="styleguide">&lt;legend&gt;</code> if using a <code class="styleguide">&lt;fieldset&gt;</code>) and the <code class="styleguide">&lt;div&gt;</code> that holds the input field(s)</li>
+<li>Use <a class="styleguide" href="http://getbootstrap.com/css/#grid-offsetting" title="http://getbootstrap.com/css/#grid-offsetting">offset columns</a> to space checkboxes &amp; radio buttons to be inline with the other fields</li>
+<li>For most cases <code class="styleguide">.col-sm-</code> column widths are ideal for spacing labels and fields</li>
+<li>By default use <code class="styleguide">.col-sm-2</code> for the <code class="styleguide">&lt;label&gt;</code> and <code class="styleguide">.col-sm-10</code> for the <code class="styleguide">&lt;div&gt;</code> holding the <code class="styleguide">&lt;input&gt;</code></li>
+<li><code class="styleguide">.form-control</code> class should be on all inputs except radio buttons and checkboxes</li>
+<li><em>Optional</em> <code class="styleguide">&lt;p class=&quot;help-block&quot;&gt;</code> is for help text. This should follow under the <code class="styleguide">&lt;input&gt;</code> if desired</li>
+<li>For optimal mobile experience, use HTML5 input types when applicable. This includes: <code class="styleguide">&lt;input type=&quot;email&quot;&gt;</code>, <code class="styleguide">&lt;input type=&quot;number&quot;&gt;</code>, <code class="styleguide">&lt;input type=&quot;email&quot;&gt;</code>, <code class="styleguide">&lt;input type=&quot;search&quot;&gt;</code> and <code class="styleguide">&lt;input type=&quot;tel&quot;&gt;</code></li>
+<li><code class="styleguide">.multi-button-bar</code> class should be used to contain the buttons used at the end of the form which will cause the buttons to be properly <code class="styleguide">float: right</code></li>
+</ul>
+<h4 id="r-b_basic_form_block" class="styleguide">Right Aligned Labels Form</h4>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <form role="form" class="form-horizontal">
+  <div class="form-wrapper with-2-columns">
+    <div class="form-group">
+      <label for="CHANGE-ME" class="control-label col-sm-2">Name</label>
+      <div class="col-sm-10">
+        <input type="text" placeholder="Placeholder Text disappears when typing starts" class="form-control" id="CHANGE-ME">
+        <p class="help-block">Help Text should describe the type of input desired</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="CHANGE-ME2" class="control-label col-sm-2 required-field">Email</label>
+      <div class="col-sm-10">
+        <input type="email" placeholder="Enter email" id="CHANGE-ME2" required>
+      </div>
+    </div>
+    <div class="multi-button-bar">
+      <button class="btn btn-primary" type="submit" id="CHANGE-ME6">Submit</button>
+    </div>
+  </div>
+</form>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;form</span> <span class="na">role=</span><span class="s">"form"</span> <span class="na">class=</span><span class="s">"form-horizontal"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-wrapper with-2-columns"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"CHANGE-ME"</span> <span class="na">class=</span><span class="s">"control-label col-sm-2"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-10"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">placeholder=</span><span class="s">"Placeholder Text disappears when typing starts"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"CHANGE-ME"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"help-block"</span><span class="nt">&gt;</span>Help Text should describe the type of input desired<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"CHANGE-ME2"</span> <span class="na">class=</span><span class="s">"control-label col-sm-2 required-field"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-10"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"Enter email"</span> <span class="na">id=</span><span class="s">"CHANGE-ME2"</span> <span class="na">required</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"multi-button-bar"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">id=</span><span class="s">"CHANGE-ME6"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="c_radio_buttons" class="styleguide">Radio Buttons</h2>
+<p class="styleguide"><strong>Rules of Development</strong></p><ul class="styleguide"><li>all radio buttons should be wrapped with a <code class="styleguide">&lt;fieldset&gt;</code></li>
+<li>all fieldsets should have a <code class="styleguide">&lt;legend&gt;</code> that is the first child element</li>
+<li>use the <code class="styleguide">.visually-hidden</code> class to hide the legend when it is not visually necessary</li>
+</ul><p class="styleguide">On mobile, radio button size is increased for greater hit target.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <form class="form" role="form">
+  <fieldset class="form-group">
+    <legend class="control-label">Select the best vertical Radio Button</label>
+    <div class="custom-radio">
+      <input type="radio" name="optionsRadios" id="radiosSuccess1" value="option1" checked>
+      <label for="radiosSuccess1" class="label-soft">Option one is this and that&mdash;be sure to include why it's great</label>
+    </div>
+    <div class="custom-radio">
+      <input type="radio" name="optionsRadios" id="radiosSuccess2" value="option2">
+      <label for="radiosSuccess2" class="label-soft">Option two can be something else and selecting it will deselect option one</label>
+    </div>
+  </fieldset>
+</form>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form"</span> <span class="na">role=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;legend</span> <span class="na">class=</span><span class="s">"control-label"</span><span class="nt">&gt;</span>Select the best vertical Radio Button<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"custom-radio"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"radiosSuccess1"</span> <span class="na">value=</span><span class="s">"option1"</span> <span class="na">checked</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radiosSuccess1"</span> <span class="na">class=</span><span class="s">"label-soft"</span><span class="nt">&gt;</span>Option one is this and that<span class="ni">&amp;mdash;</span>be sure to include why it's great<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"custom-radio"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"optionsRadios"</span> <span class="na">id=</span><span class="s">"radiosSuccess2"</span> <span class="na">value=</span><span class="s">"option2"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"radiosSuccess2"</span> <span class="na">class=</span><span class="s">"label-soft"</span><span class="nt">&gt;</span>Option two can be something else and selecting it will deselect option one<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="d_checkboxes" class="styleguide">Checkboxes</h2>
+<p class="styleguide">Use the <code class="styleguide">.custom-checkbox</code> class on the input element to use the custom styling for checkboxes. Input element must come <em>before</em> the <code class="styleguide">label</code>. On mobile, checkbox size is increased for greater hit target.</p><p class="styleguide">In the cases of multiple checkboxes, the list style should adapt to a more mobile-friendly approach. Use the <code class="styleguide">.checkbox-bar-touch</code> class on the parent <code class="styleguide">ul</code> and <code class="styleguide">.checkbox-bar-label</code> for the <code class="styleguide">label</code>. View this section on mobile or adjust your browser window to view the mobile checkbox list in action.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <form class="form" role="form" class="hidden-xs">
+  <fieldset>
+    <div class="form-group">
+      <input id="pharmacy_checkbox_setAsPrimary" class="custom-checkbox" type="checkbox">
+      <label for="pharmacy_checkbox_setAsPrimary">Set this as Primary Pharmacy</label>
+    </div>
+  </fieldset>
+</form>
+<div class="visible-xs">
+  <ul class="checkbox-bar-touch">
+    <li>
+      <input type="checkbox" id="preferredmonday" class="custom-checkbox">
+      <label for="preferredmonday" class="checkbox-bar-label" ng-class="{date-disabled: functionToDisableDay()}">Monday <span class="small">Morning</span></label>
+    </li>
+    <li>
+      <input type="checkbox" id="preferredtues" class="custom-checkbox">
+      <label for="preferredtues" class="checkbox-bar-label" ng-class="{date-disabled: functionToDisableDay()}">Tuesday <span class="small">Afternoon</span></label>
+    </li>
+  </ul>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form"</span> <span class="na">role=</span><span class="s">"form"</span> <span class="na">class=</span><span class="s">"hidden-xs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"pharmacy_checkbox_setAsPrimary"</span> <span class="na">class=</span><span class="s">"custom-checkbox"</span> <span class="na">type=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"pharmacy_checkbox_setAsPrimary"</span><span class="nt">&gt;</span>Set this as Primary Pharmacy<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"visible-xs"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"checkbox-bar-touch"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"preferredmonday"</span> <span class="na">class=</span><span class="s">"custom-checkbox"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"preferredmonday"</span> <span class="na">class=</span><span class="s">"checkbox-bar-label"</span> <span class="na">ng-class=</span><span class="s">"{date-disabled: functionToDisableDay()}"</span><span class="nt">&gt;</span>Monday <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"small"</span><span class="nt">&gt;</span>Morning<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"preferredtues"</span> <span class="na">class=</span><span class="s">"custom-checkbox"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"preferredtues"</span> <span class="na">class=</span><span class="s">"checkbox-bar-label"</span> <span class="na">ng-class=</span><span class="s">"{date-disabled: functionToDisableDay()}"</span><span class="nt">&gt;</span>Tuesday <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"small"</span><span class="nt">&gt;</span>Afternoon<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="e_select_boxes" class="styleguide">Select Boxes</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row">
+  <div class="col-md-4">
+    <form role="form" class="form">
+      <div class="form-group">
+        <label class="control-label" for="style_guideselect1">Select one</label>
+        <select class="form-control" name="style_guideselect1" id="style_guideselect1">
+          <option value="">Select A</option>
+          <option value="">Select B</option>
+          <option value="">Select C</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="style_guideselect2">List (single selection)</label>
+        <select class="form-control" name="" id="style_guideselect2" size="5">
+          <option value="">Item 1</option>
+          <option value="">Item 2</option>
+          <option value="">Item 3</option>
+          <option value="">Item 4</option>
+          <option value="">Item 5</option>
+          <option value="">Item 6</option>
+          <option value="">Item 7</option>
+          <option value="">Item 8</option>
+          <option value="">Item 9</option>
+          <option value="">Item 10</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="style_guideselect3">List (multiple selections)</label>
+        <select class="form-control" name="" id="style_guideselect3" size="5" multiple>
+          <option value="">Item 1</option>
+          <option value="">Item 2</option>
+          <option value="">Item 3</option>
+          <option value="">Item 4</option>
+          <option value="">Item 5</option>
+          <option value="">Item 6</option>
+          <option value="">Item 7</option>
+          <option value="">Item 8</option>
+          <option value="">Item 9</option>
+          <option value="">Item 10</option>
+        </select>
+      </div>
+    </form>
+  </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">role=</span><span class="s">"form"</span> <span class="na">class=</span><span class="s">"form"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label"</span> <span class="na">for=</span><span class="s">"style_guideselect1"</span><span class="nt">&gt;</span>Select one<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">"style_guideselect1"</span> <span class="na">id=</span><span class="s">"style_guideselect1"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Select A<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Select B<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Select C<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label"</span> <span class="na">for=</span><span class="s">"style_guideselect2"</span><span class="nt">&gt;</span>List (single selection)<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"style_guideselect2"</span> <span class="na">size=</span><span class="s">"5"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 5<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 6<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 7<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 8<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 9<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 10<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label"</span> <span class="na">for=</span><span class="s">"style_guideselect3"</span><span class="nt">&gt;</span>List (multiple selections)<span class="nt">&lt;/label&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">name=</span><span class="s">""</span> <span class="na">id=</span><span class="s">"style_guideselect3"</span> <span class="na">size=</span><span class="s">"5"</span> <span class="na">multiple</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 5<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 6<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 7<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 8<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 9<span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">""</span><span class="nt">&gt;</span>Item 10<span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="a_d_images" class="styleguide">Images</h1>
+
+<ul class="section-nav">
+  <li><a href="#b_iconography">Iconography</a></li>
+</ul>
+
+<h2 id="b_iconography" class="styleguide">Iconography</h2>
+<p class="styleguide">There are 2 types of icons used in the app: Circle and Flat. If there is no supporting label, icon must use a tooltip and <code class="styleguide">.sr-only</code> descriptive text.</p><p class="styleguide"><strong>Circle icon</strong></p><div class="codeExample">
+  <div class="exampleOutput">
+    <button type="button" role="button" class="no-btn" tooltip="Edit" tooltip-placement="top edit">
+  <span class="icon-holder">
+    <i class="round-icon_edit"></i>
+    <span class="sr-only">Edit Icon Button</span>
+  </span>
+</button>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"no-btn"</span> <span class="na">tooltip=</span><span class="s">"Edit"</span> <span class="na">tooltip-placement=</span><span class="s">"top edit"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-holder"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"round-icon_edit"</span><span class="nt">&gt;&lt;/i&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Edit Icon Button<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/button&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<p class="styleguide"><strong>Flat icon</strong></p><div class="codeExample">
+  <div class="exampleOutput">
+    <a href="" class="icon-with-label">
+    <span class="icon-holder">
+        <span class="sg-quick-links_messages"></span>
+    </span>
+    <span class="icon-label">Messages</span>
+</a>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"icon-with-label"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-holder"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sg-quick-links_messages"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-label"</span><span class="nt">&gt;</span>Messages<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/a&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <!-- MOBILE ONLY SIDENAV -->
+    <aside class="sg-sidebar visible-xs" role="complementary">
+        <nav class="sg-nav-secondary" role="navigation">
+            <ul role="menu">
+                
+                <li role="presentation"><a href="#a_a_basics">Basics</a></li>
+                
+                <li role="presentation"><a href="#a_colors">Colors</a></li>
+                
+                <li role="presentation"><a href="#b_fonts">Fonts</a></li>
+                
+                <li role="presentation"><a href="#c_buttons">Buttons</a></li>
+                
+                <li role="presentation"><a href="#d_links">Links</a></li>
+                
+                <li role="presentation"><a href="#e_hr">Horizontal Rule</a></li>
+                
+                <li role="presentation"><a href="#f_badges">Badges</a></li>
+                
+                <li role="presentation"><a href="#a_b_typography">Typography</a></li>
+                
+                <li role="presentation"><a href="#a_headings">Headings</a></li>
+                
+                <li role="presentation"><a href="#b_paragraphs">Paragraphs</a></li>
+                
+                <li role="presentation"><a href="#c_required_fields">Required Fields</a></li>
+                
+                <li role="presentation"><a href="#d_lists">Lists</a></li>
+                
+                <li role="presentation"><a href="#a_unordered_lists">Unordered Lists</a></li>
+                
+                <li role="presentation"><a href="#b_ordered_lists">Ordered Lists</a></li>
+                
+                <li role="presentation"><a href="#c_definition_lists">Definition Lists</a></li>
+                
+                <li role="presentation"><a href="#a_c_forms">Forms</a></li>
+                
+                <li role="presentation"><a href="#a_general_form_rules">General Form Rules</a></li>
+                
+                <li role="presentation"><a href="#b_input_fields">Text Input Fields</a></li>
+                
+                <li role="presentation"><a href="#b_input_fields_states">Input States</a></li>
+                
+                <li role="presentation"><a href="#c_labels">Labels</a></li>
+                
+                <li role="presentation"><a href="#a_top_aligned_labels">Top Aligned Labels</a></li>
+                
+                <li role="presentation"><a href="#b_right_aligned_labels">Right Aligned Labels</a></li>
+                
+                <li role="presentation"><a href="#r-b_basic_form_block">Right Aligned Labels Form</a></li>
+                
+                <li role="presentation"><a href="#c_radio_buttons">Radio Buttons</a></li>
+                
+                <li role="presentation"><a href="#d_checkboxes">Checkboxes</a></li>
+                
+                <li role="presentation"><a href="#e_select_boxes">Select Boxes</a></li>
+                
+                <li role="presentation"><a href="#a_d_images">Images</a></li>
+                
+                <li role="presentation"><a href="#b_iconography">Iconography</a></li>
+                
+            </ul>
+        </nav>
+    </aside>
+    </main>    
+
+  </body>
+</html>

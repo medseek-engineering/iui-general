@@ -1,7 +1,7 @@
 <!doctype html>
 <html ng-app="styleGuideApp" ng-controller="SGMainCtrl">
   <head>
-    <title>iui-general Style Guide: filters</title>
+    <title>iui-general Style Guide: Filters</title>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
@@ -18,7 +18,7 @@
     <header class="sg-header clearfix" role="banner">
       <h1 class="sg-title">
         <a href="index.html">
-            <img src="images/sg-empower-revised-logo.svg" alt="iui-general Revised Style Guide logo" class="sg-empower-logo">
+            Influence Health UX Style Guide 1.0
         </a>
       </h1>
       <nav class="navbar navbar-default sg-nav-main">
@@ -32,14 +32,26 @@
             </button>
           </div>
           <div class="collapse navbar-collapse" id="sg-navbar-main">
-            <ul class="nav navbar-nav">              
+            <ul class="nav navbar-nav">
               
-              <li class="active" role="presentation">
-                <a role="menuitem" href="filters.html">filters</a>
+              <li role="presentation">
+                <a role="menuitem" href="globals.html">Globals</a>
               </li>
               
               <li role="presentation">
-                <a role="menuitem" href="index.html">directives</a>
+                <a role="menuitem" href="components.html">Components</a>
+              </li>
+              
+              <li class="active" role="presentation">
+                <a role="menuitem" href="filters.html">Filters</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="directives.html">Directives</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="index.html">Overview</a>
               </li>
               
             </ul>
@@ -111,8 +123,8 @@
 
 
 <h1 id="to_trusted" class="styleguide">to_trusted</h1>
-<p class="styleguide">Filter to &quot;trust&quot; the HTML source. This is useful for binding HTML from the API. 
-Please use caution when using this filter. If you find yourself storing bits and 
+<p class="styleguide">Filter to &quot;trust&quot; the HTML source. This is useful for binding HTML from the API.
+Please use caution when using this filter. If you find yourself storing bits and
 pieces of HTML in a service or controller, consider using an <code class="styleguide">ng-include</code> or a <code class="styleguide">directive</code> instead.</p><div class="codeExample">
   <div class="exampleOutput">
     <div ng-controller="ToTrustedController as example">

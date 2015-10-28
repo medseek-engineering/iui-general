@@ -11,3 +11,111 @@
 
 // Directives
 @import "**/*.*";
+
+/*doc
+---
+title : Atomic Style Guide for Empower 6.0
+name : overview
+category : Overview
+---
+<p class="description">Welcome to the official style guide and style documentation for Empower 6.0. Built by the Influence Health UX team in Birmingham, this guide will show you how to properly mark up common elements and components and also provide documentation for use of our directive library. <br><br>If you have any questions or wish to add entries to this style guide, please contact <strong>Martin Castre</strong> at <a href="mailto:martin.castre@influencehealth.com">martin.castre@influencehealth.com.</a></p>
+<p class="description">This style guide is based of the <a href="http://bradfrost.com/blog/post/atomic-web-design/" target="_blank">Atomic Design</a> style. Atomic design describes itself as modularizing every element of an app by breaking them down into its most basic components, then building themselves back up, piece by piece. These elements are broken up into:</p>
+<ul>
+  <li>Atoms</li>
+  <li>Molecules</li>
+  <li>Organisms</li>
+  <li>Templates</li>
+  <li>Pages</li>
+</ul>
+<h2>Atoms</h2>
+<p class="description">The most basic component. Can be elements such as fonts, buttons, colors, links, etc. In this app we will store the app's Atoms in the <a href="/style_guide/globals.html">Globals</a> subpage.</p>
+<h2>Molecules</h2>
+<p class="description">An element that can be comprised of multiple Atoms. These elements should contain the exact same code used for the Atoms. This is the very nature of modular design. Consider this Editable form field:</p>
+```html_example
+<div class="row">
+  <div class="col-md-4">
+    <form>
+      <fieldset>
+        <div class="form-group">
+          <a href="" role="button" class="icon-with-label with-key" ng-click="toggleEditField = true">
+            <span class="icon-holder">
+              <i class="round-icon_edit"></i>
+              <span class="sr-only">Edit</span>
+            </span>
+            <span class="icon-label">
+              <span class="label-key">Phone</span>
+              <span class="link-inside-button" ng-if="toggleEditField !== true">+ Add mobile phone</span>
+              <span class="sg-editable-field" ng-if="toggleEditField === true">
+                <input type="tel" placeholder="Enter Mobile Phone">
+              </span>
+            </span>
+          </a>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div> <!-- /.row -->
+```
+<p class="description">This Editable form field Molecule is comprised of several Atoms:
+  <ol>
+    <li><a href="/style_guide/globals.html##c_buttons">Circle icon button</a></li>
+    <li><a href="/style_guide/globals.html##c_labels">Form label</a></li>
+    <li><a href="/style_guide/globals.html##d_links">A hyperlink</a></li>
+    <li><a href="/style_guide/globals.html##b_input_fields">Text input field</a></li>
+  </ol>
+  Upon clicking the Edit circle icon or the Add mobile phone link, a text input field appears.
+  Each Atom has its own appropriate styling and class names. This eliminates the need to create custom CSS for other parts of the app. You just drop in the group of Atoms and done.
+</p>
+<p class="description sg-callout sg-callout-nota">
+  <span class="sg-nota-bene-title">Nota Bene</span>
+  <span class="sg-nota-bene-body">Please be aware that many of these Components are pre-mixed and packaged Angular directives. This style guide will reference any Components that are directives. Make sure you check whether there are any directives that are already created to avoid duplication of code.</span>
+</p>
+<h2>Organisms</h2>
+<p class="description">Organisms are, you guessed it, comprised of a group of Molecules. There aren't many that we will be referencing here but some examples of Organisms would be: Header, Footer, Login, Wizard. For the sake of simplicity, we will combine the Molecules and Organisms into one category: <a href="/style_guide/components.html">Components</a></p>
+<p class="description">We will not be talking about Templates or Pages, as these elements vary between apps.</p>
+*/
+
+/*doc
+---
+title : Basics
+name : a_a_basics
+category : Globals
+---
+*/
+
+/*doc
+---
+title : Typography
+name : a_b_typography
+category : Globals
+---
+*/
+/*doc
+---
+title : Forms
+name : a_c_forms
+category : Globals
+---
+*/
+/*doc
+---
+title : Images
+name : a_d_images
+category : Globals
+---
+*/
+
+/*doc
+---
+title : Components
+name : b_a_components
+category : Components
+---
+*/
+/*doc
+---
+title : Groups
+name : b_b_groups
+category : Components
+---
+*/
