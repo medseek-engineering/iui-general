@@ -172,7 +172,7 @@ parent : a_a_basics
 category: Globals
 ---
 
-Empower uses 3 types of buttons: primary, default, and icon buttons. Our buttons, excluding icon buttons, follow Bootstrap's default styling and should not be customized outside of primary and default styling. _On mobile, all buttons should be at least 2.5em (44px) wide or tall for a greater hit target._
+We use 3 types of buttons: primary, default, and icon buttons. Our buttons, excluding icon buttons, follow Bootstrap's default styling and should not be customized outside of primary and default styling. _On mobile, all buttons should be at least 2.5em (44px) wide or tall for a greater hit target._
 
 ##### Primary Button
 ```html_example
@@ -233,8 +233,6 @@ name: d_links
 parent : a_a_basics
 category: Globals
 ---
-
-Empower uses 3 types of buttons: primary, default, and icon buttons. Our buttons, excluding icon buttons, follow Bootstrap's default styling and should not be customized outside of primary and default styling.
 
 Links as defined as hyperlinks, and it's function is to take the user a new page. Uses the <code>$sg\_bold\_blue</code> color to define a hyperlink. On hover, a text underline appears so there is more emphasis on state change if users are unable to differentiate the shift from dark blue to light blue.
 
