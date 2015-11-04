@@ -1,0 +1,22 @@
+<ng-form name="stepperForm" class="stepper-button">
+  <label for="stepper_value">
+    <span class="sr-only" ng-if="!stepperLabel">Choose a number</span>
+    {{stepperLabel}}
+  </label>
+  <div class="input-group">
+    <div class="input-group-btn">
+      <span class="sr-only">Decrease number</span>
+      <button type="button" role="button" class="btn btn-default" ng-click="decrement()">-</button>
+    </div>
+    <input type="number" name="stepper_value" id="stepper_value" class="stepper-button-input" ng-model="value" min="{{minValue}}" max="{{maxValue}}" step="{{incrementBy}}" />
+    <div class="input-group-btn">
+      <span class="sr-only">Increase number</span>
+      <button type="button" role="button" class="btn btn-default" ng-click="increment()">+</button>
+    </div>
+  </div>
+  <div class="form-group error-group">
+    <span class="error" ng-show="stepperForm.stepper_value.$error.number">Please enter a valid number.</span>
+    <span class="error" ng-show="stepperForm.stepper_value.$error.min">Sorry! Invalid value. Minimum value is {{minValue}}.</span>
+    <span class="error" ng-show="stepperForm.stepper_value.$error.max">Oops! Max value exceeded. Maximum value is {{maxValue}}.</span>
+  </div>
+</ng-form>

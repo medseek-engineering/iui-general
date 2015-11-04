@@ -88,6 +88,10 @@
                     <a href="" ng-click="scrollTo('iui-profile-image')">iui-profile-image</a>
                   </li>
                   
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('iui-stepper')">iui-stepper</a>
+                  </li>
+                  
                 </ul>
             </nav>
         </aside>
@@ -417,6 +421,99 @@ the use of borders.</p><div class="codeExample">
   </div>
 </div>
 
+<h1 id="iui-stepper" class="styleguide">iui-stepper</h1>
+<p class="styleguide">Standard stepper button to allow incrementing or decrementing a numerical value.</p>
+<table class="table responsive">
+  <caption>Options for iui-stepper</caption>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ng-model</code></td>
+      <td>Variable</td>
+      <td>Must be set</td>
+      <td>ngModel will tie functionality to the value determined in the stepper, therefore, it is required to make it work.</td>
+    </tr>
+    <tr>
+      <td><code>min-value</code></td>
+      <td>Integer</td>
+      <td>0</td>
+      <td>Sets a minimum integer value. If not set, will default to 0.</td>
+    </tr>
+    <tr>
+      <td><code>max-value</code></td>
+      <td>Integer</td>
+      <td>None</td>
+      <td>Sets a ceiling to the value that can be incremented.</td>
+    </tr>
+    <tr>
+      <td><code>increment-by</code></td>
+      <td>Integer</td>
+      <td>1</td>
+      <td>In the case where you need to increment by multiples of an integer. Set to 1 by default.</td>
+    </tr>
+    <tr>
+      <td><code>stepper-label</code></td>
+      <td>String</td>
+      <td>'Choose a number'</td>
+      <td>Enter a string value to set the label of the stepper.</td>
+    </tr>
+  </tbody>
+</table>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div ng-controller="StepperCtrl">
+  <iui-stepper
+    ng-model="newValue"
+    min-value="minValue"
+    max-value="maxValue"
+    increment-by="incrementBy"
+    stepper-label="stepperLabel">
+  </iui-stepper>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"StepperCtrl"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;iui-stepper</span>
+    <span class="na">ng-model=</span><span class="s">"newValue"</span>
+    <span class="na">min-value=</span><span class="s">"minValue"</span>
+    <span class="na">max-value=</span><span class="s">"maxValue"</span>
+    <span class="na">increment-by=</span><span class="s">"incrementBy"</span>
+    <span class="na">stepper-label=</span><span class="s">"stepperLabel"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/iui-stepper&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+<script>app.controller('StepperCtrl', ['$scope', function(scope) {
+  scope.newValue = 5;
+  scope.minValue = 0;
+  scope.maxValue = 50;
+  scope.incrementBy = 3;
+  scope.stepperLabel = 'Choose a number';
+}]);
+</script>
+<div class="codeBlock jsExample">
+  <div class="highlight">
+    <pre><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'StepperCtrl'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$scope'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">scope</span><span class="p">.</span><span class="nx">newValue</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+  <span class="nx">scope</span><span class="p">.</span><span class="nx">minValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="nx">scope</span><span class="p">.</span><span class="nx">maxValue</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+  <span class="nx">scope</span><span class="p">.</span><span class="nx">incrementBy</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="nx">scope</span><span class="p">.</span><span class="nx">stepperLabel</span> <span class="o">=</span> <span class="s1">'Choose a number'</span><span class="p">;</span>
+<span class="p">}]);</span></pre>
+  </div>
+</div>
+
+
     </div>
     <!-- MOBILE ONLY SIDENAV -->
     <aside class="sg-sidebar visible-xs" role="complementary">
@@ -434,6 +531,8 @@ the use of borders.</p><div class="codeExample">
                 <li role="presentation"><a href="#iui-page-header">iui-page-header</a></li>
                 
                 <li role="presentation"><a href="#iui-profile-image">iui-profile-image</a></li>
+                
+                <li role="presentation"><a href="#iui-stepper">iui-stepper</a></li>
                 
             </ul>
         </nav>
