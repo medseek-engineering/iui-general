@@ -6,26 +6,26 @@
       width: $stepper-button-width;
       margin-top: -2px; // Aligns buttons to input
     }
-    &:first-child {
-      > .btn {
-        border-top-left-radius: $base-border-radius;
-        border-bottom-left-radius: $base-border-radius;
-      }
+    &:first-child > .btn {
+      border-top-left-radius: $base-border-radius;
+      border-bottom-left-radius: $base-border-radius;
     }
   }
-  .stepper-button-input {
-    width: $stepper-input-width;
-    height: $stepper-height;
-    text-align: center;
-    padding-left: 10px; // Centers number with browser default spinner
-    &.ng-invalid {
-      color: $sg_alert_danger;
-    }
+}
+.stepper-button .input-group input[type=number].stepper-button-input {
+  display: inline;
+  float: none;
+  width: $stepper-input-width;
+  height: $stepper-height;
+  text-align: center;
+  padding-left: 20px; // Centers number with browser default spinner
+  &.ng-invalid {
+    color: $sg_alert_danger;
   }
-  .error-group {
-    margin-top: 0.5em;
-    .error {
-      color: $sg_alert_danger;
-    }
+}
+.stepper-button .error-group {
+  margin-top: 0.5em;
+  .error {
+    color: $sg_alert_danger;
   }
 }
