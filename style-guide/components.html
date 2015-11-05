@@ -108,8 +108,12 @@
   </accordion-group>
 </accordion>
 
+    <button type="button" role="button" class="btn btn-default show-code-snippet" ng-click="snippetExpanded = !snippetExpanded">
+      <span ng-if="!snippetExpanded"><span class="glyphicon glyphicon-resize-full"></span> Expand Code Snippet</span>
+      <span ng-if="snippetExpanded"><span class="glyphicon glyphicon-resize-small"></span> Hide Code Snippet</span>
+    </button>
   </div>
-  <div class="codeBlock">
+  <div class="codeBlock" collapse="!snippetExpanded">
     <div class="highlight" ng-non-bindable>
       <pre><span class="nt">&lt;accordion</span> <span class="na">close-others=</span><span class="s">"true"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;accordion-group</span> <span class="na">heading=</span><span class="s">"Accordion Header"</span> <span class="na">ng-class=</span><span class="s">"{'expanded':isOpen}"</span> <span class="na">is-open=</span><span class="s">"isOpen"</span><span class="nt">&gt;</span>
@@ -117,107 +121,6 @@
   <span class="nt">&lt;/accordion-group&gt;</span>
   <span class="nt">&lt;accordion-group</span> <span class="na">heading=</span><span class="s">"Accordion Header"</span> <span class="na">ng-class=</span><span class="s">"{'expanded':isOpenB}"</span> <span class="na">is-open=</span><span class="s">"isOpenB"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Content.<span class="nt">&lt;/p&gt;</span>
-  <span class="nt">&lt;/accordion-group&gt;</span>
-<span class="nt">&lt;/accordion&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2>Accordions with Tabular Data</h2>
-<p class="styleguide">In this case, we use the Upcoming Appointments accordion. This does not use a <code class="styleguide">table</code>, but rather definition lists separated by Bootstrap columns. Because each appointment is clickable, each appointment row must be wrapped in an <code class="styleguide">a</code> tag, which gives it the hover highlight background color. The class <code class="styleguide">appointment-year-header</code> gives the heading element a 2px blue box-shadow as the border.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <accordion close-others="true">
-  <accordion-group heading="Upcoming Appointments" ng-class="{'expanded':isOpen}" is-open="isOpen">
-  <div class="appointments-table">
-  <div class="appointment-year-header">2015</div>
-    <a href="" class="appointment-data future-target my-appointments__appointment">
-      <div class="my-appointments__wrapper">
-        <p class="my-appointments__date">
-          <span class="my-appointments__month">Sep</span>
-          <span class="my-appointments__day">17</span>
-        </p>
-        <div class="row">
-          <div class="col-md-4">
-            <dl class="dl-horizontal dt-as-left-aligned">
-              <dt>Patient</dt>
-              <dd>You</dd>
-              <dt>Date</dt>
-              <dd>09/17/2015</dd>
-              <dt>Time</dt>
-              <dd>07:00 AM Central Time</dd>
-            </dl>
-          </div>
-          <div class="col-md-4">
-            <dl class="dl-horizontal dt-as-left-aligned">
-              <dt>Physician</dt>
-              <dd>Dr. Abadir, Brian</dd>
-              <dt>Location</dt>
-              <dd>Byrd Clinical Center (304-691-1000)</dd>
-              <dt>Visit Type</dt>
-              <dd>Check Up</dd>
-            </dl>
-          </div>
-          <div class="col-md-4">
-            <dl class="dl-horizontal dt-as-left-aligned">
-              <dt>Status</dt>
-              <dd class="pending-field">
-                Pending Approval
-              </dd>
-            </dl>
-          </div>
-        </div>
-      </div>
-      </a>
-    </div>
-  </accordion-group>
-</accordion>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight" ng-non-bindable>
-      <pre><span class="nt">&lt;accordion</span> <span class="na">close-others=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;accordion-group</span> <span class="na">heading=</span><span class="s">"Upcoming Appointments"</span> <span class="na">ng-class=</span><span class="s">"{'expanded':isOpen}"</span> <span class="na">is-open=</span><span class="s">"isOpen"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"appointments-table"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"appointment-year-header"</span><span class="nt">&gt;</span>2015<span class="nt">&lt;/div&gt;</span>
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">class=</span><span class="s">"appointment-data future-target my-appointments__appointment"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"my-appointments__wrapper"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"my-appointments__date"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"my-appointments__month"</span><span class="nt">&gt;</span>Sep<span class="nt">&lt;/span&gt;</span>
-          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"my-appointments__day"</span><span class="nt">&gt;</span>17<span class="nt">&lt;/span&gt;</span>
-        <span class="nt">&lt;/p&gt;</span>
-        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal dt-as-left-aligned"</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;dt&gt;</span>Patient<span class="nt">&lt;/dt&gt;</span>
-              <span class="nt">&lt;dd&gt;</span>You<span class="nt">&lt;/dd&gt;</span>
-              <span class="nt">&lt;dt&gt;</span>Date<span class="nt">&lt;/dt&gt;</span>
-              <span class="nt">&lt;dd&gt;</span>09/17/2015<span class="nt">&lt;/dd&gt;</span>
-              <span class="nt">&lt;dt&gt;</span>Time<span class="nt">&lt;/dt&gt;</span>
-              <span class="nt">&lt;dd&gt;</span>07:00 AM Central Time<span class="nt">&lt;/dd&gt;</span>
-            <span class="nt">&lt;/dl&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal dt-as-left-aligned"</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;dt&gt;</span>Physician<span class="nt">&lt;/dt&gt;</span>
-              <span class="nt">&lt;dd&gt;</span>Dr. Abadir, Brian<span class="nt">&lt;/dd&gt;</span>
-              <span class="nt">&lt;dt&gt;</span>Location<span class="nt">&lt;/dt&gt;</span>
-              <span class="nt">&lt;dd&gt;</span>Byrd Clinical Center (304-691-1000)<span class="nt">&lt;/dd&gt;</span>
-              <span class="nt">&lt;dt&gt;</span>Visit Type<span class="nt">&lt;/dt&gt;</span>
-              <span class="nt">&lt;dd&gt;</span>Check Up<span class="nt">&lt;/dd&gt;</span>
-            <span class="nt">&lt;/dl&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-4"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal dt-as-left-aligned"</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;dt&gt;</span>Status<span class="nt">&lt;/dt&gt;</span>
-              <span class="nt">&lt;dd</span> <span class="na">class=</span><span class="s">"pending-field"</span><span class="nt">&gt;</span>
-                Pending Approval
-              <span class="nt">&lt;/dd&gt;</span>
-            <span class="nt">&lt;/dl&gt;</span>
-          <span class="nt">&lt;/div&gt;</span>
-        <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;/div&gt;</span>
-      <span class="nt">&lt;/a&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
   <span class="nt">&lt;/accordion-group&gt;</span>
 <span class="nt">&lt;/accordion&gt;</span></pre>
     </div>
@@ -238,15 +141,17 @@
     </button>
     <ul class="dropdown-menu" id="dropdown-menu-id" role="menu">
         <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-        <li role="separator" class="divider"></li>
         <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-        <li role="separator" class="divider"></li>
         <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
     </ul>
 </div>
 
+    <button type="button" role="button" class="btn btn-default show-code-snippet" ng-click="snippetExpanded = !snippetExpanded">
+      <span ng-if="!snippetExpanded"><span class="glyphicon glyphicon-resize-full"></span> Expand Code Snippet</span>
+      <span ng-if="snippetExpanded"><span class="glyphicon glyphicon-resize-small"></span> Hide Code Snippet</span>
+    </button>
   </div>
-  <div class="codeBlock">
+  <div class="codeBlock" collapse="!snippetExpanded">
     <div class="highlight" ng-non-bindable>
       <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown"</span> <span class="na">dropdown</span> <span class="na">is-open=</span><span class="s">"isOpen"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">dropdown-toggle</span><span class="nt">&gt;</span>Actions
@@ -254,9 +159,7 @@
     <span class="nt">&lt;/button&gt;</span>
     <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">id=</span><span class="s">"dropdown-menu-id"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"separator"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"separator"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
     <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span></pre>
@@ -280,19 +183,20 @@
             </button>
             <ul class="dropdown-menu" id="userMenu">
                 <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-                <li role="separator" class="divider"></li>
                 <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-                <li role="separator" class="divider"></li>
                 <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-                <li role="separator" class="divider"></li>
                 <li role="presentation"><a href="" role="menuitem">Cancel</a></li>
             </ul>
         </div>
     </div>
 </div>
 
+    <button type="button" role="button" class="btn btn-default show-code-snippet" ng-click="snippetExpanded = !snippetExpanded">
+      <span ng-if="!snippetExpanded"><span class="glyphicon glyphicon-resize-full"></span> Expand Code Snippet</span>
+      <span ng-if="snippetExpanded"><span class="glyphicon glyphicon-resize-small"></span> Hide Code Snippet</span>
+    </button>
   </div>
-  <div class="codeBlock">
+  <div class="codeBlock" collapse="!snippetExpanded">
     <div class="highlight" ng-non-bindable>
       <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-2"</span><span class="nt">&gt;</span>
@@ -307,66 +211,12 @@
             <span class="nt">&lt;/button&gt;</span>
             <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">id=</span><span class="s">"userMenu"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-                <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"separator"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
                 <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-                <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"separator"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
                 <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
-                <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"separator"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
                 <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
             <span class="nt">&lt;/ul&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></pre>
-    </div>
-  </div>
-</div>
-
-<h2>Dropdown Menu with Icons</h2>
-<p class="styleguide"><code class="styleguide">.svg-inline</code> &amp; <code class="styleguide">.is-custom-svg</code> allows the ability to control SVG styling in CSS. This uses the @mixin <code class="styleguide">svg-custom</code>, which takes in a size value and a color value params. Note that the background color changes to <code class="styleguide">$sg_light_grey_background</code> on hover. This is to prevent color clashing of the svg and the primary color.</p><div class="codeExample">
-  <div class="exampleOutput">
-    <div class="dropdown" dropdown is-open="isOpen">
-    <button type="button" role="button" class="btn btn-default" dropdown-toggle>Actions
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu has-svg-inline-item" id="dropdown-menu-id" role="menu">
-        <li role="presentation">
-            <a href="" role="menuitem">
-                <span class="svg-inline is-custom-svg" ng-include="'images/icon-blue_rebook.svg'"></span>
-                <span class="svg-inline svg-label"> Add a Search</span>
-            </a>
-        </li>
-        <li role="separator" class="divider"></li>
-        <li role="presentation">
-            <a href="" role="menuitem">
-                <span class="svg-inline is-custom-svg" ng-include="'images/settings.svg'"></span>
-                <span class="svg-inline svg-label"> Manage Searches</span>
-            </a>
-        </li>
-    </ul>
-</div>
-
-  </div>
-  <div class="codeBlock">
-    <div class="highlight" ng-non-bindable>
-      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown"</span> <span class="na">dropdown</span> <span class="na">is-open=</span><span class="s">"isOpen"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">dropdown-toggle</span><span class="nt">&gt;</span>Actions
-        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
-    <span class="nt">&lt;/button&gt;</span>
-    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu has-svg-inline-item"</span> <span class="na">id=</span><span class="s">"dropdown-menu-id"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"svg-inline is-custom-svg"</span> <span class="na">ng-include=</span><span class="s">"'images/icon-blue_rebook.svg'"</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"svg-inline svg-label"</span><span class="nt">&gt;</span> Add a Search<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"separator"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
-        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"svg-inline is-custom-svg"</span> <span class="na">ng-include=</span><span class="s">"'images/settings.svg'"</span><span class="nt">&gt;&lt;/span&gt;</span>
-                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"svg-inline svg-label"</span><span class="nt">&gt;</span> Manage Searches<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;/a&gt;</span>
-        <span class="nt">&lt;/li&gt;</span>
-    <span class="nt">&lt;/ul&gt;</span>
 <span class="nt">&lt;/div&gt;</span></pre>
     </div>
   </div>
@@ -397,8 +247,12 @@
     </div>
   </div>
 
+    <button type="button" role="button" class="btn btn-default show-code-snippet" ng-click="snippetExpanded = !snippetExpanded">
+      <span ng-if="!snippetExpanded"><span class="glyphicon glyphicon-resize-full"></span> Expand Code Snippet</span>
+      <span ng-if="snippetExpanded"><span class="glyphicon glyphicon-resize-small"></span> Hide Code Snippet</span>
+    </button>
   </div>
-  <div class="codeBlock">
+  <div class="codeBlock" collapse="!snippetExpanded">
     <div class="highlight" ng-non-bindable>
       <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-3"</span><span class="nt">&gt;</span>

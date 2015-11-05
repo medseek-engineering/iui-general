@@ -139,6 +139,126 @@ a.disabled-link {
   opacity: 0.5;
   cursor: not-allowed;
 }
+.dropdown-toggle-circle {
+  position: relative;
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+  background: none;
+  border: 1px solid $sg_teal_primary;
+  -webkit-border-radius: 100em;
+  border-radius: 100em;
+  vertical-align: bottom;
+  .caret {
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    border-top: 4px solid $sg_teal_primary;
+  }
+}
+.with-circle-toggle {
+	@extend %clearfix;
+	padding: 5px 0;
+	display: block;
+	position: relative;
+	.circle-dropdown-label-wrapper {
+		display: block;
+    position: relative;
+    padding-right: 22px;
+	}
+	.circle-dropdown-label {
+		padding-left: 10px;
+    @media #{$mq-xs-screen-only} {
+			padding-left: 20px;
+		}
+    padding-right: 10px;
+    display: block;
+    text-align: left;
+    @media #{$mq-xs-screen-only} {
+      font-size: $base-mobile-font-size;
+    }
+		@media #{$mq-sm-screen-only} {
+			text-overflow: ellipsis;
+	    white-space: nowrap;
+	    overflow: hidden;
+      max-width: 120px;
+    }
+	}
+	.dropdown-toggle-circle {
+		position: absolute;
+    right: 0;
+    top: -1px;
+		border: 1px solid $sg_medium_grey;
+		margin-bottom: 0;
+		.caret {
+			border-top: 4px solid $sg_medium_grey;
+		}
+	}
+}
+.circle-button-dropdown-wrapper .dropdown-menu {
+	left: auto;
+	right: 0;
+}
+@mixin action-sheet-dropdown {
+  @include transition (opacity 100ms linear, bottom 200ms ease-in-out);
+  float: none;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0;
+  opacity: 1;
+  z-index: 99999;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.25);
+}
+@media #{$mq-xs-screen-only} {
+  .as-action-sheet.open {
+    &:before {
+      content: "";
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 5;
+    }
+    > .dropdown-menu {
+      @include action-sheet-dropdown;
+    }
+  }
+  .as-action-sheet > .dropdown-menu {
+    position: fixed;
+    top: auto;
+    float: none;
+    display: block;
+    bottom: -10%;
+    opacity: 0;
+    @include transition (opacity 100ms linear, bottom 200ms ease-in-out);
+  }
+	.as-action-sheet .with-circle-toggle {
+    width: 100%;
+    min-height: $base-mobile-icon-size;
+  }
+	.as-action-sheet .dropdown-toggle-circle {
+		width: $base-mobile-icon-size;
+  	height: $base-mobile-icon-size;
+		top: -11px;
+		.caret {
+			top: 20px;
+	    left: 16px;
+	    border-top: 5px solid $sg_medium_grey;
+	    border-right: 5px solid transparent;
+	    border-left: 5px solid transparent;
+		}
+	}
+	.dropdown-menu > li > a {
+		font-size: $base-mobile-font-size;
+		padding: 10px 20px;
+	}
+}
+
 /*doc
 ---
 title: Buttons
@@ -249,9 +369,7 @@ On mobile, the circle button dropdown changes to an action sheet style. Add the 
 	</button>
 	<ul class="dropdown-menu" id="dropdown-menu-id" role="menu">
 		<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-		<li role="separator" class="divider"></li>
 		<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-		<li role="separator" class="divider"></li>
 		<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
 	</ul>
 </div>
@@ -275,42 +393,12 @@ _View this on mobile to see the `.as-action-sheet` modifier in action._
 			</button>
 			<ul class="dropdown-menu" id="userMenu">
 				<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-				<li role="separator" class="divider"></li>
 				<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-				<li role="separator" class="divider"></li>
 				<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
-				<li role="separator" class="divider"></li>
 				<li role="presentation"><a href="" role="menuitem">Cancel</a></li>
 			</ul>
 		</div>
 	</div>
-</div>
-```
-
-## Dropdown Menu with Icons
-
-`.svg-inline` &amp; `.is-custom-svg` allows the ability to control SVG styling in CSS. This uses the @mixin `svg-custom`, which takes in a size value and a color value params. Note that the background color changes to `$sg_light_grey_background` on hover. This is to prevent color clashing of the svg and the primary color.
-
-```html_example
-<div class="dropdown" dropdown is-open="isOpen">
-	<button type="button" role="button" class="btn btn-default" dropdown-toggle>Actions
-		<span class="caret"></span>
-	</button>
-	<ul class="dropdown-menu has-svg-inline-item" id="dropdown-menu-id" role="menu">
-		<li role="presentation">
-			<a href="" role="menuitem">
-				<span class="svg-inline is-custom-svg" ng-include="'images/icon-blue_rebook.svg'"></span>
-				<span class="svg-inline svg-label"> Add a Search</span>
-			</a>
-		</li>
-		<li role="separator" class="divider"></li>
-		<li role="presentation">
-			<a href="" role="menuitem">
-				<span class="svg-inline is-custom-svg" ng-include="'images/settings.svg'"></span>
-				<span class="svg-inline svg-label"> Manage Searches</span>
-			</a>
-		</li>
-	</ul>
 </div>
 ```
 

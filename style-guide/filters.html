@@ -89,8 +89,12 @@
   </dl>
 </div>
 
+    <button type="button" role="button" class="btn btn-default show-code-snippet" ng-click="snippetExpanded = !snippetExpanded">
+      <span ng-if="!snippetExpanded"><span class="glyphicon glyphicon-resize-full"></span> Expand Code Snippet</span>
+      <span ng-if="snippetExpanded"><span class="glyphicon glyphicon-resize-small"></span> Hide Code Snippet</span>
+    </button>
   </div>
-  <div class="codeBlock">
+  <div class="codeBlock" collapse="!snippetExpanded">
     <div class="highlight" ng-non-bindable>
       <pre><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"GenderFilterExampleController as example"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">"dl-horizontal dt-as-left-aligned short-list"</span><span class="nt">&gt;</span>
@@ -131,8 +135,12 @@ pieces of HTML in a service or controller, consider using an <code class="styleg
   <span ng-bind-html="example.quote | to_trusted"></span>
 </div>
 
+    <button type="button" role="button" class="btn btn-default show-code-snippet" ng-click="snippetExpanded = !snippetExpanded">
+      <span ng-if="!snippetExpanded"><span class="glyphicon glyphicon-resize-full"></span> Expand Code Snippet</span>
+      <span ng-if="snippetExpanded"><span class="glyphicon glyphicon-resize-small"></span> Hide Code Snippet</span>
+    </button>
   </div>
-  <div class="codeBlock">
+  <div class="codeBlock" collapse="!snippetExpanded">
     <div class="highlight" ng-non-bindable>
       <pre><span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"ToTrustedController as example"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;span</span> <span class="na">ng-bind-html=</span><span class="s">"example.quote | to_trusted"</span><span class="nt">&gt;&lt;/span&gt;</span>

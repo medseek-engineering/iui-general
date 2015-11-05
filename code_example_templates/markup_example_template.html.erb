@@ -1,8 +1,12 @@
 <div class="codeExample">
   <div class="exampleOutput">
     <%= rendered_example %>
+    <button type="button" role="button" class="btn btn-default show-code-snippet" ng-click="snippetExpanded = !snippetExpanded">
+      <span ng-if="!snippetExpanded"><span class="glyphicon glyphicon-resize-full"></span> Expand Code Snippet</span>
+      <span ng-if="snippetExpanded"><span class="glyphicon glyphicon-resize-small"></span> Hide Code Snippet</span>
+    </button>
   </div>
-  <div class="codeBlock">
+  <div class="codeBlock" collapse="!snippetExpanded">
     <div class="highlight" ng-non-bindable>
       <pre><%= code_example %></pre>
     </div>
