@@ -6,13 +6,6 @@
     display: inline;
   }
 }
-.subheader-wrapper.with-button {
-  @extend .clearfix;
-  width: 100%;
-  a {
-    float: right;
-  }
-}
 
 .popover-header {
   @extend .page-subheader;

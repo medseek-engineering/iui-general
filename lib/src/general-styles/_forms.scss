@@ -1,57 +1,3 @@
-$inputs-list: 'input[type="email"]',
-              'input[type="number"]',
-              'input[type="password"]',
-              'input[type="search"]',
-              'input[type="tel"]',
-              'input[type="text"]',
-              'input[type="url"]',
-
-              // Webkit & Gecko may change the display of these in the future
-              'input[type="color"]',
-              'input[type="date"]',
-              'input[type="datetime"]',
-              'input[type="datetime-local"]',
-              'input[type="month"]',
-              'input[type="time"]',
-              'input[type="week"]';
-
-$inputs-button-list: 'input[type="button"]',
-                     'input[type="reset"]',
-                     'input[type="submit"]';
-
-@function assign-inputs($inputs, $pseudo: null) {
-  $list : ();
-
-  @each $input in $inputs {
-    $input: unquote($input);
-    $input: if($pseudo, $input + ":" + $pseudo, $input);
-    $list: append($list, $input, comma);
-  }
-
-  @return $list;
-}
-
-// Bare inputs
-//************************************************************************//
-$all-text-inputs : assign-inputs($inputs-list);
-
-// Hover Pseudo-class
-//************************************************************************//
-$all-text-inputs-hover : assign-inputs($inputs-list, hover);
-
-// Focus Pseudo-class
-//************************************************************************//
-$all-text-inputs-focus : assign-inputs($inputs-list, focus);
-
-// Disabled Pseudo-class
-//************************************************************************//
-$all-text-inputs-disabled: assign-inputs($inputs-list, disabled);
-
-
-#{$all-text-inputs}, textarea, select{
-  @extend .form-control;
-}
-
 %valid-and-invalid-dirty-states {
   @include transition(border-color 100ms linear);
   &:focus{
@@ -71,15 +17,22 @@ $all-text-inputs-disabled: assign-inputs($inputs-list, disabled);
     }
   }
 }
-
-textarea.form-control, textarea, select.form-control, select {
-  @extend %valid-and-invalid-dirty-states;
+.form-group.has-success .control-label,
+.form-group.has-warning .control-label,
+.form-group.has-error .control-label {
+  color: $sg_medium_grey;
 }
-
-#{$all-text-inputs}{
-  height: 34px;
+.form-group.has-success .form-control {
+  border-color: $sg_gamma_green;
+}
+.form-group.has-warning .form-control {
+  border-color: $sg_organic_orange;
+}
+.form-group.has-error .form-control {
+  border-color: $sg_alert_danger;
+}
+.form-control {
   border: 1px $sg_light_highlight solid;
-
   @extend %valid-and-invalid-dirty-states;
   // Disable default box-shadow for iOS devices
   -webkit-appearance: none;
@@ -95,15 +48,7 @@ textarea.form-control, textarea, select.form-control, select {
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width:1024px) {
   %webkit-non-zoom-font-size {
-    font-size: 16px;
-  }
-  .page {
-    select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
-      @extend %webkit-non-zoom-font-size;
-    }
-    select.form-control, textarea.form-control {
-      @extend %webkit-non-zoom-font-size;
-    }
+    font-size: $base-mobile-font-size;
   }
   .form-control {
     @extend %webkit-non-zoom-font-size;
@@ -112,20 +57,12 @@ textarea.form-control, textarea, select.form-control, select {
 
 
 .label-soft {
-  font-weight: normal;
+  font-weight: $base-font-weight;
 }
 
-.form-horizontal {
-    legend.control-label:not(.col-sm-6):not(.col-sm-5):not(.col-sm-4):not(.col-sm-3):not(.col-sm-2):not(.col-sm-1) {
-      padding: 0 15px;
-    }
-}
 
 legend.control-label {
   display: inline-block;
-  &:not(.col-sm-6):not(.col-sm-5):not(.col-sm-4):not(.col-sm-3):not(.col-sm-2):not(.col-sm-1) {
-    width: 100%;
-  }
   margin-bottom: 0;
   font-size: inherit;
   line-height: inherit;
@@ -144,12 +81,10 @@ fieldset{
   &.radios, &.checks{
     legend {
         border: none;
-        font-size: 1em;
+        font-size: $base-font-size;
         font-weight: bold;
       }
-
       label {
-        height: 1em;
         width: auto;
       }
       input {
@@ -158,7 +93,7 @@ fieldset{
       }
   }
 }
-label, .label-text{
+.control-label {
   font-weight: $heading-font-weight;
   @media #{$mq-xs-screen-only} {
     font-size: $base-mobile-font-size;
@@ -453,7 +388,7 @@ category: Globals
       </div>
       <div class="form-group">
         <label for="CHANGE-ME2" class="control-label">Email</label>
-        <input type="email" placeholder="Enter email" id="CHANGE-ME2">
+        <input type="email" placeholder="Enter email" id="CHANGE-ME2" class="form-control">
       </div>
       <div class="form-group">
        <label for="CHANGE-ME3" class="control-label">Phone</label>

@@ -135,31 +135,6 @@ $button-bar-margin: 1em;
 .multi-button-bar {
   @extend %multi-button-bar;
 }
-// STYLE GUIDE ONLY BUTTON STATES SHOWCASE
-.sg-btn-active {
-  @extend .btn;
-  color: white;
-  background-color: $sg_bashful_blue;
-  border-color: $sg_bashful_blue;
-	&:hover {
-		color: white;
-	}
-}
-.sg-btn-disabled {
-  @extend .btn;
-	@extend %iui-button-skin-default__disabled;
-	&:hover {
-		color: #ccc;
-	}
-}
-.sg-btn-mobile {
-	@media #{$mq-xs-screen-only} {
-		padding-top: 1em;
-		padding-bottom: 1em;
-		min-width: 100%;
-		margin-top: 10px;
-	}
-}
 a.disabled-link {
   opacity: 0.5;
   cursor: not-allowed;
@@ -208,10 +183,10 @@ Note that the <code>.no-btn</code> class is used for the circle icon. Because th
 ### Button States
 
 ##### Hover, Active, & Focus States
-<button type="button" role="button" class="sg-btn-active">Active State</button>
+<button type="button" role="button" class="btn sg-btn-active">Active State</button>
 
 ##### Disabled State
-<button type="button" role="button" class="sg-btn-disabled">Disabled</button>
+<button type="button" role="button" class="btn sg-btn-disabled">Disabled</button>
 
 Use angular's built in directive <code>ng-disabled</code> as an attribute for all buttons that need to be disabled. Do not apply disabled classes.
 
