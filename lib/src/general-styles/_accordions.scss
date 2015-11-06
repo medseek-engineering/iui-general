@@ -84,3 +84,25 @@ accordion > .panel-group > .panel-default, accordion > .panel-group > ul > li > 
     }
   }
 }
+/*doc
+---
+title : Accordions
+name : a_accordions
+parent : b_a_components
+category : Components
+---
+
+Accordions use the UI Bootstrap <a href="https://angular-ui.github.io/bootstrap/#/accordion" target="_blank">accordion directive</a>.
+
+```html_example
+<accordion close-others="true">
+  <accordion-group heading="Accordion Header" ng-class="{'expanded':isOpen}" is-open="isOpen">
+    This content is straight in the template.
+  </accordion-group>
+  <accordion-group heading="Accordion Header" ng-class="{'expanded':isOpenB}" is-open="isOpenB">
+    <p>Content.</p>
+  </accordion-group>
+</accordion>
+```
+
+*/

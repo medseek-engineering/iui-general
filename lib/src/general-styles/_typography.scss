@@ -1,0 +1,125 @@
+.page-subheader {
+  color: $sg_primary;
+  font-size: 16px;
+  font-weight: $heading-font-weight;
+  .subheader-wrapper.with-button & {
+    display: inline;
+  }
+}
+
+.popover-header {
+  @extend .page-subheader;
+  font-weight: 400;
+}
+
+.paragraph-header {
+  font-weight: $heading-font-weight;
+  font-size: $base-font-weight;
+}
+/*doc
+---
+title : Fonts
+name : b_fonts
+parent : a_a_basics
+category : Globals
+---
+Font-Family : Roboto, Helvetica, Arial, sans-serif
+
+<a href="https://www.google.com/fonts/specimen/Roboto" target="_blank">Roboto</a> is a sans-serif typeface developed by Google released in January of 2012 and is the main typeface used in the app. This font was chosen for it's approachable, modern, and professional characteristics. Use 700 font weight for headings and labels and 400 font weight for non-heading text.
+
+All non-heading text is 14px font size by default. On mobile, font size is increased to 16px for cleaner reading and legibility.
+<dl>
+  <dt>Roboto Bold</dt>
+  <dd class="sg-font-showcase label-text">Grumpy wizards make toxic brew for the evil Queen and Jack. 0123456789</dd>
+  <dt>Roboto Regular</dt>
+  <dd class="sg-font-showcase">Grumpy wizards make toxic brew for the evil Queen and Jack. 0123456789</dd>
+  <dt>Roboto Italic</dt>
+  <dd class="sg-font-showcase italic-text">Grumpy wizards make toxic brew for the evil Queen and Jack. 0123456789</dd>
+</dl>
+
+Use these variables for each of the font weights:
+
+ - `$base-font-weight` for 400 weight
+
+ - `$large-font-weight` for 700 weight
+
+
+*/
+
+/*doc
+---
+title: Headings
+name: a_headings
+parent : a_b_typography
+category: Globals
+---
+
+Use the appropriate header **h1** through **h6** based on HTML hirearchy. NOT based on the default size it outputs.
+Use the classes defined below to change the size and styling.
+
+```html_example
+<h1 class="page-header">Page Header</h1>
+<h2 class="page-subheader">Page Subheader</h2>
+<p class="paragraph-header">paragraph header</p>
+```
+
+<p class="sg-callout sg-callout-info">
+  <span class="sg-info-title">iui-page-header directive</span>
+  <span class="sg-info-body">Use the directive <code>iui-page-header</code> for page headings. This will also include the <code>iui-breadcrumb</code> directive. <br>
+  You can find the directive documentation <a href="">here</a>.
+  </span>
+</p>
+
+*/
+
+/*doc
+---
+title: Required Fields
+name: c_required_fields
+parent : a_b_typography
+category: Globals
+---
+
+All forms that have required fields should use this text. The class of `.required-field` is appended to the `<label>` to add the * to the right of the label.
+
+Use this ng-include for the "Indicates required field" text.
+
+```html_example
+<div ng-include="'/templates/required-text.html'"></div>
+```
+
+*/
+
+/*doc
+---
+title: Paragraphs
+name: b_paragraphs
+parent : a_b_typography
+category: Globals
+---
+
+```html_example
+<p>A standard paragraph.</p>
+```
+
+*/
+/*doc
+---
+title : Horizontal Rule
+name : e_hr
+parent : a_a_basics
+category : Globals
+---
+Horizontal rules, or hr, is a thematic break between paragraph elements or sections. While the \<hr\> element is not defined frequently in the app, we use the same CSS properties to define list item separators. If you need to use a border or divider line, always use the color <code>$sg\_light\_grey\_border</code>. And border-width should not exceed 1px.
+
+```html_example
+<section class="row">
+ <div class="col-md-6">
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores hic provident, ipsum dicta perferendis possimus labore illum quidem enim quibusdam harum perspiciatis, tenetur et, aliquam.</p>
+   <hr>
+   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores hic provident, ipsum dicta perferendis possimus labore illum quidem enim quibusdam harum perspiciatis, tenetur et, aliquam.</p>
+ </div>
+</section>
+
+```
+*/
