@@ -29,3 +29,7 @@
     color: $sg_alert_danger;
   }
 }
+// Removes the label if label is already present in view.
+.with-no-label .stepper-button label {
+  display: none;
+}
