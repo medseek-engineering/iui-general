@@ -5,6 +5,10 @@
 
 ## Changelog
 
+### 1.0.3
+
+Moved alerts to [iui-alerts](https://github.com/medseek-engineering/iui-alerts)
+
 ### 1.0.2
 
 Add iui-stepper as a new directive.
