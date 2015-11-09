@@ -404,10 +404,10 @@ the use of borders.</p><div class="codeExample">
       <td>In the case where you need to increment by multiples of an integer. Set to 1 by default.</td>
     </tr>
     <tr>
-      <td><code>stepper-label</code></td>
+      <td><code>stepper-id</code></td>
       <td>String</td>
-      <td>'Choose a number'</td>
-      <td>Enter a string value to set the label of the stepper.</td>
+      <td>None</td>
+      <td>Pass in a unique identifier for linking form input to label.</td>
     </tr>
   </tbody>
 </table>
@@ -419,7 +419,7 @@ the use of borders.</p><div class="codeExample">
     min-value="minValue"
     max-value="maxValue"
     increment-by="incrementBy"
-    stepper-label="stepperLabel">
+    stepper-id="stepper_value">
   </iui-stepper>
 </div>
 
@@ -436,7 +436,7 @@ the use of borders.</p><div class="codeExample">
     <span class="na">min-value=</span><span class="s">"minValue"</span>
     <span class="na">max-value=</span><span class="s">"maxValue"</span>
     <span class="na">increment-by=</span><span class="s">"incrementBy"</span>
-    <span class="na">stepper-label=</span><span class="s">"stepperLabel"</span><span class="nt">&gt;</span>
+    <span class="na">stepper-id=</span><span class="s">"stepper_value"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/iui-stepper&gt;</span>
 <span class="nt">&lt;/div&gt;</span></pre>
     </div>
@@ -447,7 +447,6 @@ the use of borders.</p><div class="codeExample">
   scope.minValue = 0;
   scope.maxValue = 50;
   scope.incrementBy = 3;
-  scope.stepperLabel = 'Choose a number';
 }]);
 </script>
 <div class="codeBlock jsExample">
@@ -457,7 +456,6 @@ the use of borders.</p><div class="codeExample">
   <span class="nx">scope</span><span class="p">.</span><span class="nx">minValue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="nx">scope</span><span class="p">.</span><span class="nx">maxValue</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
   <span class="nx">scope</span><span class="p">.</span><span class="nx">incrementBy</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-  <span class="nx">scope</span><span class="p">.</span><span class="nx">stepperLabel</span> <span class="o">=</span> <span class="s1">'Choose a number'</span><span class="p">;</span>
 <span class="p">}]);</span></pre>
   </div>
 </div>
