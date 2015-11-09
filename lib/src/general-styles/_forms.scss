@@ -34,10 +34,6 @@
 .form-control {
   border: 1px $sg_light_highlight solid;
   @extend %valid-and-invalid-dirty-states;
-  // Disable default box-shadow for iOS devices
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   &:disabled{
     border-color: $sg_light_highlight;
     color: $sg_light_highlight;
