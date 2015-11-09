@@ -150,3 +150,94 @@ $xlarge-list: 270px;
     @include dl-type($xlarge-list);
   }
 }
+
+/*doc
+---
+title: Lists
+name: d_lists
+parent : a_b_typography
+category: Globals
+---
+
+*/
+
+/*doc
+---
+title: Unordered Lists
+name: a_unordered_lists
+parent : d_lists
+category: Globals
+---
+
+Unordered lists, `ul`, are a collection of items that are not numbered and order is not important. By default, `ul`, are bulleted. For an un-bulleted list, use the Bootstrap class `.list-unstyled` on the parent `ul`.
+
+If you are using a collection of links as a list, please use the proper accessibility role requirements for list items:
+
+```html_example
+<ul role="menu">
+  <li role="presentation"><a href="" role="menuitem">List Item 1</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 2</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 3</a></li>
+</ul>
+```
+
+*/
+
+/*doc
+---
+title: Ordered Lists
+name: b_ordered_lists
+parent : d_lists
+category: Globals
+---
+
+Ordered lists, `ol`, are a collection of items that are numbered.
+
+If you are using a collection of links as a list, please use the proper accessibility role requirements for list items:
+
+```html_example
+<ol role="menu">
+  <li role="presentation"><a href="" role="menuitem">List Item 1</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 2</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 3</a></li>
+</ol>
+```
+
+You can also use our customized ordered list numbers using the `.number` class on the parent `ol`.
+
+```html_example
+<ol class="number" role="menu">
+  <li role="presentation"><a href="" role="menuitem">List Item 1</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 2</a></li>
+  <li role="presentation"><a href="" role="menuitem">List Item 3</a></li>
+</ol>
+```
+*/
+
+/*doc
+---
+title: Definition Lists
+name: c_definition_lists
+parent : d_lists
+category: Globals
+---
+
+Definition lists, or Descriptive lists, are used to list out terms and description pairs. `dl`s contain `dt`, (which stands for definition term), and `dd` (which is the description of the term). Like unordered lists, you cannot insert non-dl elements in the `dl`, or between the `dt` and `dd`.
+
+Definition lists come in 2 styles: horizontal and vertical. Most of the `dl`s in the app use the `.dl-horizontal` class to align the terms and descriptions horizontally. On mobile, it defaults to stacked style. Bootstrap right-aligns the `dt` by default when using the `.dl-horizontal` class. This is not an optimal UX experience, therefore always add the class `.dt-as-left-aligned` to the `dl` parent
+
+You can also define the size of the `dl` in 3 ways: `.short-list`, `.medium-list`, `.large-list`. Each class defines a certain width and spacing of `dt`,`dd` elements. By default, use the `.medium-list` class.
+
+
+```html_example
+<dl class="dl-horizontal dt-as-left-aligned medium-list">
+  <dt>Patient Name</dt>
+  <dd>Edward Stone</dd>
+  <dt>Task Name</dt>
+  <dd>Connect with New Patient Approval Request</dd>
+  <dt>Request Id</dt>
+  <dd>PMEM1ACEQE</dd>
+</dl>
+```
+
+*/

@@ -1,19 +1,44 @@
 @import "_iui-variables";
 
+body {
+  background-color: $sg_light_grey_background;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  color: $sg_medium_grey;
+}
+pre {
+  overflow-y: scroll;
+  word-break: normal;
+  word-wrap: normal;
+  @media #{$mq-xs-screen} {
+    padding: 22px 10px;
+  }
+}
+code {
+  color: $sg_tertiary;
+}
+a {
+  cursor: pointer;
+  color: $sg_secondary;
+  &:hover, &:focus {
+    color: $sg_secondary;
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $heading-font-weight;
+  color: $sg_medium_grey;
+}
+.page-header {
+  font-family: $base-font-family;
+  font-size: $large-font-size;
+  font-weight: $base-font-weight;
+  color: $sg_dark_grey;
+  margin: 0 0 1em;
+  padding-bottom: 0;
+  border-bottom: none;
+}
 .content {
   padding: 1em;
-}
-
-body {
-  font-size: 14px;
-  background-color: $sg_light_grey_background;
-}
-
-a {
-  color: $sg_teal_primary;
-}
-a:hover {
-  color: $sg_teal_primary;
 }
 .sg-wrapper {
   display: block;
@@ -196,6 +221,9 @@ form.style-guide-demo{
   padding: 1em;
   min-width: 100%;
 }
+.show-code-snippet {
+  margin-top: 1em;
+}
 .codeBlock {
   clear: both;
   margin-top: 1em;
@@ -339,4 +367,138 @@ width: 33%;
 }
 .round-icon_tile_close {
   background: url("../images/tile_close.svg") !important;
+}
+.section-nav {
+  display: none;
+}
+// COLOR SWATCH PANELS FOR STYLE GUIDE USE
+
+@mixin color-swatch-body {
+	&.bashful-blue {
+		.panel-body {
+			background-color: $sg_primary;
+		}
+	}
+	&.bold-blue {
+		.panel-body {
+			background-color: $sg_secondary;
+		}
+	}
+	&.teal {
+		.panel-body {
+			background-color: $sg_tertiary;
+		}
+	}
+	&.gamma-green {
+		.panel-body {
+			background-color: $sg_alert_success;
+		}
+	}
+	&.organic-orange {
+		.panel-body {
+			background-color: $sg_organic_orange;
+		}
+	}
+	&.alert-red {
+		.panel-body {
+			background-color: $sg_alert_danger;
+		}
+	}
+	&.light-grey {
+		.panel-body {
+			background-color: $sg_light_grey_background;
+		}
+	}
+	&.light-grey-border {
+		.panel-body {
+			background-color: $sg_light_grey_border;
+		}
+	}
+	&.medium-grey {
+		.panel-body {
+			background-color: $sg_medium_grey;
+		}
+	}
+	&.dark-grey {
+		.panel-body {
+			background-color: $sg_dark_grey;
+		}
+	}
+}
+.sg-color-swatch {
+  position: relative;
+  border-radius: 0;
+  border: 0;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  .panel-body {
+    height: 15rem;
+  }
+  @include color-swatch-body;
+  .panel-title {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 100%;
+    font-size: 14px;
+    color: white;
+  }
+  .panel-footer {
+    color: $sg_dark_grey;
+    background-color: none;
+    height: auto;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: 1px solid $sg_light_grey_border;
+    padding: 15px;
+    height: 120px;
+    @media screen and (min-width: 200px) and (max-width: 767px) {
+      height: 115px;
+    }
+    h4 {
+      margin-top: 0;
+    }
+    code {
+      color: $sg_medium_grey;
+      font-size: 12px;
+    }
+    ul {
+      margin-bottom: 0;
+      li {
+        font-size: 12px;
+      }
+    }
+    .label-text {
+      margin-right: 5px;
+    }
+  }
+}
+// STYLE GUIDE ONLY BUTTON STATES SHOWCASE
+.sg-btn-active {
+  color: white;
+  background-color: $sg_bashful_blue;
+  border-color: $sg_bashful_blue;
+	&:hover {
+		color: white;
+	}
+}
+%iui-button-skin-default__disabled {
+  color : $sg_light_highlight;
+  border-color: $sg_light_highlight;
+  background-color: $sg_disabled_background;
+  cursor: not-allowed;
+}
+.sg-btn-disabled {
+	@extend %iui-button-skin-default__disabled;
+	&:hover {
+		color: #ccc;
+	}
+}
+.sg-btn-mobile {
+	@media #{$mq-xs-screen-only} {
+		padding-top: 1em;
+		padding-bottom: 1em;
+		min-width: 100%;
+		margin-top: 10px;
+	}
 }
