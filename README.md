@@ -5,6 +5,12 @@
 
 ## Changelog
 
+### 1.0.4
+
+Add iui-label-indicator directive.
+
+iui-label-indicator is a small circle dot indicator with a question mark that is usually seen next to a label. This indicator allows for more information to be attached to a label in case there is no room to allow for a help block or descriptor text. Upon hovering over the label indicator, a tooltip will appear with the descriptor text.
+
 ### 1.0.3
 
 Moved alerts to [iui-alerts](https://github.com/medseek-engineering/iui-alerts)
