@@ -1,0 +1,21 @@
+.more-info-indicator {
+  display: inline-block;
+  position: relative;
+  width: $base-font-size;
+  height: $base-font-size;
+  margin-left: 5px;
+  line-height: $label-indicator-line-height;
+  text-align: center;
+  -webkit-border-radius: 100em;
+  border-radius: 100em;
+  background-color: $sg_secondary;
+  cursor: pointer;
+  &:after {
+    content: '\00003F';
+    font-size: 10px;
+    color: white;
+  }
+  &.is-warning {
+    background-color: $sg_alert_warning;
+  }
+}
