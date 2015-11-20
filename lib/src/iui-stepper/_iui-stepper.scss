@@ -1,0 +1,35 @@
+.stepper-button {
+  margin-top: 1em;
+  .input-group-btn {
+    display: inline;
+    > .btn {
+      width: $stepper-button-width;
+      margin-top: -2px; // Aligns buttons to input
+    }
+    &:first-child > .btn {
+      border-top-left-radius: $base-border-radius;
+      border-bottom-left-radius: $base-border-radius;
+    }
+  }
+}
+.form-control.stepper-button-input {
+  display: inline;
+  float: none;
+  width: $stepper-input-width;
+  height: $stepper-height;
+  text-align: center;
+  padding-left: 20px; // Centers number with browser default spinner
+  &.ng-invalid {
+    color: $sg_alert_danger;
+  }
+}
+.stepper-button .error-group {
+  margin-top: 0.5em;
+  .error {
+    color: $sg_alert_danger;
+  }
+}
+// Removes the label if label is already present in view.
+.with-no-label .stepper-button label {
+  display: none;
+}

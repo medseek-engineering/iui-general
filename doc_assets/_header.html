@@ -18,7 +18,7 @@
     <header class="sg-header clearfix" role="banner">
       <h1 class="sg-title">
         <a href="index.html">
-            <img src="images/sg-empower-revised-logo.svg" alt="iui-general Revised Style Guide logo" class="sg-empower-logo">
+            Influence Health UX Style Guide 1.0
         </a>
       </h1>
       <nav class="navbar navbar-default sg-nav-main">
@@ -32,7 +32,7 @@
             </button>
           </div>
           <div class="collapse navbar-collapse" id="sg-navbar-main">
-            <ul class="nav navbar-nav">              
+            <ul class="nav navbar-nav">
               <% @categories.each do |category, file_name| %>
               <li<%=(title == category) ? ' class="active"' : '' %> role="presentation">
                 <a role="menuitem" href="<%= file_name %>"><%= category %></a>

@@ -1,0 +1,434 @@
+/* BUTTONS */
+%iui-button-skin-default__disabled {
+  color : $sg_light_highlight;
+  border-color: $sg_light_highlight;
+  background-color: $sg_disabled_background;
+  cursor: not-allowed;
+}
+%no-btn {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+.no-btn {
+  @extend %no-btn;
+}
+.btn-primary {
+  color: white;
+  background-color: $sg_secondary;
+	border-width: 1px;
+  border-style: solid;
+  border-color: $sg_secondary;
+  &:hover, &:focus, &:active, &.active {
+    color: white;
+    background-color: $sg_primary;
+		border-color: $sg_primary;
+  }
+  &:disabled {
+    @extend %iui-button-skin-default__disabled;
+  }
+}
+.btn-default, .btn-secondary {
+  background-color: $sg_secondary_background;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $sg_light_grey_border;
+  color: $sg_secondary;
+  @include transition(border-color 100ms linear, color 100ms linear, background-color 100ms linear);
+  &:hover, &:focus {
+    background-color: $sg_primary;
+    color: white;
+    border-color: $sg_primary;
+  }
+	&:active, &.active {
+		color: white;
+		border: 1px solid $sg_primary;
+		box-shadow: none;
+		background-color: $sg_primary;
+	}
+  &:disabled {
+    @extend %iui-button-skin-default__disabled;
+  }
+}
+.icon-with-label {
+  position: relative;
+  padding-left: $base-icon-size;
+  text-decoration: none;
+  min-height: $base-icon-size;
+  display: inline-block;
+  @media #{$mq-xs-screen-only} {
+    padding-left: $base-mobile-icon-size;
+    min-height: $base-mobile-icon-size;
+  }
+  %color-transition {
+    @include transition(color 100ms linear);
+  }
+  > .icon-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  > .icon-label {
+    margin-top: 0.35em;
+    margin-left: 0.5em;
+    display: inline-block;
+    color: $sg_medium_grey;
+    text-align: left;
+    @extend %color-transition;
+    @media #{$mq-xs-screen-only} {
+      margin-top: 0.75em;
+    }
+    > .link-inside-button {
+      color: $sg_secondary;
+      @extend %color-transition;
+    }
+  }
+
+
+  &:not(:disabled):hover, &:focus {
+    text-decoration: none;
+    > .icon-label > .link-inside-button {
+      color: $sg_primary;
+    }
+  }
+  &.with-key {
+    padding-left: ($base-icon-size+60px);
+    .label-key {
+      position: absolute;
+      left: $base-icon-size;
+      margin-left: 0.5em;
+      font-weight: $large-font-weight;
+    }
+    @media #{$mq-xs-screen-only} {
+      padding-left: ($base-mobile-icon-size+60px);
+      .label-key {
+        left: $base-mobile-icon-size;
+      }
+    }
+  }
+}
+$button-bar-margin: 1em;
+
+%multi-button-bar {
+  @extend %clearfix;
+  &.has-top-spacing {
+    margin-top: 10px;
+  }
+  @media #{$mq-xs-screen-only} {
+    > .btn, .round-icon_print {
+      padding-top: $button-bar-margin;
+      padding-bottom: $button-bar-margin;
+      margin-top: 10px;
+      display: block;
+      min-width: 100%;
+    }
+  }
+  @media #{$mq-md-screen} {
+    > .btn, .round-icon_print {
+      float: right;
+      margin-left: 10px;
+    }
+  }
+}
+
+.multi-button-bar {
+  @extend %multi-button-bar;
+}
+a.disabled-link {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.dropdown-toggle-circle {
+  position: relative;
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+  background: none;
+  border: 1px solid $sg_teal_primary;
+  -webkit-border-radius: 100em;
+  border-radius: 100em;
+  vertical-align: bottom;
+  .caret {
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    border-top: 4px solid $sg_teal_primary;
+  }
+}
+.with-circle-toggle {
+	@extend %clearfix;
+	padding: 5px 0;
+	display: block;
+	position: relative;
+	.circle-dropdown-label-wrapper {
+		display: block;
+    position: relative;
+    padding-right: 22px;
+	}
+	.circle-dropdown-label {
+		padding-left: 10px;
+    @media #{$mq-xs-screen-only} {
+			padding-left: 20px;
+		}
+    padding-right: 10px;
+    display: block;
+    text-align: left;
+    @media #{$mq-xs-screen-only} {
+      font-size: $base-mobile-font-size;
+    }
+		@media #{$mq-sm-screen-only} {
+			text-overflow: ellipsis;
+	    white-space: nowrap;
+	    overflow: hidden;
+      max-width: 120px;
+    }
+	}
+	.dropdown-toggle-circle {
+		position: absolute;
+    right: 0;
+    top: -1px;
+		border: 1px solid $sg_medium_grey;
+		margin-bottom: 0;
+		.caret {
+			border-top: 4px solid $sg_medium_grey;
+		}
+	}
+}
+.circle-button-dropdown-wrapper .dropdown-menu {
+	left: auto;
+	right: 0;
+}
+@mixin action-sheet-dropdown {
+  @include transition (opacity 100ms linear, bottom 200ms ease-in-out);
+  float: none;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0;
+  opacity: 1;
+  z-index: 99999;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.25);
+}
+@media #{$mq-xs-screen-only} {
+  .as-action-sheet.open {
+    &:before {
+      content: "";
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 5;
+    }
+    > .dropdown-menu {
+      @include action-sheet-dropdown;
+    }
+  }
+  .as-action-sheet > .dropdown-menu {
+    position: fixed;
+    top: auto;
+    float: none;
+    display: block;
+    bottom: -10%;
+    opacity: 0;
+    @include transition (opacity 100ms linear, bottom 200ms ease-in-out);
+  }
+	.as-action-sheet .with-circle-toggle {
+    width: 100%;
+    min-height: $base-mobile-icon-size;
+  }
+	.as-action-sheet .dropdown-toggle-circle {
+		width: $base-mobile-icon-size;
+  	height: $base-mobile-icon-size;
+		top: -11px;
+		.caret {
+			top: 20px;
+	    left: 16px;
+	    border-top: 5px solid $sg_medium_grey;
+	    border-right: 5px solid transparent;
+	    border-left: 5px solid transparent;
+		}
+	}
+	.dropdown-menu > li > a {
+		font-size: $base-mobile-font-size;
+		padding: 10px 20px;
+	}
+}
+
+/*doc
+---
+title: Buttons
+name: c_buttons
+parent : a_a_basics
+category: Globals
+---
+
+We use 3 types of buttons: primary, default, and icon buttons. Our buttons, excluding icon buttons, follow Bootstrap's default styling and should not be customized outside of primary and default styling. _On mobile, all buttons should be at least 2.5em (44px) wide or tall for a greater hit target._
+
+##### Primary Button
+```html_example
+<button type="button" role="button" class="btn btn-primary">Primary Action</button>
+```
+<h5 class="visible-xs">Primary Button Mobile</h5>
+<button type="button" role="button" class="btn btn-primary sg-btn-mobile visible-xs">Mobile Primary</button>
+
+##### Default Button
+```html_example
+<button type="button" role="button" class="btn btn-default">Secondary Action</button>
+```
+<h5 class="visible-xs">Default Button Mobile</h5>
+<button type="button" role="button" class="btn btn-default sg-btn-mobile visible-xs">Mobile Secondary</button>
+
+##### Circle Icon Button
+
+**Rules of Development**
+
+- Any circle icons without labels must use a <a href="/style_guide/components.html##h_tooltip">tooltip</a>.
+- For use of circle icons with a label, click <a href="/style_guide/components.html##a_circle_icon_label">here</a>.
+
+```html_example
+<button type="button" role="button" class="no-btn" tooltip="Edit" tooltip-placement="top edit">
+  <span class="icon-holder">
+    <i class="round-icon_edit"></i>
+    <span class="sr-only">Edit Icon Button</span>
+  </span>
+</button>
+```
+Note that the <code>.no-btn</code> class is used for the circle icon. Because this is a button type, most browser automatically style these buttons a certain way. Add the <code>.no-btn</code> class to remove unwanted styling.
+<hr>
+### Button States
+
+##### Hover, Active, & Focus States
+<button type="button" role="button" class="btn sg-btn-active">Active State</button>
+
+##### Disabled State
+<button type="button" role="button" class="btn sg-btn-disabled">Disabled</button>
+
+Use angular's built in directive <code>ng-disabled</code> as an attribute for all buttons that need to be disabled. Do not apply disabled classes.
+
+<p class="sg-callout sg-callout-warning">
+  <span class="sg-warning-title">Accessibility Note</span>
+  <span class="sg-warning-body">all <code>buttons</code> need to include a <code>role="button"</code> and <code>type="button"</code></span>
+</p>
+<p class="sg-callout sg-callout-info">
+  <span class="sg-info-title">Semantic Note</span>
+  <span class="sg-info-body">Use <code>button</code> for any actions that do not take you to a separate page in the app. Anchor tags, <code>a</code>, represent hyperlinks which is an action that takes you away from the current page.</span>
+</p>
+
+*/
+
+/*doc
+---
+title: Links
+name: d_links
+parent : a_a_basics
+category: Globals
+---
+
+Links as defined as hyperlinks, and it's function is to take the user a new page. Uses the <code>$sg\_bold\_blue</code> color to define a hyperlink. On hover, a text underline appears so there is more emphasis on state change if users are unable to differentiate the shift from dark blue to light blue.
+
+```html_example
+<a href="">This is a hyperlink</a>
+```
+
+<h4>Disabled Links</h4>
+```html_example
+<a href="" class="disabled-link">Disabled hyperlink</a>
+```
+*/
+
+
+/*doc
+---
+title : Dropdown Menus
+name : c_dropdowns
+parent : b_a_components
+category : Components
+---
+
+There are 2 types of dropdown menus. The Button Dropdown and the Circle Button Dropdown. The Button Dropdown uses  the UI Bootstrap directive <a href="https://angular-ui.github.io/bootstrap/#/dropdown" target="_blank">Dropdown.</a>
+
+On mobile, the circle button dropdown changes to an action sheet style. Add the `.as-action-sheet` modifier to the parent element with the `.dropdown` class.
+
+**Rules of Development**
+
+- All dropdown buttons must default to the `.btn-default` class for styling.
+- All dropdown menu items must be separated with a divider.
+- On mobile, action sheet must always have a Cancel menu item.
+
+## Button Dropdown Menu
+
+```html_example
+<div class="dropdown" dropdown is-open="isOpen">
+	<button type="button" role="button" class="btn btn-default" dropdown-toggle>Actions
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" id="dropdown-menu-id" role="menu">
+		<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+		<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+		<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+	</ul>
+</div>
+```
+
+## Circle Button Dropdown Menu
+
+_View this on mobile to see the `.as-action-sheet` modifier in action._
+
+```html_example
+<div class="row">
+	<div class="col-md-2">
+		<div class="dropdown circle-button-dropdown-wrapper as-action-sheet" id="circle-dropdown-menu-id" dropdown is-open="isOpen">
+			<button class="with-circle-toggle no-btn" role="button" dropdown-toggle>
+				<span class="circle-dropdown-label-wrapper">
+					<span class="circle-dropdown-label">More Actions</span>
+					<span class="btn btn-sm dropdown-toggle-circle">
+						<span class="caret"></span>
+					</span>
+				</span>
+			</button>
+			<ul class="dropdown-menu" id="userMenu">
+				<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+				<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+				<li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+				<li role="presentation"><a href="" role="menuitem">Cancel</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+```
+
+*/
+
+/*doc
+ ---
+title: Multi-Button Bar
+name: d_multi_button_bar
+parent: b_b_groups
+category: Components
+ ---
+
+The `.multi-button-bar` class groups 2 or more buttons and floats them to the right. Modal dialogs, forms, and anything that may require 2 or more actions must use the `.multi-button-bar`.
+
+```html_example
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          Some content.
+        </div>
+        <div class="panel-footer">
+          <div class="multi-button-bar">
+            <button role="button" type="button" class="btn btn-primary">Save</button>
+            <button role="button" type="button" class="btn btn-default">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+```
+*/

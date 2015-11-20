@@ -1,0 +1,690 @@
+%valid-and-invalid-dirty-states {
+  @include transition(border-color 100ms linear);
+  &:focus{
+    border-color: $sg_bashful_blue;
+
+  }
+  &.ng-dirty{
+    &.ng-valid{
+      border-color: $sg_gamma_green;
+    }
+    &.ng-invalid{
+      border-color: $sg_rosy_red;
+      & + .help-block {
+        color: $sg_rosy_red;
+      }
+
+    }
+  }
+}
+.form-group.has-success .control-label,
+.form-group.has-warning .control-label,
+.form-group.has-error .control-label {
+  color: $sg_medium_grey;
+}
+.form-group.has-success .form-control {
+  border-color: $sg_gamma_green;
+}
+.form-group.has-warning .form-control {
+  border-color: $sg_organic_orange;
+}
+.form-group.has-error .form-control {
+  border-color: $sg_alert_danger;
+}
+.form-control {
+  border: 1px $sg_light_highlight solid;
+  @extend %valid-and-invalid-dirty-states;
+  &:disabled{
+    border-color: $sg_light_highlight;
+    color: $sg_light_highlight;
+  }
+}
+
+// This prevents webkit browsers from "zooming" to the focused field input while on mobile
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width:1024px) {
+  %webkit-non-zoom-font-size {
+    font-size: $base-mobile-font-size;
+  }
+  .form-control {
+    @extend %webkit-non-zoom-font-size;
+  }
+}
+
+
+.label-soft {
+  font-weight: $base-font-weight;
+}
+
+
+legend.control-label {
+  display: inline-block;
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  border: 0;
+  border-bottom: 0;
+  font-weight: bold;
+  @media #{$mq-xs-screen} {
+    &.col-sm-4 {
+      width: 33.3333333333%;
+    }
+  }
+}
+
+fieldset{
+  &.radios, &.checks{
+    legend {
+        border: none;
+        font-size: $base-font-size;
+        font-weight: bold;
+      }
+      label {
+        width: auto;
+      }
+      input {
+        width: auto;
+        margin-left : 3em;
+      }
+  }
+}
+.control-label {
+  font-weight: $heading-font-weight;
+  @media #{$mq-xs-screen-only} {
+    font-size: $base-mobile-font-size;
+  }
+}
+.form-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
+  &.flush-left {
+    margin-left: 0;
+  }
+  &.flush-right {
+    margin-right: 0;
+  }
+  &.with-2-columns {
+    max-width: 640px;
+  }
+  &.with-3-columns {
+    max-width: 960px;
+  }
+  &.form-horizontal {
+    max-width: 480px;
+    &.with-2-columns {
+      max-width: 960px;
+    }
+  }
+}
+// CUSTOM RADIO BUTTONS
+%custom-radio-pseudo-absolute-element {
+  content: ' ';
+  display:block;
+  position: absolute;
+  cursor:pointer;
+  background-color: white;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+$custom-radio-offset-top: 1px;
+$custom-radio-width: 18px;
+$custom-radio-border-size: 1px;
+.radio-cell > .custom-radio, .primary-cell > .custom-radio {
+  display: inline-block;
+  padding-left: $custom-radio-width;
+}
+.custom-radio {
+  position: relative;
+  padding-left: $custom-radio-width*1.5;
+  &.radio-inline {
+    padding-left: $custom-radio-width*1.5;
+  }
+  label {
+    font-weight: $heading-font-weight;
+    cursor: pointer;
+  }
+  input[type="radio"] {
+    @extend .sr-only;
+    cursor: pointer;
+    + label, + .implicit-label{&:before {
+      @extend %custom-radio-pseudo-absolute-element;
+      width:$custom-radio-width;
+      height:$custom-radio-width;
+      left: 0;
+      top: $custom-radio-offset-top;
+      @include transition(box-shadow 100ms linear);
+      @include box-shadow(0 0 0 $custom-radio-border-size $sg_light_grey);
+    }
+    &:after {
+      @extend %custom-radio-pseudo-absolute-element;
+      width: $custom-radio-width - $custom-radio-border-size*4;
+      height: $custom-radio-width - $custom-radio-border-size*4;
+      left: $custom-radio-border-size*2;
+      top: $custom-radio-border-size*2 + $custom-radio-offset-top;
+      @include box-shadow(0 0 $custom-radio-width*0.2 0 rgba(black, .33) inset);
+      @include transition(background-color 100ms linear);
+    }
+  }
+    &:checked {
+      + label, + .implicit-label{&:before {
+        @include box-shadow(0 0 0 $custom-radio-border-size $sg_primary);
+      }
+      &:after {
+        background-color: $sg_primary;
+      }
+    }
+    }
+    &:focus {
+      + label, + .implicit-label{&:before {
+        @include box-shadow(0 0 $custom-radio-width/3 0 $sg_primary);
+      }}
+      &:checked {
+        + label, + .implicit-label{:before {
+          @include box-shadow(0 0 $custom-radio-width/3 $custom-radio-border-size $sg_primary);
+        }
+       }
+      }
+    }
+    &:disabled {
+      + label, + .implicit-label {
+        opacity: 0.3;
+       &:before, + &:after {
+        cursor: not-allowed;
+       }
+      }
+      &:checked {
+        + label, + .implicit-label {&:before {
+          @include box-shadow(0 0 0 $custom-radio-border-size $sg_light_grey);
+        }
+        &:after {
+          background-color: $sg_light_grey;
+        }
+      }
+      }
+    }
+  }
+}
+
+/* CUSTOM CHECKBOXES Oh Yeah!!!!! */
+
+$checkbox-size: 1em;
+$checkbox-size-mobile: 1.2em;
+
+%custom-checkbox {
+    &[type="checkbox"] {
+      cursor: pointer;
+        &:not(:checked), &:checked {
+            // Hide visually, but not for screen readers
+            @extend .sr-only;
+            &.with-hidden-label {
+                + label {
+                    padding-left: $checkbox-size;
+                }
+            }
+            // We use the adjacent label for both the pseudo checkbox and check as well as for the label
+            + label {
+                position: relative;
+                padding-left: ($checkbox-size + 0.8em);
+                cursor: pointer;
+                display: inline-block;
+                font-weight: $heading-font-weight;
+                // The box
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 2px;
+                    width: $checkbox-size;
+                    height: $checkbox-size;
+                    @media #{$mq-xs-screen-only} {
+                      width: $checkbox-size-mobile;
+                      height: $checkbox-size-mobile;
+                    }
+                    border: 1px solid $sg_light_grey;
+                    background-color: white;
+                    @include transition(border 200ms linear, background-color 200ms linear);
+                }
+
+                // The check
+                &:after {
+                    @extend .glyphicon;
+                    @extend .glyphicon-ok:before;
+                    position: absolute;
+                    top: 1px;
+                    left: 1px;
+                    font-size: $checkbox-size;
+                    @media #{$mq-xs-screen-only} {
+                      font-size: $checkbox-size-mobile;
+                    }
+                    color: $sg_bashful_blue;
+                    -webkit-transition: all 200ms cubic-bezier(0.730, 0, 0.240, 1);
+                    @include transition(all 200ms cubic-bezier(0.730, -0.300, 0.240, 1.280));
+                }
+            }
+
+            &:focus {
+                + label {
+                    // The box :focus
+                    &:before {
+                      @extend .form-control:focus;
+                    }
+                }
+            }
+        } // &:not(:checked), &:checked
+
+        // Not Checked - The Check
+        &:not(:checked) + label:after {
+            top: $checkbox-size/2;
+            opacity: 0;
+            transform: scale(0);
+            @media #{$mq-xs-screen-only} {
+              top: $checkbox-size-mobile/2;
+            }
+        }
+
+        // Checked - The Check
+        &:checked + label:after {
+            top: 1px;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        // Disabled
+        &:disabled {
+            &:not(:checked), &:checked {
+                + label {
+                    color: $sg_light_grey;
+                    cursor: not-allowed;
+
+                    // The Box
+                    &:before {
+                        box-shadow: none;
+                        border: 1px solid lighten($sg_light_grey, 10%);
+                    }
+
+                    // The Check
+                    &:after {
+                        color: $sg_light_grey;
+                    }
+                }
+            }
+        } // &:disabled
+
+    } // &[type="checkbox"]
+}
+
+.custom-checkbox {
+  @extend %custom-checkbox;
+  &.in-table-header {
+    &[type="checkbox"]:not(:checked), &:checked {
+      + label {
+        &:before {
+          top: -7px;
+        }
+        &:after {
+          top: -8px;
+        }
+      }
+    }
+  }
+}
+
+.checkbox:not(.input-group) .custom-checkbox[type="checkbox"]:not(:checked) + label,
+.checkbox:not(.input-group) .custom-checkbox[type="checkbox"]:checked + label {
+    margin-left: -20px;
+}
+
+.checkbox.large-on-mobile {
+  @media #{$mq-xs-screen-only} {
+    font-size: 18px;
+  }
+}
+
+/* END CUSTOM CHECKBOXES*/
+/*doc
+ ---
+ title: General Form Rules
+ name: a_general_form_rules
+ parent: a_c_forms
+ category: Globals
+ ---
+
+We use Bootstrap's basic form styles to style forms.
+
+**All form inputs, selects and textareas must have:**
+
+- unique `id` attribute
+- corresponding `<label>`
+
+
+**All buttons must have a unique `id`**
+
+When in doubt, follow as closely as possible to the [Bootstrap Form Defaults](http://getbootstrap.com/css/#forms-example)
+
+*/
+
+/*doc
+---
+title: Text Input Fields
+name: b_input_fields
+parent: a_c_forms
+category: Globals
+---
+
+```html_example
+<div class="row">
+  <div class="col-md-4">
+    <form role="form" class="form">
+      <div class="form-group">
+        <label for="CHANGE-ME" class="control-label">Name</label>
+        <input type="text" placeholder="Placeholder Text disappears when typing starts" class="form-control" id="CHANGE-ME">
+        <p class="help-block">Help Text should describe the type of input desired</p>
+      </div>
+      <div class="form-group">
+        <label for="CHANGE-ME2" class="control-label">Email</label>
+        <input type="email" placeholder="Enter email" id="CHANGE-ME2" class="form-control">
+      </div>
+      <div class="form-group">
+       <label for="CHANGE-ME3" class="control-label">Phone</label>
+       <input class="form-control" type="phone" id="CHANGE-ME3"
+        pattern="(\d-)?(\d{3}-){1,2}\d{4}"
+        title="Minimum of 7 digits"
+        placeholder="x-xxx-xxx-xxxx">
+       <p class="help-block">Minimum of 7 digits</p>
+      </div>
+      <div class="form-group">
+       <label for="textarea-example" class="control-label">Enter Message</label>
+       <textarea id="textarea_example" name="textarea_example" class="form-control" maxlength="200" field="compose.body" rows="4" ng-model="compose.body"></textarea>
+       <p class="help-block">Remaining characters : {{200 - compose.body.length}}</p>
+      </div>
+    </form>
+  </div>
+</div>
+```
+
+*/
+/*doc
+---
+title: Input States
+name: b_input_fields_states
+category: Globals
+parent: a_c_forms
+---
+
+Angular includes validation styles for error, warning, and success states on form controls. To use, add the `ng-required="true"` to the input element. Any `.control-label`, `.form-control`, and `.help-block` within that element will receive the validation styles.
+
+
+<div class="row">
+  <div class="col-md-4">
+    <form class="form" role="form">
+      <div class="form-group">
+          <label for="CHANGE-ME-1" class="control-label">Demo 1</label>
+          <input type="text" placeholder="Placeholder Text disappears when typing starts" class="form-control" id="CHANGE-ME-1">
+          <p class="help-block">Help Text should describe the type of input desired</p>
+        </div>
+        <div class="form-group has-error">
+          <label for="CHANGE-ME-1B" class="control-label">Demo 1 with Error</label>
+          <input type="text" class="form-control" id="CHANGE-ME-1B">
+          <p class="help-block">Help Text should describe the type of input desired</p>
+        </div>
+        <div class="form-group has-warning">
+          <label for="CHANGE-ME-1C" class="control-label">Demo 1 with Warning</label>
+          <input type="text" class="form-control" id="CHANGE-ME-1C">
+          <p class="help-block">Help Text should describe the type of input desired</p>
+        </div>
+        <div class="form-group has-success">
+          <label for="CHANGE-ME-1D" class="control-label">Demo 1 with Success</label>
+          <input type="text" class="form-control" id="CHANGE-ME-1D">
+        </div>
+        <div class="form-group disabled">
+          <label for="CHANGE-ME-1E" class="control-label">Demo 1 Disabled</label>
+          <input type="text" class="form-control" value="Can't Change Me" disabled="disabled" id="CHANGE-ME-1E">
+        </div>
+        <div class="form-group readonly">
+          <label for="CHANGE-ME-1F" class="control-label">Demo 1 Read Only</label>
+          <input type="text" value="I'm a read only field"  class="form-control" id="CHANGE-ME-1F" readonly>
+        </div>
+    </form>
+  </div>
+</div>
+
+*/
+
+/*doc
+---
+title: Labels
+name: c_labels
+parent: a_c_forms
+category: Globals
+---
+
+Every `label` should include a `for=""` which matches the id of the input. Use the label class `.label-soft` for cases where the font weight needs to be normal instead of bolded.
+
+*/
+
+/*doc
+---
+title: Top Aligned Labels
+name: a_top_aligned_labels
+parent: c_labels
+category: Globals
+---
+
+When the label sits on top of the input field.
+
+**Advantages:**
+
+- great for limited horizontal space
+- tends to reduce form completion times
+- mobile phones
+
+**Disadvantages:**
+
+- increased vertical space
+
+**Rules of Development:**
+
+- `.form-group` class should wrap each form element &amp; label
+- `.control-label` class should be applied to the label
+- `.form-control` class should be on all inputs except radio buttons and checkboxes
+- *Optional* `<p class="help-block">` is for help text. This should follow under the `<input>` if desired
+- For optimal mobile experience, use HTML5 input types when applicable. This includes: `<input type="email">`, `<input type="number">`, `<input type="email">`, `<input type="search">` and `<input type="tel">`
+- `.multi-button-bar` class should be used to contain the buttons used at the end of the form which will cause the buttons to be properly `float: right`
+
+*/
+
+/*doc
+---
+title: Right Aligned Labels
+name: b_right_aligned_labels
+parent: c_labels
+category: Globals
+---
+
+When the label is to the left of the input field.
+
+**Advantages:**
+
+- great for limited vertical space
+- this version can switch to a top-aligned layout at small screen widths which is ideal for mobile
+
+**Disadvantages:**
+
+- increased horizontal space
+- labels are sometimes too long for available space
+
+**Rules of Development:**
+
+- `.form-horizontal` class should be applied to wrapping `<form>` tags
+- `.form-group` class should wrap each form element &amp; label; this class acts like a `.row` when wrapped with the `.form-horizontal` class
+- `.control-label` class should be applied to the label
+- [Bootstrap grid classes](http://getbootstrap.com/css/#grid-options) should be applied to the `<label>` (or `<legend>` if using a `<fieldset>`) and the `<div>` that holds the input field(s)
+- Use [offset columns](http://getbootstrap.com/css/#grid-offsetting) to space checkboxes &amp; radio buttons to be inline with the other fields
+- For most cases `.col-sm-` column widths are ideal for spacing labels and fields
+- By default use `.col-sm-2` for the `<label>` and `.col-sm-10` for the `<div>` holding the `<input>`
+- `.form-control` class should be on all inputs except radio buttons and checkboxes
+- *Optional* `<p class="help-block">` is for help text. This should follow under the `<input>` if desired
+- For optimal mobile experience, use HTML5 input types when applicable. This includes: `<input type="email">`, `<input type="number">`, `<input type="email">`, `<input type="search">` and `<input type="tel">`
+- `.multi-button-bar` class should be used to contain the buttons used at the end of the form which will cause the buttons to be properly `float: right`
+
+*/
+
+/*doc
+---
+title: Right Aligned Labels Form
+name: r-b_basic_form_block
+category: Globals
+parent: b_right_aligned_labels
+---
+
+```html_example
+<form role="form" class="form-horizontal">
+  <div class="form-wrapper with-2-columns">
+    <div class="form-group">
+      <label for="CHANGE-ME" class="control-label col-sm-2">Name</label>
+      <div class="col-sm-10">
+        <input type="text" placeholder="Placeholder Text disappears when typing starts" class="form-control" id="CHANGE-ME">
+        <p class="help-block">Help Text should describe the type of input desired</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="CHANGE-ME2" class="control-label col-sm-2 required-field">Email</label>
+      <div class="col-sm-10">
+        <input type="email" placeholder="Enter email" id="CHANGE-ME2" required>
+      </div>
+    </div>
+    <div class="multi-button-bar">
+      <button class="btn btn-primary" type="submit" id="CHANGE-ME6">Submit</button>
+    </div>
+  </div>
+</form>
+```
+
+*/
+
+/*doc
+---
+title: Radio Buttons
+name: c_radio_buttons
+category: Globals
+parent: a_c_forms
+---
+
+**Rules of Development**
+
+- all radio buttons should be wrapped with a `<fieldset>`
+- all fieldsets should have a `<legend>` that is the first child element
+- use the `.visually-hidden` class to hide the legend when it is not visually necessary
+
+On mobile, radio button size is increased for greater hit target.
+
+```html_example
+<form class="form" role="form">
+  <fieldset class="form-group">
+    <legend class="control-label">Select the best vertical Radio Button</label>
+    <div class="custom-radio">
+      <input type="radio" name="optionsRadios" id="radiosSuccess1" value="option1" checked>
+      <label for="radiosSuccess1" class="label-soft">Option one is this and that&mdash;be sure to include why it's great</label>
+    </div>
+    <div class="custom-radio">
+      <input type="radio" name="optionsRadios" id="radiosSuccess2" value="option2">
+      <label for="radiosSuccess2" class="label-soft">Option two can be something else and selecting it will deselect option one</label>
+    </div>
+  </fieldset>
+</form>
+```
+*/
+/*doc
+---
+title: Checkboxes
+name: d_checkboxes
+category: Globals
+parent: a_c_forms
+---
+
+Use the `.custom-checkbox` class on the input element to use the custom styling for checkboxes. Input element must come _before_ the `label`. On mobile, checkbox size is increased for greater hit target.
+
+In the cases of multiple checkboxes, the list style should adapt to a more mobile-friendly approach. Use the `.checkbox-bar-touch` class on the parent `ul` and `.checkbox-bar-label` for the `label`. View this section on mobile or adjust your browser window to view the mobile checkbox list in action.
+
+```html_example
+<form class="form" role="form" class="hidden-xs">
+  <fieldset>
+    <div class="form-group">
+      <input id="pharmacy_checkbox_setAsPrimary" class="custom-checkbox" type="checkbox">
+      <label for="pharmacy_checkbox_setAsPrimary">Set this as Primary Pharmacy</label>
+    </div>
+  </fieldset>
+</form>
+<div class="visible-xs">
+  <ul class="checkbox-bar-touch">
+    <li>
+      <input type="checkbox" id="preferredmonday" class="custom-checkbox">
+      <label for="preferredmonday" class="checkbox-bar-label" ng-class="{date-disabled: functionToDisableDay()}">Monday <span class="small">Morning</span></label>
+    </li>
+    <li>
+      <input type="checkbox" id="preferredtues" class="custom-checkbox">
+      <label for="preferredtues" class="checkbox-bar-label" ng-class="{date-disabled: functionToDisableDay()}">Tuesday <span class="small">Afternoon</span></label>
+    </li>
+  </ul>
+</div>
+```
+*/
+
+/*doc
+---
+title: Select Boxes
+name: e_select_boxes
+category: Globals
+parent: a_c_forms
+---
+
+```html_example
+<div class="row">
+  <div class="col-md-4">
+    <form role="form" class="form">
+      <div class="form-group">
+        <label class="control-label" for="style_guideselect1">Select one</label>
+        <select class="form-control" name="style_guideselect1" id="style_guideselect1">
+          <option value="">Select A</option>
+          <option value="">Select B</option>
+          <option value="">Select C</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="style_guideselect2">List (single selection)</label>
+        <select class="form-control" name="" id="style_guideselect2" size="5">
+          <option value="">Item 1</option>
+          <option value="">Item 2</option>
+          <option value="">Item 3</option>
+          <option value="">Item 4</option>
+          <option value="">Item 5</option>
+          <option value="">Item 6</option>
+          <option value="">Item 7</option>
+          <option value="">Item 8</option>
+          <option value="">Item 9</option>
+          <option value="">Item 10</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="style_guideselect3">List (multiple selections)</label>
+        <select class="form-control" name="" id="style_guideselect3" size="5" multiple>
+          <option value="">Item 1</option>
+          <option value="">Item 2</option>
+          <option value="">Item 3</option>
+          <option value="">Item 4</option>
+          <option value="">Item 5</option>
+          <option value="">Item 6</option>
+          <option value="">Item 7</option>
+          <option value="">Item 8</option>
+          <option value="">Item 9</option>
+          <option value="">Item 10</option>
+        </select>
+      </div>
+    </form>
+  </div>
+</div>
+```
+
+*/

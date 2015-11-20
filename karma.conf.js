@@ -63,7 +63,7 @@ module.exports = function (config) {
       'test/**/*.test.js'
     ],
 
-    reporters: ['coverage', 'progress', 'html'],
+    reporters: ['coverage', 'progress', 'html', 'spec'],
 
     preprocessors: {
       'lib/src/**/*.html': ['ng-html2js'],

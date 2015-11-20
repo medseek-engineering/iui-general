@@ -1,0 +1,282 @@
+<!doctype html>
+<html ng-app="styleGuideApp" ng-controller="SGMainCtrl">
+  <head>
+    <title>iui-general Style Guide: Components</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.13/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="scripts/classname_clicker.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://medseek-engineering.github.io/iui-table/lib/dist/iui-table.min.js"></script>
+    <script src="scripts/style_guide_app.js"></script>
+    <script src="../lib/dist/iui-general.min.js"></script>
+    <link rel="stylesheet" href="../lib/dist/iui-general.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  </head>
+  <body role="document" class="sg-body">
+    <header class="sg-header clearfix" role="banner">
+      <h1 class="sg-title">
+        <a href="index.html">
+            Influence Health UX Style Guide 1.0
+        </a>
+      </h1>
+      <nav class="navbar navbar-default sg-nav-main">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sg-navbar-main" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="sg-navbar-main">
+            <ul class="nav navbar-nav">
+              
+              <li role="presentation">
+                <a role="menuitem" href="globals.html">Globals</a>
+              </li>
+              
+              <li class="active" role="presentation">
+                <a role="menuitem" href="components.html">Components</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="filters.html">Filters</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="directives.html">Directives</a>
+              </li>
+              
+              <li role="presentation">
+                <a role="menuitem" href="index.html">Overview</a>
+              </li>
+              
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <main class="sg-wrapper clearfix" role="main">
+        <aside class="sg-sidebar hidden-xs" role="complementary">
+            <nav class="sg-nav-secondary" role="navigation">
+                <ul role="menu">
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('b_a_components')">Components</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('a_accordions')">Accordions</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('c_dropdowns')">Dropdown Menus</a>
+                  </li>
+                  
+                  <li role="presentation" class='sg-is-parent-item'>
+                    <a href="" ng-click="scrollTo('b_b_groups')">Groups</a>
+                  </li>
+                  
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('d_multi_button_bar')">Multi-Button Bar</a>
+                  </li>
+                  
+                </ul>
+            </nav>
+        </aside>
+        <div class="sg-element-wrapper" id="top">
+          <iui-alert-placeholder id="alert_appTop"></iui-alert-placeholder>
+<h1 id="b_a_components" class="styleguide">Components</h1>
+
+<ul class="section-nav">
+  <li><a href="#a_accordions">Accordions</a></li>
+  <li><a href="#c_dropdowns">Dropdown Menus</a></li>
+</ul>
+
+<h2 id="a_accordions" class="styleguide">Accordions</h2>
+<p class="styleguide">Accordions use the UI Bootstrap <a href="https://angular-ui.github.io/bootstrap/#/accordion" target="_blank">accordion directive</a>.</p><div class="codeExample">
+  <div class="exampleOutput">
+    <accordion close-others="true">
+  <accordion-group heading="Accordion Header" ng-class="{'expanded':isOpen}" is-open="isOpen">
+    This content is straight in the template.
+  </accordion-group>
+  <accordion-group heading="Accordion Header" ng-class="{'expanded':isOpenB}" is-open="isOpenB">
+    <p>Content.</p>
+  </accordion-group>
+</accordion>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;accordion</span> <span class="na">close-others=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;accordion-group</span> <span class="na">heading=</span><span class="s">"Accordion Header"</span> <span class="na">ng-class=</span><span class="s">"{'expanded':isOpen}"</span> <span class="na">is-open=</span><span class="s">"isOpen"</span><span class="nt">&gt;</span>
+    This content is straight in the template.
+  <span class="nt">&lt;/accordion-group&gt;</span>
+  <span class="nt">&lt;accordion-group</span> <span class="na">heading=</span><span class="s">"Accordion Header"</span> <span class="na">ng-class=</span><span class="s">"{'expanded':isOpenB}"</span> <span class="na">is-open=</span><span class="s">"isOpenB"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Content.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/accordion-group&gt;</span>
+<span class="nt">&lt;/accordion&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2 id="c_dropdowns" class="styleguide">Dropdown Menus</h2>
+<p class="styleguide">There are 2 types of dropdown menus. The Button Dropdown and the Circle Button Dropdown. The Button Dropdown uses  the UI Bootstrap directive <a href="https://angular-ui.github.io/bootstrap/#/dropdown" target="_blank">Dropdown.</a></p><p class="styleguide">On mobile, the circle button dropdown changes to an action sheet style. Add the <code class="styleguide">.as-action-sheet</code> modifier to the parent element with the <code class="styleguide">.dropdown</code> class.</p><p class="styleguide"><strong>Rules of Development</strong></p><ul class="styleguide"><li>All dropdown buttons must default to the <code class="styleguide">.btn-default</code> class for styling.</li>
+<li>All dropdown menu items must be separated with a divider.</li>
+<li>On mobile, action sheet must always have a Cancel menu item.</li>
+</ul>
+<h2>Button Dropdown Menu</h2>
+<div class="codeExample">
+  <div class="exampleOutput">
+    <div class="dropdown" dropdown is-open="isOpen">
+    <button type="button" role="button" class="btn btn-default" dropdown-toggle>Actions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" id="dropdown-menu-id" role="menu">
+        <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+        <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+        <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+    </ul>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown"</span> <span class="na">dropdown</span> <span class="na">is-open=</span><span class="s">"isOpen"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">dropdown-toggle</span><span class="nt">&gt;</span>Actions
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">id=</span><span class="s">"dropdown-menu-id"</span> <span class="na">role=</span><span class="s">"menu"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h2>Circle Button Dropdown Menu</h2>
+<p class="styleguide"><em>View this on mobile to see the <code class="styleguide">.as-action-sheet</code> modifier in action.</em></p><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="row">
+    <div class="col-md-2">
+        <div class="dropdown circle-button-dropdown-wrapper as-action-sheet" id="circle-dropdown-menu-id" dropdown is-open="isOpen">
+            <button class="with-circle-toggle no-btn" role="button" dropdown-toggle>
+                <span class="circle-dropdown-label-wrapper">
+                    <span class="circle-dropdown-label">More Actions</span>
+                    <span class="btn btn-sm dropdown-toggle-circle">
+                        <span class="caret"></span>
+                    </span>
+                </span>
+            </button>
+            <ul class="dropdown-menu" id="userMenu">
+                <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+                <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+                <li role="presentation"><a href="" role="menuitem">Action Item</a></li>
+                <li role="presentation"><a href="" role="menuitem">Cancel</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-2"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dropdown circle-button-dropdown-wrapper as-action-sheet"</span> <span class="na">id=</span><span class="s">"circle-dropdown-menu-id"</span> <span class="na">dropdown</span> <span class="na">is-open=</span><span class="s">"isOpen"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"with-circle-toggle no-btn"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">dropdown-toggle</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"circle-dropdown-label-wrapper"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"circle-dropdown-label"</span><span class="nt">&gt;</span>More Actions<span class="nt">&lt;/span&gt;</span>
+                    <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"btn btn-sm dropdown-toggle-circle"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
+                    <span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">id=</span><span class="s">"userMenu"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Action Item<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">role=</span><span class="s">"menuitem"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+<h1 id="b_b_groups" class="styleguide">Groups</h1>
+
+<ul class="section-nav">
+  <li><a href="#d_multi_button_bar">Multi-Button Bar</a></li>
+</ul>
+
+<h2 id="d_multi_button_bar" class="styleguide">Multi-Button Bar</h2>
+<p class="styleguide">The <code class="styleguide">.multi-button-bar</code> class groups 2 or more buttons and floats them to the right. Modal dialogs, forms, and anything that may require 2 or more actions must use the <code class="styleguide">.multi-button-bar</code>.</p><div class="codeExample">
+  <div class="exampleOutput">
+      <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          Some content.
+        </div>
+        <div class="panel-footer">
+          <div class="multi-button-bar">
+            <button role="button" type="button" class="btn btn-primary">Save</button>
+            <button role="button" type="button" class="btn btn-default">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-3"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-default"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>
+          Some content.
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-footer"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"multi-button-bar"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Save<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <!-- MOBILE ONLY SIDENAV -->
+    <aside class="sg-sidebar visible-xs" role="complementary">
+        <nav class="sg-nav-secondary" role="navigation">
+            <ul role="menu">
+                
+                <li role="presentation"><a href="#b_a_components">Components</a></li>
+                
+                <li role="presentation"><a href="#a_accordions">Accordions</a></li>
+                
+                <li role="presentation"><a href="#c_dropdowns">Dropdown Menus</a></li>
+                
+                <li role="presentation"><a href="#b_b_groups">Groups</a></li>
+                
+                <li role="presentation"><a href="#d_multi_button_bar">Multi-Button Bar</a></li>
+                
+            </ul>
+        </nav>
+    </aside>
+    </main>    
+
+  </body>
+</html>
