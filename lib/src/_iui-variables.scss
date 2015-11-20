@@ -36,6 +36,7 @@ $sg_primary: $sg_bashful_blue !default;
 $sg_secondary: $sg_bold_blue !default;
 $sg_tertiary: $sg_teal_primary !default;
 $sg_alert_success: $sg_gamma_green !default;
+$sg_alert_warning: $sg_organic_orange !default;
 $sg_alert_danger: $sg_rosy_red !default;
 
 // Normalcy ranges. Used in charts
@@ -128,11 +129,14 @@ $link-button-function : cubic-bezier(0.455, 1.17, 0.7, 1.31);
 
 // ====== iui-stepper
 
-$stepper-height: 34px;
-$stepper-button-width: 36px;
-$stepper-input-width: 70px;
-$base-border-radius: 4px;
+$stepper-height: 34px !default;
+$stepper-button-width: 36px !default;
+$stepper-input-width: 70px !default;
+$base-border-radius: 4px !default;
 
+// ====== iui-label-indicator
+
+$label-indicator-line-height: 0.95 !default;
 /*doc
 ---
 title: Colors
