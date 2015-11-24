@@ -76,6 +76,10 @@
                     <a href="" ng-click="scrollTo('c_dropdowns')">Dropdown Menus</a>
                   </li>
                   
+                  <li role="presentation" >
+                    <a href="" ng-click="scrollTo('d_expandable_panel')">Expandable Panel</a>
+                  </li>
+                  
                   <li role="presentation" class='sg-is-parent-item'>
                     <a href="" ng-click="scrollTo('b_b_groups')">Groups</a>
                   </li>
@@ -94,6 +98,7 @@
 <ul class="section-nav">
   <li><a href="#a_accordions">Accordions</a></li>
   <li><a href="#c_dropdowns">Dropdown Menus</a></li>
+  <li><a href="#d_expandable_panel">Expandable Panel</a></li>
 </ul>
 
 <h2 id="a_accordions" class="styleguide">Accordions</h2>
@@ -210,6 +215,136 @@
   </div>
 </div>
 
+<h2 id="d_expandable_panel" class="styleguide">Expandable Panel</h2>
+<p class="styleguide">The Expandable Panel component is a simple alternative to an accordion. This allows for greater control over what content goes inside the expandable panel, in the panel header, and even allows for additional controls to be placed on the panel heading bar, such as a More or Actions dropdown which would be difficult to accomplish with Bootstrap&#39;s standard Accordion.</p><p class="styleguide"><strong>Rules of Development</strong></p><ul class="styleguide"><li>Right edge of expandable panel must be flush with right edge of window (Not shown in this example)</li>
+<li>Panel background color changes to grey on expanded state</li>
+<li>The &quot;More&quot; dropdown on the right side of panel should only contain actions that are appliable to the panel itself</li>
+</ul><div class="codeExample">
+  <div class="exampleOutput">
+    <div class="expandable-panel-wrapper">
+<article class="expandable-panel" ng-class="{'is-expanded': toggleExpandedPanel}">
+    <header class="exp-panel-header">
+        <div class="exp-panel-description">
+            <h2 class="exp-panel-heading">Panel Heading</h2>
+      <span class="exp-panel-detail-info">Other info</span>
+            <p class="exp-panel-subheading">Panel subheading or descriptor text</p>
+        </div>
+        <span class="exp-panel-actions">
+            <a href="" ng-click="toggleExpandedPanel = !toggleExpandedPanel">
+                <span ng-if="!toggleExpandedPanel">Edit</span>
+                <span ng-if="toggleExpandedPanel">Close</span>
+            </a>
+        </span>
+    <div class="exp-panel-more-options dropdown" dropdown>
+            <button type="button" role="button" class="no-btn" dropdown-toggle>
+                More
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li>
+                    <a href="">Duplicate</a>
+                </li>
+                <li>
+                    <a href="">Remove</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <section class="exp-panel-content" collapse="!toggleExpandedPanel">
+    <p>Works great with a form!</p>
+    <div class="row">
+      <div class="col-md-6">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="exp_panel_name">Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="exp_panel_name" placeholder="Required" />
+            </div>
+          </div><!-- /.form-group -->
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="exp_panel_name">Email</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="exp_panel_name" placeholder="Required" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="multi-button-bar">
+              <button type="button" role="button" class="btn btn-primary">Ok</button>
+              <button type="button" role="button" class="btn btn-default">Cancel</button>
+            </div>
+          </div><!-- /.form-group -->
+        </form>
+      </div>
+    </div><!-- /.row -->
+    </section>
+</article>
+</div>
+
+  </div>
+  <div class="codeBlock">
+    <div class="highlight" ng-non-bindable>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"expandable-panel-wrapper"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"expandable-panel"</span> <span class="na">ng-class=</span><span class="s">"{'is-expanded': toggleExpandedPanel}"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"exp-panel-header"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"exp-panel-description"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"exp-panel-heading"</span><span class="nt">&gt;</span>Panel Heading<span class="nt">&lt;/h2&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"exp-panel-detail-info"</span><span class="nt">&gt;</span>Other info<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"exp-panel-subheading"</span><span class="nt">&gt;</span>Panel subheading or descriptor text<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"exp-panel-actions"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">ng-click=</span><span class="s">"toggleExpandedPanel = !toggleExpandedPanel"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">ng-if=</span><span class="s">"!toggleExpandedPanel"</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/span&gt;</span>
+                <span class="nt">&lt;span</span> <span class="na">ng-if=</span><span class="s">"toggleExpandedPanel"</span><span class="nt">&gt;</span>Close<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"exp-panel-more-options dropdown"</span> <span class="na">dropdown</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"no-btn"</span> <span class="na">dropdown-toggle</span><span class="nt">&gt;</span>
+                More
+                <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span>
+            <span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>Duplicate<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span><span class="nt">&gt;</span>Remove<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+    <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"exp-panel-content"</span> <span class="na">collapse=</span><span class="s">"!toggleExpandedPanel"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Works great with a form!<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-6"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">"form-horizontal"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label col-sm-3"</span> <span class="na">for=</span><span class="s">"exp_panel_name"</span><span class="nt">&gt;</span>Name<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exp_panel_name"</span> <span class="na">placeholder=</span><span class="s">"Required"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.form-group --&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label col-sm-3"</span> <span class="na">for=</span><span class="s">"exp_panel_name"</span><span class="nt">&gt;</span>Email<span class="nt">&lt;/label&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-sm-9"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"exp_panel_name"</span> <span class="na">placeholder=</span><span class="s">"Required"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"multi-button-bar"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Ok<span class="nt">&lt;/button&gt;</span>
+              <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">role=</span><span class="s">"button"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span><span class="nt">&gt;</span>Cancel<span class="nt">&lt;/button&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.form-group --&gt;</span>
+        <span class="nt">&lt;/form&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span><span class="c">&lt;!-- /.row --&gt;</span>
+    <span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;/div&gt;</span></pre>
+    </div>
+  </div>
+</div>
+
 <h1 id="b_b_groups" class="styleguide">Groups</h1>
 
 <ul class="section-nav">
@@ -268,6 +403,8 @@
                 <li role="presentation"><a href="#a_accordions">Accordions</a></li>
                 
                 <li role="presentation"><a href="#c_dropdowns">Dropdown Menus</a></li>
+                
+                <li role="presentation"><a href="#d_expandable_panel">Expandable Panel</a></li>
                 
                 <li role="presentation"><a href="#b_b_groups">Groups</a></li>
                 
