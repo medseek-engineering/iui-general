@@ -5,6 +5,12 @@
 
 ## Changelog
 
+### 1.0.5
+
+Added a ui-bootstrap overrides folder for directives that we create to override ui-bootstrap.
+
+Added a directive override for the ui-bootstrap directive typeahead. This directive adds the ability to scroll a popup when the keyboard is used to scroll.
+
 ### 1.0.4
 
 Add iui-label-indicator directive.
