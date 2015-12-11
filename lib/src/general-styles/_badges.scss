@@ -1,0 +1,20 @@
+.badge {
+  background-color: $sg_alert_danger;
+}
+/*doc
+---
+title : Badges
+name : f_badges
+parent : a_a_basics
+category : Globals
+---
+Badges are UI components that draw the user's attention to a specific piece of content. Usually indicates a counter or that action needs to be taken. Badge color should always be red, <code>$sg\_alert\_primary</code>.
+
+```html_example
+<a href="" class="no-btn">
+  <span class="icon-label">Notifications</span>
+  <span class="badge badge-alert">4</span>
+</a>
+
+```
+*/

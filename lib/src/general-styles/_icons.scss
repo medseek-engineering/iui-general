@@ -1,0 +1,194 @@
+// Round color icons
+
+%iui-round-icon-sizing {
+  min-width: $base-icon-size;
+  min-height: $base-icon-size;
+}
+
+%iui-round-icon {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  -webkit-border-radius: 100em;
+  border-radius: 100em;
+  vertical-align: middle;
+}
+
+
+%iui-round-icon-has-link {
+  position: relative;
+  &:after {
+    content: '';
+    display: inline;
+    float: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    right: 50%;
+    bottom: 50%;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style:  solid;
+    border-color: transparent;
+    @include box-sizing(border-box);
+    @include transition-property(width, height, bottom, right, left, top, border);
+    @include transition-duration($link-button-delay, $link-button-delay, $link-button-delay ,$link-button-delay ,$link-button-delay, $link-button-delay, 100ms);
+    @include transition-timing-function($link-button-function $link-button-function $link-button-function $link-button-function $link-button-function $link-button-function linear);
+  }
+}
+
+%iui-round-icon-hover {
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  z-index: 2;
+  border-width: 1px;
+  border-style: solid;
+  display: inline-block;
+}
+
+.icon-with-label {
+  position: relative;
+  padding-left: $base-icon-size;
+  text-decoration: none;
+  min-height: $base-icon-size;
+  display: inline-block;
+  @media #{$mq-xs-screen-only} {
+    padding-left: $base-mobile-icon-size;
+    min-height: $base-mobile-icon-size;
+  }
+  %color-transition {
+    @include transition(color 100ms linear);
+  }
+  > .icon-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  > .icon-label {
+    margin-top: 0.35em;
+    margin-left: 0.5em;
+    display: inline-block;
+    color: $sg_medium_grey;
+    text-align: left;
+    @extend %color-transition;
+    @media #{$mq-xs-screen-only} {
+      margin-top: 0.75em;
+    }
+    > .link-inside-button {
+      color: $sg_bold_blue;
+      @extend %color-transition;
+    }
+  }
+
+
+  &:not(:disabled):hover, &:focus {
+    text-decoration: none;
+    > .icon-label > .link-inside-button {
+      color: $sg_bashful_blue;
+    }
+  }
+  &.with-key {
+    padding-left: ($base-icon-size+60px);
+    .label-key {
+      position: absolute;
+      left: $base-icon-size;
+      margin-left: 0.5em;
+      font-weight: $large-font-weight;
+    }
+    @media #{$mq-xs-screen-only} {
+      padding-left: ($base-mobile-icon-size+60px);
+      .label-key {
+        left: $base-mobile-icon-size;
+      }
+    }
+  }
+}
+@mixin iui-roundicon($selector, $icon_url, $defaultSkin : true, $color: $sg_bashful_blue, $size: $base-icon-size, $mobile: true){
+  #{$selector}{
+    @extend %iui-round-icon;
+    background-image: url($icon_url);
+  }
+  @if $defaultSkin != false {
+    @include iui-roundicon-default($selector, $color, $size);
+    @if $mobile == true {
+      @media #{$mq-xs-screen-only} {
+        min-width: $base-mobile-icon-size;
+        min-height: $base-mobile-icon-size;
+      }
+    }
+  }
+}
+// provide a default skin for the component
+// only visual changes that don't affect the component layout should be in here
+@mixin iui-roundicon-default($selector, $color: $sg_bashful_blue, $size: $base-icon-size, $mobile: true) {
+  #{$selector}{
+    background-color: $color;
+    @if $size == $base-icon-size {
+      @extend %iui-round-icon-sizing;
+    } @else {
+      min-width: $size;
+      min-height: $size;
+    }
+    @if $mobile == true {
+      @media #{$mq-xs-screen-only} {
+        min-width: $base-mobile-icon-size;
+        min-height: $base-mobile-icon-size;
+      }
+    }
+  }
+  a, button {
+    #{$selector}{
+      @extend %iui-round-icon-has-link;
+    }
+    &:not(:disabled):hover, &:focus {
+      #{$selector}{
+        &:after {
+          @extend %iui-round-icon-hover;
+          border-color: $color;
+        }
+      }
+    }
+  }
+}
+
+@include iui-roundicon('.round-icon_edit', "../images/icon-white_edit.svg", true, $sg_organic_orange);
+/*doc
+---
+title: Iconography
+name: b_iconography
+parent : a_d_images
+category: Globals
+---
+
+There are 2 types of icons used in the app: Circle and Flat. If there is no supporting label, icon must use a tooltip and `.sr-only` descriptive text.
+
+**Circle icon**
+
+```html_example
+<button type="button" role="button" class="no-btn" tooltip="Edit" tooltip-placement="top edit">
+  <span class="icon-holder">
+    <i class="round-icon_edit"></i>
+    <span class="sr-only">Edit Icon Button</span>
+  </span>
+</button>
+```
+
+**Flat icon**
+
+```html_example
+<a href="" class="icon-with-label">
+	<span class="icon-holder">
+		<span class="sg-quick-links_messages"></span>
+	</span>
+	<span class="icon-label">Messages</span>
+</a>
+```
+
+*/

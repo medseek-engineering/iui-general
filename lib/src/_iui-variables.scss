@@ -36,6 +36,7 @@ $sg_primary: $sg_bashful_blue !default;
 $sg_secondary: $sg_bold_blue !default;
 $sg_tertiary: $sg_teal_primary !default;
 $sg_alert_success: $sg_gamma_green !default;
+$sg_alert_warning: $sg_organic_orange !default;
 $sg_alert_danger: $sg_rosy_red !default;
 
 // Normalcy ranges. Used in charts
@@ -115,3 +116,271 @@ $mq-xlg-screen-only: $mq-xlg-screen !default;
 $base-mobile-icon-size: 44px !default;
 $base-icon-size: 30px !default;
 $base-number-icon-size: 34px !default;
+
+
+$link-button-delay : 200ms;
+$link-button-function : cubic-bezier(0.455, 1.17, 0.7, 1.31);
+
+/*
+--------------------------------------------------------------------------
+  Directive-Specific Variables
+--------------------------------------------------------------------------
+*/
+
+// ====== iui-stepper
+
+$stepper-height: 34px !default;
+$stepper-button-width: 36px !default;
+$stepper-input-width: 70px !default;
+$base-border-radius: 4px !default;
+
+// ====== iui-label-indicator
+
+$label-indicator-line-height: 0.95 !default;
+/*doc
+---
+title: Colors
+name: a_colors
+parent : a_a_basics
+category: Globals
+---
+
+ These are the colors used throughout the application. Each color is defined with its Hex value and its Sass variable. Please do not use any colors that are not defined here. Any lightening or darkening of a color should only be applied to greys and should never exceed 5%.
+
+<div class="row">
+<div class="col-lg-10">
+<div class="row">
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch bashful-blue">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Primary Color</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#6fa8dc</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>111 168 220</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_primary</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch bold-blue">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Secondary Color</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#0072bc</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>0 114 188</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_secondary</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch teal">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Tertiary Color</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#00a79b</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>0 167 155</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_tertiary</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch gamma-green">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Gamma Green</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#6aa84f</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>106 168 79</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_alert_success</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch organic-orange">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Organic Orange</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#ff9900</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>255 153 0</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_organic_orange</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch alert-red">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Alert Red</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#e06666</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>224 102 102</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_alert_danger</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch light-grey">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Light Grey</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#e8e8e8</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>232 232 232</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_light_grey_background</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch light-grey-border">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Light Grey Border</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#d4d4d4</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>212 212 212</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_light_grey_border</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch medium-grey">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Medium Grey</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#666</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>102 102 102</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_medium_grey</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-4">
+		<article class="panel panel-default sg-color-swatch dark-grey">
+			<div class="panel-body"></div>
+			<footer class="panel-footer">
+			  <h4>Dark Grey</h4>
+			  <ul class="list-unstyled">
+			    <li>
+			      <span class="label-text">Hex</span>
+			      <code>#333</code>
+			    </li>
+			    <li>
+			      <span class="label-text">RGB</span>
+			      <span>51 51 51</span>
+			    </li>
+			    <li>
+			      <span class="label-text">Sass</span>
+			      <code>$sg_dark_grey</code>
+			    </li>
+			  </ul>
+			</footer>
+		</article>
+	</div>
+</div>
+</div>
+</div>
+
+ */

@@ -1,6 +1,6 @@
 {
   "name": "iui-general",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "Directives and styling for Influence Health Apps",
   "main": "./lib/index.js",
   "private": true,
@@ -48,7 +48,7 @@
     "karma-jasmine": "~0.2.2",
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "karma-requirejs": "~0.2.0",
-    "karma-spec-reporter": "0.0.6",
+    "karma-spec-reporter": "0.0.10",
     "ui-core": "git+ssh://git@github.com:medseek-engineering/ui-core.git"
   }
 }
