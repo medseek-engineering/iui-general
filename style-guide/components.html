@@ -221,13 +221,13 @@
 <li>The &quot;More&quot; dropdown on the right side of panel should only contain actions that are appliable to the panel itself</li>
 </ul><div class="codeExample">
   <div class="exampleOutput">
-    <div class="expandable-panel-wrapper">
+    <div class="exp-panel-wrapper">
 <article class="expandable-panel" ng-class="{'is-expanded': toggleExpandedPanel}">
     <header class="exp-panel-header">
         <div class="exp-panel-description">
             <h2 class="exp-panel-heading">Panel Heading</h2>
       <span class="exp-panel-detail-info">Other info</span>
-            <p class="exp-panel-subheading">Panel subheading or descriptor text</p>
+            <p class="description">Panel subheading or descriptor text</p>
         </div>
         <span class="exp-panel-actions">
             <a href="" ng-click="toggleExpandedPanel = !toggleExpandedPanel">
@@ -283,13 +283,13 @@
   </div>
   <div class="codeBlock">
     <div class="highlight" ng-non-bindable>
-      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"expandable-panel-wrapper"</span><span class="nt">&gt;</span>
+      <pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"exp-panel-wrapper"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"expandable-panel"</span> <span class="na">ng-class=</span><span class="s">"{'is-expanded': toggleExpandedPanel}"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"exp-panel-header"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"exp-panel-description"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">"exp-panel-heading"</span><span class="nt">&gt;</span>Panel Heading<span class="nt">&lt;/h2&gt;</span>
       <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"exp-panel-detail-info"</span><span class="nt">&gt;</span>Other info<span class="nt">&lt;/span&gt;</span>
-            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"exp-panel-subheading"</span><span class="nt">&gt;</span>Panel subheading or descriptor text<span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"description"</span><span class="nt">&gt;</span>Panel subheading or descriptor text<span class="nt">&lt;/p&gt;</span>
         <span class="nt">&lt;/div&gt;</span>
         <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"exp-panel-actions"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">""</span> <span class="na">ng-click=</span><span class="s">"toggleExpandedPanel = !toggleExpandedPanel"</span><span class="nt">&gt;</span>

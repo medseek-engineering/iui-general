@@ -2,11 +2,10 @@
 
 .expandable-panel {
   @extend %clearfix;
-  padding: 0 10px;
+  padding: 0 $page-wrapper-padding;
   border-bottom: 1px solid $sg_light_grey_border;
   background: white;
   @include transition(background 100ms linear);
-  &:first-child,
   &.single-exp-panel {
     border-top: 1px solid $sg_light_grey_border;
   }
@@ -15,43 +14,43 @@
     border-left: 1px solid $sg_light_grey_border;
     @include transition(background 100ms linear);
   }
-}
-.expandable-panel .exp-panel-heading {
-  font-size: ($base-mobile-font-size + 2);
-  font-weight: $base-font-weight;
-  margin: 0;
-  display: inline-block;
-  margin-right: 20px;
-}
-.expandable-panel .exp-panel-description {
-  display: inline;
-  float: left;
-  padding: 10px 0;
-}
-.expandable-panel .exp-panel-subheading {
-  font-size: ($base-font-size - 2);
-  color: $sg_small_text_gray;
-  margin-bottom: 0;
-}
-.expandable-panel .exp-panel-actions {
-  margin-left: 20px;
-  line-height: 3;
-}
-.expandable-panel .exp-panel-more-options {
-  float: right;
-  color: $sg_secondary;
-  padding-right: 10px;
-  margin-top: 8px;
-  .dropdown-menu {
-    left: auto;
-    right: 0;
+  .exp-panel-description {
+    display: inline;
+    float: left;
+    padding: $page-wrapper-padding 0;
+  }
+  .exp-panel-heading {
+    font-size: ($base-mobile-font-size + 2);
+    font-weight: $base-font-weight;
+    margin: 0;
+    display: inline-block;
+    margin-right: 20px;
+    @media #{$mq-md-screen} {
+      max-width: 400px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      vertical-align: top; // overrides baseline issue with inline-block
+    }
+  }
+  .description {
+    font-size: ($base-font-size - 2px); // 14px - 2px = 12px
+    color: $sg_small_text_gray;
+    margin-bottom: 0;
+  }
+  .exp-panel-actions {
+    margin-left: 20px;
+    line-height: 3;
   }
 }
+.exp-panel-wrapper:first-child .expandable-panel {
+  border-top: 1px solid $sg_light_grey_border;
+}
 .expandable-panel .exp-panel-more-options {
   float: right;
   color: $sg_secondary;
-  padding-right: 10px;
-  margin-top: 8px;
+  padding-right: $page-wrapper-padding;
+  margin-top: $page-wrapper-padding;
   .dropdown-menu {
     left: auto;
     right: 0;
@@ -63,6 +62,9 @@
 .exp-panel-content {
   @extend %clearfix;
   margin-top: 1em;
+  .control-label.sr-only {
+    padding-top: 0;
+  }
 }
 
 
@@ -84,13 +86,13 @@ The Expandable Panel component is a simple alternative to an accordion. This all
 
 
 ```html_example
-<div class="expandable-panel-wrapper">
+<div class="exp-panel-wrapper">
 <article class="expandable-panel" ng-class="{'is-expanded': toggleExpandedPanel}">
 	<header class="exp-panel-header">
 		<div class="exp-panel-description">
 			<h2 class="exp-panel-heading">Panel Heading</h2>
       <span class="exp-panel-detail-info">Other info</span>
-			<p class="exp-panel-subheading">Panel subheading or descriptor text</p>
+			<p class="description">Panel subheading or descriptor text</p>
 		</div>
 		<span class="exp-panel-actions">
 			<a href="" ng-click="toggleExpandedPanel = !toggleExpandedPanel">
