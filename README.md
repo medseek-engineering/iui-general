@@ -7,7 +7,7 @@
 
 ### 1.0.6
 
-Add icon-checkmark-white.svg to /src/images folder for use with templateCache.
+Add icon-checkmark-white.svg and icon-exclamation-mark-white.svg to /src/images folder for use with templateCache.
 
 ### 1.0.5
 
