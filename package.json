@@ -1,6 +1,6 @@
 {
   "name": "iui-general",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Directives and styling for Influence Health Apps",
   "main": "./lib/index.js",
   "private": true,
