@@ -5,11 +5,19 @@
 
 ## Changelog
 
-### 1.0.5
+### 1.0.7
 
 Added a ui-bootstrap overrides folder for directives that we create to override ui-bootstrap.
 
 Added a directive override for the ui-bootstrap directive typeahead. This directive adds the ability to scroll a popup when the keyboard is used to scroll.
+
+### 1.0.6
+
+Add icon-checkmark-white.svg and icon-exclamation-mark-white.svg to /src/images folder for use with templateCache.
+
+### 1.0.5
+
+Add new Expandable Panel class Component. This highly customizable element is based off Bootstrap's accordion and collapse. This allows for greater control over what content goes inside the expandable panel, in the panel header, and even allows for additional controls to be placed on the panel heading bar, such as a More or Actions dropdown which would be difficult to accomplish with Bootstrap's standard Accordion. This update also adds a new SVG icon to the asset library: icon-checkmark-white.svg.
 
 ### 1.0.4
 
