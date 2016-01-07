@@ -1,5 +1,38 @@
 # iui-general
 
+[iui-general Examples](http://medseek-engineering.github.io/iui-general/style-guide/ "iui-general Examples")
+
+
+## Installation (with Influence Health ui-core)
+
+Add to package.json:
+```javascript
+"dependencies": {
+    ...
+    "iui-general": "git+ssh://git@github.com:medseek-engineering/iui-general.git"
+}
+```
+
+Use in `app.js`:
+```javascript
+ui.use(require('iui.general'));
+```
+
+Add the import paths to your `config.rb` file
+```ruby
+additional_import_paths = [File.join('node_modules','iui-general','lib','src')]
+```
+
+import iui-general.scss in your `main.scss` file
+
+```sass
+// Place your variable overrides above this line. A full list of variables can be found here: 
+// https://github.com/medseek-engineering/iui-general/blob/master/lib/src/_iui-variables.scss
+@import iui-general;
+```
+
+
+
 ## Build
 **Note:** if you make changes, you must run **gulp** to rebuild the combined files in the 'dist' directory. You may need to also update the package.json version number.
 
