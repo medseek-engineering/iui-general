@@ -1,0 +1,149 @@
+// EXPANDABLE PANELS STYLING
+
+.expandable-panel {
+  @extend %clearfix;
+  padding: 0 $page-wrapper-padding;
+  border-bottom: 1px solid $sg_light_grey_border;
+  background: white;
+  @include transition(background 100ms linear);
+  &.single-exp-panel {
+    border-top: 1px solid $sg_light_grey_border;
+  }
+  &.is-expanded {
+    background: $sg_secondary_background;
+    border-left: 1px solid $sg_light_grey_border;
+    @include transition(background 100ms linear);
+  }
+  .exp-panel-description {
+    display: inline;
+    float: left;
+    padding: $page-wrapper-padding 0;
+  }
+  .exp-panel-heading {
+    font-size: ($base-mobile-font-size + 2);
+    font-weight: $base-font-weight;
+    margin: 0;
+    display: inline-block;
+    margin-right: 20px;
+    @media #{$mq-md-screen} {
+      max-width: 400px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      vertical-align: top; // overrides baseline issue with inline-block
+    }
+  }
+  .description {
+    font-size: ($base-font-size - 2px); // 14px - 2px = 12px
+    color: $sg_small_text_gray;
+    margin-bottom: 0;
+  }
+  .exp-panel-actions {
+    margin-left: 20px;
+    line-height: 3;
+  }
+}
+.exp-panel-wrapper:first-child .expandable-panel {
+  border-top: 1px solid $sg_light_grey_border;
+}
+.expandable-panel .exp-panel-more-options {
+  float: right;
+  color: $sg_secondary;
+  padding-right: $page-wrapper-padding;
+  margin-top: $page-wrapper-padding;
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+}
+.expandable-panel .exp-panel-header {
+  @extend %clearfix;
+}
+.exp-panel-content {
+  @extend %clearfix;
+  margin-top: 1em;
+  .control-label.sr-only {
+    padding-top: 0;
+  }
+}
+
+
+/*doc
+---
+title : Expandable Panel
+name : d_expandable_panel
+parent : b_a_components
+category : Components
+---
+
+The Expandable Panel component is a simple alternative to an accordion. This allows for greater control over what content goes inside the expandable panel, in the panel header, and even allows for additional controls to be placed on the panel heading bar, such as a More or Actions dropdown which would be difficult to accomplish with Bootstrap's standard Accordion.
+
+**Rules of Development**
+
+- Right edge of expandable panel must be flush with right edge of window (Not shown in this example)
+- Panel background color changes to grey on expanded state
+- The "More" dropdown on the right side of panel should only contain actions that are appliable to the panel itself
+
+
+```html_example
+<div class="exp-panel-wrapper">
+<article class="expandable-panel" ng-class="{'is-expanded': toggleExpandedPanel}">
+	<header class="exp-panel-header">
+		<div class="exp-panel-description">
+			<h2 class="exp-panel-heading">Panel Heading</h2>
+      <span class="exp-panel-detail-info">Other info</span>
+			<p class="description">Panel subheading or descriptor text</p>
+		</div>
+		<span class="exp-panel-actions">
+			<a href="" ng-click="toggleExpandedPanel = !toggleExpandedPanel">
+				<span ng-if="!toggleExpandedPanel">Edit</span>
+				<span ng-if="toggleExpandedPanel">Close</span>
+			</a>
+		</span>
+    <div class="exp-panel-more-options dropdown" dropdown>
+			<button type="button" role="button" class="no-btn" dropdown-toggle>
+				More
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li>
+					<a href="">Duplicate</a>
+				</li>
+				<li>
+					<a href="">Remove</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<section class="exp-panel-content" collapse="!toggleExpandedPanel">
+    <p>Works great with a form!</p>
+    <div class="row">
+      <div class="col-md-6">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="exp_panel_name">Name</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="exp_panel_name" placeholder="Required" />
+            </div>
+          </div><!-- /.form-group -->
+          <div class="form-group">
+            <label class="control-label col-sm-3" for="exp_panel_name">Email</label>
+            <div class="col-sm-9">
+              <input type="email" class="form-control" id="exp_panel_name" placeholder="Required" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="multi-button-bar">
+              <button type="button" role="button" class="btn btn-primary">Ok</button>
+              <button type="button" role="button" class="btn btn-default">Cancel</button>
+            </div>
+          </div><!-- /.form-group -->
+        </form>
+      </div>
+    </div><!-- /.row -->
+	</section>
+</article>
+</div>
+```
+
+*/
