@@ -44,8 +44,6 @@ Added a ui-bootstrap overrides folder for directives that we create to override 
 
 Added a directive override for the ui-bootstrap directive typeahead. This directive adds the ability to scroll a popup when the keyboard is used to scroll.
 
-added travis cl
-
 ### 1.0.6
 
 Add icon-checkmark-white.svg and icon-exclamation-mark-white.svg to /src/images folder for use with templateCache.
