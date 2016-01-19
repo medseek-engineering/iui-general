@@ -1,6 +1,6 @@
 {
   "name": "iui-general",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Directives and styling for Influence Health Apps",
   "main": "./lib/index.js",
   "private": true,
@@ -26,6 +26,7 @@
     "delayed-stream": "0.0.5",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
     "gulp-concat": "~2.1.7",
     "gulp-filter": "^3.0.0",
     "gulp-hologram": "^1.2.0",
