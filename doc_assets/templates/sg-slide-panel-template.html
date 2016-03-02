@@ -2,17 +2,17 @@
   <button type="button" class="close" ng-click="close()">
     <span class="sr-only">Close</span>
   </button>
-  <h4 class="modal-title">{{panelData.panelTitle}}</h4>
+  <h2 class="modal-title">{{panelData.panelTitle}}</h2>
   <p>You can add a slide panel description or further instructions here.</p>
 </div>
 <div class="modal-body">
   <p>Slide panel content goes here.</p>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="item in data">
+      {{item}}
+    </li>
+  </ul>
 </div>
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="item in data">
-    {{item}}
-  </li>
-</ul>
 <div class="modal-footer">
   <div class="multi-button-bar">
     <button type="button" class="btn btn-primary" ng-click="close()">Close</button>
