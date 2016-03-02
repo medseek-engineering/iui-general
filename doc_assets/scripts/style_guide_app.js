@@ -60,9 +60,9 @@ app.controller('SGSlidePanelCtrl', ['$scope', '$modal', function(scope, $modal) 
   scope.panelTitle = 'Example Slide Panel';
 
   scope.openSlidePanel = function() {
-    var modalInstanceSG = $modal.open({
+    var panelInstanceSG = $modal.open({
       templateUrl: 'templates/sg-slide-panel-template.html',
-      controller: 'ModalInstanceCtrl',
+      controller: 'SlidePanelInstanceCtrl',
       windowClass: 'modal-as-slide-panel',
       resolve: {
         panelData: function() {
@@ -73,17 +73,56 @@ app.controller('SGSlidePanelCtrl', ['$scope', '$modal', function(scope, $modal) 
         }
       }
     });
-    modalInstanceSG.result.then(function() {
+    panelInstanceSG.result.then(function() {
       console.log('Slide panel opened.');
     }, function () { });
   };
 }]);
 
 // Slide Panel instance controller.
-app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'panelData', function(scope, $modalInstance, panelData) {
+app.controller('SlidePanelInstanceCtrl', ['$scope', '$modalInstance', 'panelData', function(scope, $modalInstance, panelData) {
   scope.panelData = panelData;
   scope.data = panelData.data;
   scope.panelTitle = panelData.panelTitle;
+
+  scope.close = function() {
+    $modalInstance.dismiss('cancel');
+  };
+}]);
+// Modal dialog example controller.
+app.controller('SGModalCtrl', ['$scope', '$modal', function(scope, $modal) {
+  scope.data = 'Are you sure you wish to proceed?';
+  scope.modalTitle = 'Example Modal Dialog';
+
+  scope.openModal = function() {
+
+    var modalInstanceSG = $modal.open({
+      templateUrl: 'templates/sg-modal-template.html',
+      controller: 'ModalInstanceCtrl',
+      resolve: {
+        modal: function() {
+          return {
+            modalTitle: scope.modalTitle,
+            data: scope.data
+          }
+        }
+      }
+    });
+    modalInstanceSG.result.then(function() {
+      console.log('Modal opened.');
+    }, function () { });
+  };
+}]);
+
+// Modal instance controller.
+app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'modal', function(scope, $modalInstance, modal) {
+  scope.modalData = modal;
+  scope.data = 'Are you sure you wish to proceed?';
+  scope.modalTitle = 'Example Modal Dialog';
+
+  scope.confirm = function() {
+    $modalInstance.close();
+  };
 
   scope.close = function() {
     $modalInstance.dismiss('cancel');

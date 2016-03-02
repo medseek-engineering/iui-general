@@ -1,0 +1,46 @@
+// MODAL DIALOG STYLING
+// Author: Martin Castre
+// Date: March 2, 2016
+//
+// ===================================
+
+.modal-content {
+  border-radius: 0;
+}
+.modal-header,
+.modal-footer {
+  border: 0;
+}
+.modal-body,
+.modal-footer {
+  padding-top: 0;
+}
+
+/*doc
+---
+title : Modals
+name : f_modals
+parent : b_a_components
+category : Components
+---
+
+A modal dialog is a small dialog window prompt that displays above the content and darkens the foreground to emphasize the focus. Modal dialogs are usually used for confirmation messages that require action, or to advise the user of a global change or event, not relating to the current context. To be consistent in defining and creating modal dialogs, use the UI Bootstrap default $modal service. Documentation can be found here: http://angular-ui.github.io/bootstrap/versioned-docs/0.12.1/#/modal
+
+**Rules of Development**
+
+- The interior content must follow all accessibility guidelines and requirements.
+- Modal should always have a header, or title.
+- The interior layout of the modal must follow the standard layout of the default Bootstrap modal dialog.
+
+<p class="sg-callout sg-callout-info">
+  <span class="sg-info-title">Semantic Note</span>
+  <span class="sg-info-body">Modal dialogs should always have at least 2 ways of closing the modal: a close icon in the top-right corner of the modal (default), and a Cancel button at the bottom to close the modal without any action taken. You can also click outside the modal to close it.</span>
+</p>
+
+```html_example
+<div ng-controller="SGModalCtrl">
+  <button role="button" type="button" class="btn btn-default" ng-click="openModal()">Trigger Modal Dialog</button>
+</div>
+```
+
+*/
