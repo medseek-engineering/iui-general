@@ -26,7 +26,7 @@ additional_import_paths = [File.join('node_modules','iui-general','lib','src')]
 import iui-general.scss in your `main.scss` file
 
 ```sass
-// Place your variable overrides above this line. A full list of variables can be found here: 
+// Place your variable overrides above this line. A full list of variables can be found here:
 // https://github.com/medseek-engineering/iui-general/blob/master/lib/src/_iui-variables.scss
 @import iui-general;
 ```
@@ -37,6 +37,12 @@ import iui-general.scss in your `main.scss` file
 **Note:** if you make changes, you must run **gulp** to rebuild the combined files in the 'dist' directory. You may need to also update the package.json version number.
 
 ## Changelog
+
+### 1.0.8
+
+New feature! New Slide Panel Component! A Slide Panel is a full-height panel dialog that slides into view from the right of the viewport upon trigger. Slide Panels are used to provide more information or secondary actions from the main content. It uses the existing Bootstrap modal dialog styling and functionality and converts the modal box to be hidden and slide in from the right when triggered. When creating the modalInstance in the controller, set windowClass to be 'modal-as-slide-panel' This class will activate the slide panel properties.
+
+Add favicon to iui-general
 
 ### 1.0.7
 
