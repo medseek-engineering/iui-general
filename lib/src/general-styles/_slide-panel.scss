@@ -51,7 +51,7 @@ $modal-body-padding: 15px;
     transform: translate3d(150px, 0, 0);
     @include transition(transform 200ms ease-out);
   }
-  .modal-body > .list-group .list-group-item {
+  .modal-body > .list-group > .list-group-item {
     margin-left: -$modal-body-padding;
     margin-right: -$modal-body-padding;
     border: 0;
