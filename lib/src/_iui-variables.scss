@@ -83,6 +83,19 @@ $xlarge-font-leading: 1.75 !default;
 
 /*
 --------------------------------------------------------------------------
+  Bootstrap Variables
+--------------------------------------------------------------------------
+*/
+
+$icon-font-path:          '/$iui-general/fonts/bootstrap/' !default;
+$brand-primary:           $sg_secondary !default;
+$link-color:              $sg_secondary !default;
+$link-hover-color:        $sg_primary !default;
+$font-family-sans-serif:  $base-font-family !default;
+
+
+/*
+--------------------------------------------------------------------------
   Breakpoints & Media Queries
 --------------------------------------------------------------------------
 */
