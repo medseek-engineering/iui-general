@@ -38,6 +38,9 @@ import iui-general.scss in your `main.scss` file
 
 ## Changelog
 
+### 1.0.9
+Definining Bootstrap Variables in variables file
+
 ### 1.0.8
 
 New feature! New Slide Panel Component! A Slide Panel is a full-height panel dialog that slides into view from the right of the viewport upon trigger. Slide Panels are used to provide more information or secondary actions from the main content. It uses the existing Bootstrap modal dialog styling and functionality and converts the modal box to be hidden and slide in from the right when triggered. When creating the modalInstance in the controller, set windowClass to be 'modal-as-slide-panel' This class will activate the slide panel properties.
