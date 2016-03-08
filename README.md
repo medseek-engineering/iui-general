@@ -38,8 +38,11 @@ import iui-general.scss in your `main.scss` file
 
 ## Changelog
 
+### 1.0.10
+Added iui-Progress-Bar 
+
 ### 1.0.9
-Definining Bootstrap Variables in variables file
+Defining Bootstrap Variables in variables file
 
 ### 1.0.8
 
