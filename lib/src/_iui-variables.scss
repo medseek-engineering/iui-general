@@ -93,6 +93,12 @@ $link-color:              $sg_secondary !default;
 $link-hover-color:        $sg_primary !default;
 $font-family-sans-serif:  $base-font-family !default;
 
+/*  Progress Bar Colors  */
+$progress-bar-bg: $sg_bashful_blue;
+$progress-bar-info-bg: $sg_bashful_blue;
+$progress-bar-success-bg: $sg_granny_smith_green;
+$progress-bar-warning-bg: $sg_organic_orange;
+$progress-bar-danger-bg: $sg_rosy_red;
 
 /*
 --------------------------------------------------------------------------
