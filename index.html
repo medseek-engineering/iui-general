@@ -18,26 +18,27 @@
         $scope.goalProgressOptions = {
           minValue: '',
           maxValue: '255',
-          hideDisplayName: true,
+          hideDisplayName: false,
           showPercent: true,
-          fieldTemplateUrl: 'test-template.html'
+          fieldTemplateUrl: 'test-template.html',
+          roundTo: 2
         };
         $scope.goalDisplayFields = [
           {
             displayName: 'Goal 1',
-            field: 'hairLength',
-            barClass: 'progress-bar-success'
+            field: 'hairLength'
           },
           {
             displayName: 'Goal 2',
-            field: 'bmi'
+            field: 'bmi',
+            barClass: 'progress-bar-success'
           },
           {
             displayName: 'Goal 3',
             field: 'weight'
           }
         ]
-        $scope.bars: {
+        $scope.bars = {
           hairLength: 13.756,
           bmi: 54.34,
           weight: 70
