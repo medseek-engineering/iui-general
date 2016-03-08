@@ -6,7 +6,7 @@
     aria-valuemin="{{barOptions.minValue}}"
     aria-valuemax="{{barOptions.maxValue}}"
     ng-style="{'width': barWidth(bar) + '%'};"
-    class="progress-bar {{bar.barClass}}">
-    <span ng-class="{ 'sr-only' : barOptions.hideDisplayName }">{{barOptions.showPercent ? (barWidth(bar) | number:barOptions.roundTo) + '%' : bar.displayName}}</span>
+    class="progress-bar {{bar.barClass}}"
+    ng-include="barOptions.fieldTemplateUrl ? barOptions.fieldTemplateUrl : '/$iui-general/iui-progress-bar/default-template.html'">
   </div>
 </div>
