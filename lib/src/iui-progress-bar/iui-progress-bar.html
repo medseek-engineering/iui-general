@@ -6,7 +6,7 @@
     aria-valuemin="{{barOptions.minValue}}"
     aria-valuemax="{{barOptions.maxValue}}"
     ng-style="{'width': barWidth(bar) + '%'};"
-    class="progress-bar {{bar.barStyle}}">
+    class="progress-bar {{bar.barClass}}">
     <span ng-class="{ 'sr-only' : barOptions.hideDisplayName }">{{bar.displayName || barWidth(bar)}}</span>
   </div>
 </div>
