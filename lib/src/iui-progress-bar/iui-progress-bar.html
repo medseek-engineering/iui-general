@@ -1,0 +1,13 @@
+<div class="progress">
+  <div
+    ng-repeat="bar in progressBarOptions.bars track by $index" 
+    role="progressbar"
+    aria-valuenow="{{bar.currentValue}}"
+    aria-valuemin="{{progressBarOptions.minValue}}"
+    aria-valuemax="{{progressBarOptions.maxValue}}"
+    style="width:{{barWidth(bar)}}%;"
+    class="progress-bar"
+    ng-class="bar.barStyle">
+    <span ng-class="{ 'sr-only' : progressBarOptions.hideLabels }">{{bar.label || barWidth(bar)}}</span>
+  </div>
+</div>
