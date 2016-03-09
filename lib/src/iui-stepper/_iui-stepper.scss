@@ -2,9 +2,10 @@
   margin-top: 1em;
   .input-group-btn {
     display: inline;
+    vertical-align: top;
     > .btn {
       width: $stepper-button-width;
-      margin-top: -2px; // Aligns buttons to input
+      margin-top: 0; // Aligns buttons to input
     }
     &:first-child > .btn {
       border-top-left-radius: $base-border-radius;
@@ -19,6 +20,7 @@
   height: $stepper-height;
   text-align: center;
   padding-left: 20px; // Centers number with browser default spinner
+  vertical-align: top;
   &.ng-invalid {
     color: $sg_alert_danger;
   }

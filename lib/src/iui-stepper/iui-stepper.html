@@ -2,12 +2,12 @@
   <div class="input-group">
     <div class="input-group-btn">
       <span class="sr-only">Decrease number</span>
-      <button type="button" role="button" class="btn btn-default" ng-click="decrement()">-</button>
+      <button type="button" role="button" class="btn btn-default" ng-click="decrement()" ng-disabled="value < minValue">-</button>
     </div>
     <input type="number" name="stepper_value" id="{{stepperId}}" class="form-control stepper-button-input" ng-model="value" min="{{minValue}}" max="{{maxValue}}" step="{{incrementBy}}" />
     <div class="input-group-btn">
       <span class="sr-only">Increase number</span>
-      <button type="button" role="button" class="btn btn-default" ng-click="increment()">+</button>
+      <button type="button" role="button" class="btn btn-default" ng-click="increment()" ng-disabled="value > maxValue">+</button>
     </div>
   </div>
   <div class="form-group error-group" ng-show="stepperForm.stepper_value.$error">
