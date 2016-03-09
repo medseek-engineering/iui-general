@@ -1,10 +1,11 @@
 .stepper-button {
   margin-top: 1em;
+  max-width: $stepper-total-width;
+  display: block;
   .input-group-btn {
-    display: inline;
     vertical-align: top;
     > .btn {
-      width: $stepper-button-width;
+      min-width: $stepper-button-width;
       margin-top: 0; // Aligns buttons to input
     }
     &:first-child > .btn {
@@ -14,12 +15,7 @@
   }
 }
 .form-control.stepper-button-input {
-  display: inline;
-  float: none;
-  width: $stepper-input-width;
-  height: $stepper-height;
   text-align: center;
-  padding-left: 20px; // Centers number with browser default spinner
   vertical-align: top;
   &.ng-invalid {
     color: $sg_alert_danger;
