@@ -148,10 +148,10 @@ $link-button-function : cubic-bezier(0.455, 1.17, 0.7, 1.31);
 
 // ====== iui-stepper
 
-$stepper-height: 34px !default;
 $stepper-button-width: 36px !default;
 $stepper-input-width: 70px !default;
 $base-border-radius: 4px !default;
+$stepper-total-width: ($stepper-input-width + $stepper-button-width + $stepper-button-width);
 
 // ====== iui-label-indicator
 
