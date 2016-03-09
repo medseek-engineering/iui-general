@@ -38,8 +38,12 @@ import iui-general.scss in your `main.scss` file
 
 ## Changelog
 
+### 1.0.11
+
+iui-stepper is now more streamlined and uses less CSS code.
+
 ### 1.0.10
-Added iui-Progress-Bar 
+Added iui-Progress-Bar
 
 ### 1.0.9
 Defining Bootstrap Variables in variables file
