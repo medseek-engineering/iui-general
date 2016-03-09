@@ -3,10 +3,8 @@
   max-width: $stepper-total-width;
   display: block;
   .input-group-btn {
-    vertical-align: top;
     > .btn {
       min-width: $stepper-button-width;
-      margin-top: 0; // Aligns buttons to input
     }
     &:first-child > .btn {
       border-top-left-radius: $base-border-radius;
@@ -15,8 +13,7 @@
   }
 }
 .form-control.stepper-button-input {
-  text-align: center;
-  vertical-align: top;
+  text-align: center;  
   &.ng-invalid {
     color: $sg_alert_danger;
   }
