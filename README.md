@@ -38,6 +38,10 @@ import iui-general.scss in your `main.scss` file
 
 ## Changelog
 
+
+### 1.0.11
+- Performance improvements for apps using `conf.client.head.addlPathedScripts`
+
 ### 1.0.10
 Added iui-Progress-Bar 
 
