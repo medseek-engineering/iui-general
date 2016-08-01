@@ -5,6 +5,10 @@
 
 ## Changelog
 
+### 1.0.7
+
+Add Modals, Tabs, and Tooltips UI components and styles to Style Guide under Components.
+
 ### 1.0.6
 
 Add icon-checkmark-white.svg and icon-exclamation-mark-white.svg to /src/images folder for use with templateCache.
