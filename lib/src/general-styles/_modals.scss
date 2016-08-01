@@ -1,0 +1,85 @@
+.modal-backdrop {
+  z-index: 9000 !important;
+}
+.modal {
+  z-index: 9010 !important;
+}
+.modal-content {
+  border-radius: 0;
+  @include box-shadow(0 0 6px rgba(0, 0, 0, 0.3));
+}
+.modal-dialog {
+  position: static; // Quick fix issue where modal is shifting offscreen
+  max-width: 600px;
+  @media #{$mq-md-screen} {
+    margin: 100px auto;
+  }
+}
+button.close {
+  background-size: 100%;
+  opacity: 1;
+  height: 30px;
+  width: 30px;
+}
+.modal-header {
+  border: none;
+  .close {
+    // positions close background image in modal to the top right of the container
+    margin-top: -4px;
+    margin-right: -7px;
+  }
+  .modal-title {
+    font-weight: $heading-font-weight;
+    color: $sg_primary;
+    font-size: $base-mobile-font-size;
+  }
+  .modal-subtitle {
+    font-size: $medium-font-size;
+    color: $sg_primary;
+    word-break: break-all;
+  }
+}
+.modal-body {
+  position: relative;
+  padding-top: 0;
+  font-size: $base-font-size;
+}
+.modal-footer {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/*doc
+---
+title : Modal Dialogs
+name : d_modals
+parent : b_a_components
+category : Components
+---
+
+Modals use the UI Bootstrap <a href="http://angular-ui.github.io/bootstrap/versioned-docs/0.12.1/#/modal" target="_blank">modal directive</a>.
+
+```html_example
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close">
+    <span class="sr-only">Close</span>
+  </button>
+  <h2 class="modal-title">Remove Something Modal Title</h2>
+</div>
+<div class="modal-body">
+  <p>Are you sure you want to remove this?</p>
+</div>
+<div class="modal-footer">
+  <div class="multi-button-bar">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+  </div>
+</div>
+</div>
+</div>
+```
+
+*/
