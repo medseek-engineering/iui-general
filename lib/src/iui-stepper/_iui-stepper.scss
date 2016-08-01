@@ -1,10 +1,10 @@
 .stepper-button {
   margin-top: 1em;
+  max-width: $stepper-total-width;
+  display: block;
   .input-group-btn {
-    display: inline;
     > .btn {
-      width: $stepper-button-width;
-      margin-top: -2px; // Aligns buttons to input
+      min-width: $stepper-button-width;
     }
     &:first-child > .btn {
       border-top-left-radius: $base-border-radius;
@@ -13,12 +13,7 @@
   }
 }
 .form-control.stepper-button-input {
-  display: inline;
-  float: none;
-  width: $stepper-input-width;
-  height: $stepper-height;
-  text-align: center;
-  padding-left: 20px; // Centers number with browser default spinner
+  text-align: center;  
   &.ng-invalid {
     color: $sg_alert_danger;
   }

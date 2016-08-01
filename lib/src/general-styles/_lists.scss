@@ -122,11 +122,13 @@ $large-list: 200px;
 $xlarge-list: 270px;
 
 @mixin dl-type($size: $short-list) {
-  > dt {
-    width: $size;
-  }
-  > dd {
-    margin-left: $size;
+  @media #{$mq-sm-screen} {
+    > dt {
+      width: $size;
+    }
+    > dd {
+      margin-left: $size;
+    }
   }
 }
 // Modifier class to left text-align dt in .dl-horizontal
