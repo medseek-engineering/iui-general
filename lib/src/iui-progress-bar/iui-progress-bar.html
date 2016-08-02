@@ -1,0 +1,12 @@
+<div class="progress">
+  <div
+    ng-repeat="bar in displayFields track by $index" 
+    role="progressbar"
+    aria-valuenow="{{barData[bar.field]}}"
+    aria-valuemin="{{barOptions.minValue}}"
+    aria-valuemax="{{barOptions.maxValue}}"
+    ng-style="{'width': barWidth(bar) + '%'};"
+    class="progress-bar {{bar.barClass}}"
+    ng-include="barOptions.fieldTemplateUrl ? barOptions.fieldTemplateUrl : '/$iui-general/iui-progress-bar/default-template.html'">
+  </div>
+</div>

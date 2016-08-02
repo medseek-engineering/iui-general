@@ -54,34 +54,38 @@ app.controller('SGMainCtrl', ['$scope', '$location', '$anchorScroll', '$window',
 
 }]);
 
-// Modal example controller.
-app.controller('SGModalDemoCtrl', ['$scope', '$modal', function(scope, $modal) {
-  scope.openDialog = function() {
+// Slide Panel example controller.
+app.controller('SGSlidePanelCtrl', ['$scope', '$modal', function(scope, $modal) {
+  scope.data = ['List Item 1', 'List Item 2', 'List Item 3'];
+  scope.panelTitle = 'Example Slide Panel';
+
+  scope.openSlidePanel = function() {
     var modalInstanceSG = $modal.open({
-      templateUrl: 'sg-modal-example-template.html'
+      templateUrl: 'templates/sg-slide-panel-template.html',
+      controller: 'ModalInstanceCtrl',
+      windowClass: 'modal-as-slide-panel',
+      resolve: {
+        panelData: function() {
+          return {
+            panelTitle: scope.panelTitle,
+            data: scope.data
+          }
+        }
+      }
     });
     modalInstanceSG.result.then(function() {
-      // Modal instance promise
-    }, function () {
-      // Modal $dismiss() means the deletion has been canceled
-    });
+      console.log('Slide panel opened.');
+    }, function () { });
   };
 }]);
 
-// Tabs example controller
-app.controller('SGTabsDemoCtrl', ['$scope', function(scope) {
-  scope.tabs = [
-    {
-      title: 'Pending',
-      content: 'All the Pending tab content.'
-    },
-    {
-      title: 'Completed',
-      content: 'All the Completed tab content.'
-    },
-    {
-      title: 'Deleted',
-      content: 'All the Deleted tab content.'
-    }
-  ];
+// Slide Panel instance controller.
+app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'panelData', function(scope, $modalInstance, panelData) {
+  scope.panelData = panelData;
+  scope.data = panelData.data;
+  scope.panelTitle = panelData.panelTitle;
+
+  scope.close = function() {
+    $modalInstance.dismiss('cancel');
+  };
 }]);

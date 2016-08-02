@@ -1,0 +1,133 @@
+// SLIDE PANEL STYLING
+// Author: Martin Castre
+// Date: March 2, 2016
+//
+// ===================================
+
+$panel-size: 400px;
+$modal-body-padding: 15px;
+
+.modal-content {
+  border-radius: 0;
+}
+.modal-backdrop.in {
+  opacity: 0.3;
+}
+.modal.modal-as-slide-panel {
+  .modal-title {
+    color: $sg_medium_grey;
+    margin-bottom: $page-wrapper-padding;
+  }
+  .modal-dialog {
+    -moz-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    max-width: $panel-size;
+    margin: 0;
+    @include transition(transform 200ms ease-out);
+  }
+  .modal-content {
+    overflow: auto;
+    height: 100vh;
+    border: 0;
+    @include box-shadow(-2px 0 8px rgba(0,0,0,0.3));
+    .modal-header .modal-title {
+      font-weight: $base-font-weight;
+      font-size: ($large-font-size - 4px); // 18px
+    }
+  }
+  .modal-footer .multi-button-bar > .btn {
+    float: left;
+    margin-left: 0;
+    margin-right: $page-wrapper-padding;
+  }
+  &.fade:not(.in) .modal-dialog {
+    -moz-transform: translate3d(150px, 0, 0);
+    -webkit-transform: translate3d(150px, 0, 0);
+    transform: translate3d(150px, 0, 0);
+    @include transition(transform 200ms ease-out);
+  }
+  .modal-body > .list-group > .list-group-item {
+    margin-left: -$modal-body-padding;
+    margin-right: -$modal-body-padding;
+    border: 0;
+    border-top: 1px solid $sg_light_grey_border;
+    border-radius: 0;
+    &:last-child {
+      border-bottom: 1px solid $sg_light_grey_border;
+    }
+  }
+}
+
+/*doc
+---
+title : Slide Panel
+name : e_slide_panel
+parent : b_a_components
+category : Components
+---
+
+A Slide Panel is a full-height panel dialog that slides into view from the right of the viewport upon trigger. Slide Panels are used to provide more information or secondary actions from the main content. It uses the existing Bootstrap modal dialog styling and functionality and converts the modal box to be hidden and slide in from the right when triggered. When creating the modalInstance in the controller, set windowClass to be 'modal-as-slide-panel' This class will activate the slide panel properties.
+
+**Rules of Development**
+
+- Slide Panel will be the topmost layer, no other element should sit above it.
+- Slide Panel must always slide in from the right side of the viewport.
+- The interior content must follow all accessibility guidelines and requirements.
+- Slide Panel should always have a header, or title.
+- The interior layout of the Slide Panel must follow the standard layout of the default Bootstrap modal dialog.
+- The trigger for the Slide Panel must always be a button with role and type defined. If you have to use an `a` link element, please use the `role="button"` attribute.
+
+<p class="sg-callout sg-callout-info">
+  <span class="sg-info-title">Semantic Note</span>
+  <span class="sg-info-body">The Slide Panel should always have at least 2 ways of closing the panel: a close icon in the top-right corner of the panel (default), and a Cancel button at the bottom to close the panel without any action taken. You can also click outside the panel to close it.</span>
+</p>
+
+```html_example
+<div ng-controller="SGSlidePanelCtrl">
+  <button role="button" type="button" class="btn btn-default" ng-click="openSlidePanel()">Trigger Slide Panel</button>
+</div>
+```
+```js_example
+// Slide Panel example controller.
+app.controller('SGSlidePanelCtrl', ['$scope', '$modal', function(scope, $modal) {
+  scope.data = ['List Item 1', 'List Item 2', 'List Item 3'];
+  scope.panelTitle = 'Example Slide Panel';
+
+  scope.openSlidePanel = function() {
+    var modalInstanceSG = $modal.open({
+      templateUrl: 'templates/sg-slide-panel-template.html',
+      controller: 'ModalInstanceCtrl',
+      windowClass: 'modal-as-slide-panel',
+      resolve: {
+        panelData: function() {
+          return {
+            panelTitle: scope.panelTitle,
+            data: scope.data
+          }
+        }
+      }
+    });
+    modalInstanceSG.result.then(function() {
+      console.log('Slide panel opened.');
+    }, function () { });
+  };
+}]);
+
+// Slide Panel instance controller.
+app.controller('ModalInstanceCtrl', ['$scope', '$modalInstance', 'panelData', function(scope, $modalInstance, panelData) {
+  scope.panelData = panelData;
+  scope.data = panelData.data;
+  scope.panelTitle = panelData.panelTitle;
+
+  scope.close = function() {
+    $modalInstance.dismiss('cancel');
+  };
+}]);
+```
+
+*/

@@ -83,6 +83,25 @@ $xlarge-font-leading: 1.75 !default;
 
 /*
 --------------------------------------------------------------------------
+  Bootstrap Variables
+--------------------------------------------------------------------------
+*/
+
+$icon-font-path:          '/$iui-general/fonts/bootstrap/' !default;
+$brand-primary:           $sg_secondary !default;
+$link-color:              $sg_secondary !default;
+$link-hover-color:        $sg_primary !default;
+$font-family-sans-serif:  $base-font-family !default;
+
+/*  Progress Bar Colors  */
+$progress-bar-bg: $sg_bashful_blue;
+$progress-bar-info-bg: $sg_bashful_blue;
+$progress-bar-success-bg: $sg_granny_smith_green;
+$progress-bar-warning-bg: $sg_organic_orange;
+$progress-bar-danger-bg: $sg_rosy_red;
+
+/*
+--------------------------------------------------------------------------
   Breakpoints & Media Queries
 --------------------------------------------------------------------------
 */
@@ -129,10 +148,10 @@ $link-button-function : cubic-bezier(0.455, 1.17, 0.7, 1.31);
 
 // ====== iui-stepper
 
-$stepper-height: 34px !default;
 $stepper-button-width: 36px !default;
 $stepper-input-width: 70px !default;
 $base-border-radius: 4px !default;
+$stepper-total-width: ($stepper-input-width + $stepper-button-width + $stepper-button-width);
 
 // ====== iui-label-indicator
 
