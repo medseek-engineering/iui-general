@@ -50,6 +50,6 @@
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "karma-requirejs": "~0.2.0",
     "karma-spec-reporter": "0.0.10",
-    "ui-core": "git+ssh://git@github.com:medseek-engineering/ui-core.git"
+    "ui-core": "git+ssh://git@github.com:medseek-engineering/ui-core.git#v1.5.2"
   }
 }
