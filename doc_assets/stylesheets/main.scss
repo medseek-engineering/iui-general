@@ -368,6 +368,9 @@ width: 33%;
 .round-icon_tile_close {
   background: url("../images/tile_close.svg") !important;
 }
+.close {
+  background: url("../images/tile_close.svg") !important;
+}
 .section-nav {
   display: none;
 }
@@ -504,4 +507,7 @@ width: 33%;
 }
 .expandable-panel-wrapper {
   margin: 2em 0;
+}
+.sg-reset-width {
+  display: inline-block;
 }

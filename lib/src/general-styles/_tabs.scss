@@ -1,0 +1,90 @@
+.nav-tabs {
+  -webkit-margin-after: 0em;
+  border-bottom: 0;
+}
+
+.nav-tabs > li {
+  margin-top: 4px;
+}
+
+.nav-tabs > li > a {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-top-color: transparent;
+  box-shadow: none;
+  color: $sg_secondary;
+  margin-right: 4px;
+  text-align: center;
+  @include transition(background 400ms linear);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  &:hover {
+    background: $sg_light_grey_background;
+    border-bottom-color: $sg_light_grey_background;
+  }
+}
+
+.nav-tabs > li.active > a {
+  color: $sg_medium_grey;
+  font-weight: $heading-font-weight;
+  border-bottom-color: transparent;
+}
+
+.nav-tabs.nav-justified > li {
+  padding-right: 4px;
+}
+
+.nav-tabs.nav-justified > li > a {
+  width:100%;
+  border-bottom: 1px solid $sg_light_grey_background;
+}
+
+.tab-content {
+  border-top: 1px solid $sg_light_grey_border;
+  padding: 10px;
+}
+
+.page-tabs {
+  margin-top: $page-wrapper-padding;
+  @media #{$mq-xs-screen-only} {
+    &.tabs-3-across .nav-tabs > li {
+      width: calc(100% / 3);
+      > a {
+        display: block;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+/*doc
+---
+title : Tabs
+name : e_tabs
+parent : b_a_components
+category : Components
+---
+
+Tabs use the UI Bootstrap <a href="http://angular-ui.github.io/bootstrap/versioned-docs/0.12.1/#/tabs" target="_blank">tabs directive</a>.
+
+```html_example
+<div class="page-tabs tabs-3-across">
+<tabset>
+  <tab heading="In Progress">
+    <p>In Progress Tasks tab content</p>
+  </tab>
+  <tab heading="Completed">
+    <p>Completed tab content</p>
+  </tab>
+  <tab heading="Inactive/Cancelled">
+    <p>Inactive/Cancelled tab content</p>
+  </tab>
+</tabset>
+</div>
+```
+
+*/

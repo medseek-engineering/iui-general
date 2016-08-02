@@ -85,7 +85,7 @@ gulp.task('compileStyle', function(){
     .pipe(compass({
       /* jshint ignore:start */
       config_file: './config.rb',
-      /* jshint ignore:end */ 
+      /* jshint ignore:end */
       sass: 'lib/src',
       css: 'lib/dist'
     }))
@@ -104,7 +104,7 @@ gulp.task('hologram', function() {
     .pipe(compass({
       /* jshint ignore:start */
       config_file: './config.rb',
-      /* jshint ignore:end */ 
+      /* jshint ignore:end */
       sass: 'doc_assets/stylesheets',
       css: 'style-guide/stylesheets'
     }))
