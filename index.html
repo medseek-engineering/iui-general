@@ -6,58 +6,15 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
     <script src="lib/dist/iui-general.min.js"></script>
-		<script>
-
-  		var app = {
-        root: '/'
-      }
-
-  		angular.module('ui.bootstrap.demo', ['ui.bootstrap', 'iui.general']);
-      angular.module('ui.bootstrap.demo').controller('ProgressBar', function($scope, $http) {
-        
-        $scope.goalProgressOptions = {
-          minValue: '',
-          maxValue: '255',
-          hideDisplayName: false,
-          showPercent: true,
-          roundTo: 2
-        };
-        $scope.goalDisplayFields = [
-          {
-            displayName: 'Goal 1',
-            field: 'hairLength'
-          },
-          {
-            displayName: 'Goal 2',
-            field: 'bmi',
-            barClass: 'progress-bar-success'
-          },
-          {
-            displayName: 'Goal 3',
-            field: 'weight'
-          }
-        ];
-        $scope.bars = {
-          hairLength: 13.756,
-          bmi: 54.34,
-          weight: 70
-        };
-        
-      });
-
-		</script>
 
 	</head>
-	<body ng-controller="ProgressBar as test">
+	<body>
 		<div class="container">
-  		
-			<h1 class="page-header">iui-general</h1>
-			
-			<a href="style-guide">Style Guide</a>
-      <br><br>
 
-		  <iui-progress-bar bar-data="bars" bar-options="goalProgressOptions" display-fields="goalDisplayFields"></iui-progress-bar>
-      
+			<h1 class="page-header">iui-general</h1>
+
+			<a href="style-guide">Go to Style Guide</a>
+
     </div>
 
 

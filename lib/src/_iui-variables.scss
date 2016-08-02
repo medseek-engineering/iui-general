@@ -87,7 +87,7 @@ $xlarge-font-leading: 1.75 !default;
 --------------------------------------------------------------------------
 */
 
-$icon-font-path:          '/$iui-general/fonts/bootstrap/' !default;
+$icon-font-path:          './fonts/bootstrap/' !default;
 $brand-primary:           $sg_secondary !default;
 $link-color:              $sg_secondary !default;
 $link-hover-color:        $sg_primary !default;
