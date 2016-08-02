@@ -38,6 +38,10 @@ import iui-general.scss in your `main.scss` file
 
 ## Changelog
 
+### 1.0.13
+
+Add Modals, Tabs, and Tooltips UI components and styles to Style Guide under Components.
+
 ### 1.0.12
 
 - Performance improvements for apps using `conf.client.head.addlPathedScripts`
@@ -64,6 +68,7 @@ Add favicon to iui-general
 Added a ui-bootstrap overrides folder for directives that we create to override ui-bootstrap.
 
 Added a directive override for the ui-bootstrap directive typeahead. This directive adds the ability to scroll a popup when the keyboard is used to scroll.
+
 
 ### 1.0.6
 

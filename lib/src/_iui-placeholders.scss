@@ -31,3 +31,8 @@
     display: none;
   }
 }
+
+%reset-side-margins {
+  margin-left: -$page-wrapper-padding;
+  margin-right: -$page-wrapper-padding;
+}
