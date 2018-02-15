@@ -38,6 +38,10 @@ import iui-general.scss in your `main.scss` file
 
 ## Changelog
 
+### 1.0.14
+
+- Update jQuery version to 3.0.0
+
 ### 1.0.13
 
 Add Modals, Tabs, and Tooltips UI components and styles to Style Guide under Components.
